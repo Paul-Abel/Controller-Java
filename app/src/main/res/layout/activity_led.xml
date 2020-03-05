@@ -6,4 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".Led">
 
+    <Button
+        android:id="@+id/LED_ChanceSite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Zurück zur Startseite"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.149" />
+
+    <TextView
+        android:id="@+id/LedHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LED"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/LED_ChanceSite"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

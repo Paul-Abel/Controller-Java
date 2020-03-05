@@ -8,23 +8,29 @@
 
 
     <Button
-        android:id="@+id/TestButton"
+        android:id="@+id/Main_LedButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.464"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.12"
+        tools:text="led" />
 
     <TextView
-        android:id="@+id/TestText"
+        android:id="@+id/MainHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/textview"
-        app:layout_constraintBottom_toTopOf="@+id/TestButton"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/Main_LedButton"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.457"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.904" />
+        app:layout_constraintVertical_bias="0.634"
+        tools:text="Startseite" />
 </androidx.constraintlayout.widget.ConstraintLayout>
