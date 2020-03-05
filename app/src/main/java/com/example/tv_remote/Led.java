@@ -2,11 +2,14 @@ package com.example.tv_remote;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -17,7 +20,6 @@ public class Led extends AppCompatActivity {
     private Button led_anzeige;
     private Button led_red;
     private Button led_blue;
-    private TextView headline;
 
 
 
@@ -31,12 +33,14 @@ public class Led extends AppCompatActivity {
         led_anzeige = findViewById(R.id.led_anzeige);
         main = findViewById(R.id.LED_ChanceSite);
 
-        headline = findViewById(R.id.LedHeader);
-
-
+        ConstraintLayout constraintLayout = findViewById(R.id.layout);
+        AnimationDrawable animationDrawable = (AnimationDrawable) constraintLayout.getBackground();
+        animationDrawable.setEnterFadeDuration(2000);
+        animationDrawable.setExitFadeDuration(4000);
+        animationDrawable.start();
 
         main.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
+            public void onClick(View v) {
                 mainmenu();
             }
         });
