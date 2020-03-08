@@ -4,4 +4,7 @@
     <string name="test_text">Test-Text</string>
     <string name="textview">TextView</string>
     <string name="button">Button</string>
+    <string name="reciver">Reciver</string>
+    <string name="television">Television</string>
+    <string name="LED">LED</string>
 </resources>
