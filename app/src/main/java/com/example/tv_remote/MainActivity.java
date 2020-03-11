@@ -11,11 +11,15 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.io.DataOutput;
+
 public class MainActivity extends AppCompatActivity {
 
+    public static DataOutput message;
     private Button testButton;
     private TextView testText;
 
@@ -24,10 +28,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        testButton = findViewById(R.id.button);
+        testText = findViewById(R.id.textView2);
+
+        testButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                InternetConnection b = new InternetConnection();
+                b.execute();
+                testText.setText("sollte funktioniert haben");
+            }
+        });
         toolbar();
         animatedbackground();
     }
-
     @Override   //Toolbarsytle wird eingefügt
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
