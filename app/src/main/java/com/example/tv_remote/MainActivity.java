@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         led_Aus = findViewById(R.id.button);
-        led_An.findViewById(R.id.button2);
+        led_An = findViewById(R.id.button2);
 
         led_Aus.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         led_An.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sendeInfrarot("16753245");
+                sendeInfrarot("16753245X");
             }
         });
         toolbar();
