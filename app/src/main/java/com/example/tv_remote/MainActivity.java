@@ -19,8 +19,8 @@ import java.io.DataOutput;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static DataOutput message;
-    private Button testButton;
+    private Button led_Aus;
+    private Button led_An;
     private TextView testText;
 
     @Override
@@ -28,15 +28,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        testButton = findViewById(R.id.button);
-        testText = findViewById(R.id.textView2);
+        led_Aus = findViewById(R.id.button);
+        led_An.findViewById(R.id.button2);
 
-        testButton.setOnClickListener(new View.OnClickListener() {
+        led_Aus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                InternetConnection b = new InternetConnection();
-                b.execute();
-                testText.setText("sollte funktioniert haben");
+                sendeInfrarot("16769565X");
+            }
+        });
+
+        led_An.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendeInfrarot("16753245");
             }
         });
         toolbar();
@@ -76,6 +81,11 @@ public class MainActivity extends AppCompatActivity {
         animationDrawable.setEnterFadeDuration(2000);
         animationDrawable.setExitFadeDuration(4000);
         animationDrawable.start();
+    }
+
+    public void sendeInfrarot(String infratrot){
+        InternetConnection b = new InternetConnection();
+        b.execute(infratrot);
     }
 
 }
