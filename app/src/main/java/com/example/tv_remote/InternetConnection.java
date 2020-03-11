@@ -16,8 +16,19 @@ public class InternetConnection extends AsyncTask<Void, Void, Void> {
         try {
             s = new Socket("192.168.2.122", 80);
             message = new DataOutputStream(s.getOutputStream());
+<<<<<<< HEAD
             MainActivity.
             message.writeUTF("16769565X");
+=======
+            message.writeUTF(frequenz);
+<<<<<<< HEAD
+            TimeUnit.MILLISECONDS.sleep(10);
+=======
+>>>>>>> bd487ea... Led an und Aus
+            message.flush();
+            message.close();
+            s.close();
+>>>>>>> c36bcfa... Led an und Aus
         }
         catch (IOException e) {
             e.printStackTrace();
