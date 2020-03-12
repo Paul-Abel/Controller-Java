@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/toolbar_led"
+        android:id="@+id/toolbar_led_tisch"
         android:title="@string/LED"
         android:icon="@drawable/ic_led"
         app:showAsAction="ifRoom"/>
@@ -16,4 +16,10 @@
         android:id="@+id/toolbar_reciver"
         app:showAsAction="ifRoom"
         android:icon="@drawable/ic_reciver"/>
+
+    <item android:title="@string/led_cupboard"
+        android:id="@+id/toolbar_led_cupboard"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_led_cupboard"/>
+
 </menu>

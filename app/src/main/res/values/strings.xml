@@ -9,4 +9,5 @@
     <string name="LED">LED</string>
     <string name="An">An</string>
     <string name="Aus">Aus</string>
+    <string name="led_cupboard">LED cupboard</string>
 </resources>
