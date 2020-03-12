@@ -7,7 +7,7 @@
     <string name="reciver">Reciver</string>
     <string name="television">Television</string>
     <string name="led_table">LED-Table</string>
-    <string name="An">An</string>
-    <string name="Aus">Aus</string>
+    <string name="on">On</string>
+    <string name="off">Off</string>
     <string name="led_cupboard">LED-Cupboard</string>
 </resources>
