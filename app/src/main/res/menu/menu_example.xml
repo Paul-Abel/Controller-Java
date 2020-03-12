@@ -2,8 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
+<<<<<<< HEAD
         android:id="@+id/toolbar_led"
         android:title="@string/LED"
+=======
+<<<<<<< HEAD
+        android:id="@+id/toolbar_led_table"
+        android:title="@string/led_table"
+=======
+        android:id="@+id/toolbar_led_tisch"
+        android:title="@string/LED"
+>>>>>>> 629eb64... LED ansteuern funktioniert
+>>>>>>> df504d8... LED ansteuern funktioniert
         android:icon="@drawable/ic_led"
         app:showAsAction="ifRoom"/>
 
@@ -16,4 +26,18 @@
         android:id="@+id/toolbar_reciver"
         app:showAsAction="ifRoom"
         android:icon="@drawable/ic_reciver"/>
+<<<<<<< HEAD
+=======
+
+    <item android:title="@string/led_cupboard"
+        android:id="@+id/toolbar_led_cupboard"
+<<<<<<< HEAD
+        app:showAsAction="always"
+        android:icon="@drawable/ic_led_cupboard" />
+=======
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_led_cupboard"/>
+>>>>>>> 629eb64... LED ansteuern funktioniert
+
+>>>>>>> df504d8... LED ansteuern funktioniert
 </menu>

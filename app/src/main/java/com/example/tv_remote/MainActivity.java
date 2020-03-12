@@ -52,8 +52,21 @@ public class MainActivity extends AppCompatActivity {
     @Override   //Navigation
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
+<<<<<<< HEAD
             case R.id.toolbar_led:
+=======
+<<<<<<< HEAD
+            case R.id.toolbar_led_table:
+<<<<<<< HEAD
+>>>>>>> df504d8... LED ansteuern funktioniert
                 Intent led = new Intent(this, Led.class);
+=======
+                Intent led = new Intent(this, Led_table.class);
+=======
+            case R.id.toolbar_led_tisch:
+                Intent led = new Intent(this, Led.class);
+>>>>>>> 629eb64... LED ansteuern funktioniert
+>>>>>>> 1a5d85a... LED ansteuern funktioniert
                 startActivity(led);
                 return true;
             case R.id.toolbar_reciver:
@@ -78,4 +91,17 @@ public class MainActivity extends AppCompatActivity {
         animationDrawable.start();
     }
 
+<<<<<<< HEAD
+=======
+    public void sendeInfrarot(String infrarot){
+        InternetConnection b = new InternetConnection();
+<<<<<<< HEAD
+        b.execute(infrarot);
+=======
+        //b.execute(infrarot);
+        b.test(infrarot);
+>>>>>>> 629eb64... LED ansteuern funktioniert
+    }
+
+>>>>>>> df504d8... LED ansteuern funktioniert
 }

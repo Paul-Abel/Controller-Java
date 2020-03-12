@@ -23,6 +23,13 @@ public class Led extends AppCompatActivity {
     private Button led_anzeige;
     private Button led_red;
     private Button led_blue;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    private Toolbar toolbar;
+=======
+>>>>>>> 1a5d85a... LED ansteuern funktioniert
+>>>>>>> df504d8... LED ansteuern funktioniert
 
 
 
@@ -30,11 +37,27 @@ public class Led extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+<<<<<<< HEAD
+        setContentView(R.layout.activity_led);
+=======
+<<<<<<< HEAD
+        setContentView(R.layout.activity_led_table);
+>>>>>>> df504d8... LED ansteuern funktioniert
+
+        led_red = findViewById(R.id.led_red);
+        led_blue = findViewById(R.id.led_blue);
+        led_anzeige = findViewById(R.id.led_anzeige);
+<<<<<<< HEAD
+=======
+        toolbar.setTitle(R.string.led_table);
+=======
         setContentView(R.layout.activity_led);
 
         led_red = findViewById(R.id.led_red);
         led_blue = findViewById(R.id.led_blue);
         led_anzeige = findViewById(R.id.led_anzeige);
+>>>>>>> 1a5d85a... LED ansteuern funktioniert
+>>>>>>> df504d8... LED ansteuern funktioniert
 
         animatedbackground();
         toolbar();
@@ -77,7 +100,15 @@ public class Led extends AppCompatActivity {
     }
 
     public void toolbar(){  //Navigation wird eingefügt
+<<<<<<< HEAD
         Toolbar toolbar = findViewById(R.id.toolbar);
+=======
+<<<<<<< HEAD
+        toolbar = findViewById(R.id.toolbar);
+=======
+        Toolbar toolbar = findViewById(R.id.toolbar);
+>>>>>>> 1a5d85a... LED ansteuern funktioniert
+>>>>>>> df504d8... LED ansteuern funktioniert
         setSupportActionBar(toolbar);
     }
 

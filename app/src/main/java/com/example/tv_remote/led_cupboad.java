@@ -10,12 +10,24 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
-public class Reciver extends AppCompatActivity {
+public class led_cupboad extends AppCompatActivity {
+
+<<<<<<< HEAD
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_reciver);
+        setContentView(R.layout.activity_led_cupboard);
+
+        toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle(R.string.led_cupboard);
+=======
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_led_cupboad);
+>>>>>>> 629eb64... LED ansteuern funktioniert
 
         toolbar();
     }
@@ -31,12 +43,8 @@ public class Reciver extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
 <<<<<<< HEAD
-            case R.id.toolbar_led:
-=======
-<<<<<<< HEAD
             case R.id.toolbar_led_table:
 <<<<<<< HEAD
->>>>>>> df504d8... LED ansteuern funktioniert
                 Intent led = new Intent(this, Led.class);
 =======
                 Intent led = new Intent(this, Led_table.class);
@@ -50,6 +58,11 @@ public class Reciver extends AppCompatActivity {
             case R.id.toolbar_television:
                 Intent television = new Intent(this, MainActivity.class);
                 startActivity(television);
+                return true;
+            case
+                R.id.toolbar_reciver:
+                Intent reciver = new Intent(this, Reciver.class);
+                startActivity(reciver);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

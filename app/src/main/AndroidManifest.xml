@@ -10,8 +10,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+<<<<<<< HEAD
         <activity android:name=".Reciver"/>
+=======
+        <activity android:name=".led_cupboad"></activity>
+        <activity android:name=".Reciver" />
+<<<<<<< HEAD
+>>>>>>> df504d8... LED ansteuern funktioniert
         <activity android:name=".Led" />
+=======
+<<<<<<< HEAD
+        <activity android:name=".Led_table" />
+=======
+        <activity android:name=".Led" />
+>>>>>>> 629eb64... LED ansteuern funktioniert
+>>>>>>> 1a5d85a... LED ansteuern funktioniert
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
