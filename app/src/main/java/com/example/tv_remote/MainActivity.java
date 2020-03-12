@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.toolbar_led_table:
-                Intent led = new Intent(this, Led.class);
+                Intent led = new Intent(this, Led_table.class);
                 startActivity(led);
                 return true;
             case R.id.toolbar_reciver:
