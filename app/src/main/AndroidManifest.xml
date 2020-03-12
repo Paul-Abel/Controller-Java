@@ -13,7 +13,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".led_cupboad"></activity>
         <activity android:name=".Reciver" />
-        <activity android:name=".Led" />
+        <activity android:name=".Led_table" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

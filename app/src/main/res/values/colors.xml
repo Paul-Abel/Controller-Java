@@ -3,11 +3,21 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
-    <color name="red">#FF0000</color>
-    <color name="blue">#0000FF</color>
-    <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
-
+    //table color
+    <color name="red">#FF0000</color>
+    <color name="green">#009933</color>
+    <color name="blue">#0000FF</color>
+    <color name="light_red">#ff6600</color>
+    <color name="light_green">#66ff66</color>
+    <color name="light_blue">#0099cc</color>
+    <color name="brown">#996633</color>
+    <color name="orange">#ff9933</color>
+    <color name="light_light_blue">#00ccff</color>
+    <color name="purple">#cc00cc</color>
+    <color name="yellow">#ffff66</color>
+    <color name="white">#FFFFFF</color>
+    <color name="gray">#6E6E6E</color>
 
 
 </resources>
