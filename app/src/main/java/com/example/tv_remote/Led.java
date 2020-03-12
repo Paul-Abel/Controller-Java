@@ -71,6 +71,10 @@ public class Led extends AppCompatActivity {
                 Intent reciver = new Intent(this, Reciver.class);
                 startActivity(reciver);
                 return true;
+            case R.id.toolbar_led_cupboard:
+                Intent Led_cupboad = new Intent(this, led_cupboad.class);
+                startActivity(Led_cupboad);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }

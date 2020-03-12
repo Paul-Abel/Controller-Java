@@ -15,8 +15,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.io.DataOutput;
-
 public class MainActivity extends AppCompatActivity {
 
     private Button led_Aus;
@@ -57,13 +55,17 @@ public class MainActivity extends AppCompatActivity {
     @Override   //Navigation
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
-            case R.id.toolbar_led:
+            case R.id.toolbar_led_tisch:
                 Intent led = new Intent(this, Led.class);
                 startActivity(led);
                 return true;
             case R.id.toolbar_reciver:
                 Intent reciver = new Intent(this, Reciver.class);
                 startActivity(reciver);
+                return true;
+            case R.id.toolbar_led_cupboard:
+                Intent Led_cupboad = new Intent(this, led_cupboad.class);
+                startActivity(Led_cupboad);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -83,9 +85,10 @@ public class MainActivity extends AppCompatActivity {
         animationDrawable.start();
     }
 
-    public void sendeInfrarot(String infratrot){
+    public void sendeInfrarot(String infrarot){
         InternetConnection b = new InternetConnection();
-        b.execute(infratrot);
+        //b.execute(infrarot);
+        b.test(infrarot);
     }
 
 }

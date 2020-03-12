@@ -10,12 +10,12 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
-public class Reciver extends AppCompatActivity {
+public class led_cupboad extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_reciver);
+        setContentView(R.layout.activity_led_cupboad);
 
         toolbar();
     }
@@ -38,9 +38,10 @@ public class Reciver extends AppCompatActivity {
                 Intent television = new Intent(this, MainActivity.class);
                 startActivity(television);
                 return true;
-            case R.id.toolbar_led_cupboard:
-                Intent Led_cupboad = new Intent(this, led_cupboad.class);
-                startActivity(Led_cupboad);
+            case
+                R.id.toolbar_reciver:
+                Intent reciver = new Intent(this, Reciver.class);
+                startActivity(reciver);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
