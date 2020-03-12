@@ -19,17 +19,45 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:text="@string/button"
+=======
+<<<<<<< HEAD
+        android:text="@string/Aus"
+=======
+<<<<<<< HEAD
+        android:text="@string/off"
+=======
+        android:text="@string/Aus"
+>>>>>>> ce959a9... Erster funktionierender test mit LED
+>>>>>>> 48b6b33... Erster funktionierender test mit LED
+>>>>>>> 9648213... Erster funktionierender test mit LED
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
+<<<<<<< HEAD
     <TextView
         android:id="@+id/textView2"
         android:layout_width="137dp"
         android:layout_height="107dp"
         android:layout_marginBottom="508dp"
+=======
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+<<<<<<< HEAD
+        android:text="@string/An"
+=======
+<<<<<<< HEAD
+        android:text="@string/on"
+=======
+        android:text="@string/An"
+>>>>>>> ce959a9... Erster funktionierender test mit LED
+>>>>>>> 48b6b33... Erster funktionierender test mit LED
+>>>>>>> 9648213... Erster funktionierender test mit LED
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

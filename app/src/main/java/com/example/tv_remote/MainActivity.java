@@ -96,11 +96,15 @@ public class MainActivity extends AppCompatActivity {
     public void sendeInfrarot(String infrarot){
         InternetConnection b = new InternetConnection();
 <<<<<<< HEAD
+<<<<<<< HEAD
         b.execute(infrarot);
 =======
         //b.execute(infrarot);
         b.test(infrarot);
 >>>>>>> 629eb64... LED ansteuern funktioniert
+=======
+        b.execute(infrarot);
+>>>>>>> ce959a9... Erster funktionierender test mit LED
     }
 
 >>>>>>> df504d8... LED ansteuern funktioniert

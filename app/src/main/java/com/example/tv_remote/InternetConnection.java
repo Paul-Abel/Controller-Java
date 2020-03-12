@@ -5,6 +5,7 @@ import android.os.AsyncTask;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
+import java.util.concurrent.TimeUnit;
 
 public class InternetConnection extends AsyncTask<Void, Void, Void> {
 
@@ -22,9 +23,13 @@ public class InternetConnection extends AsyncTask<Void, Void, Void> {
 =======
             message.writeUTF(frequenz);
 <<<<<<< HEAD
+<<<<<<< HEAD
             TimeUnit.MILLISECONDS.sleep(10);
 =======
 >>>>>>> bd487ea... Led an und Aus
+=======
+            TimeUnit.MILLISECONDS.sleep(10);
+>>>>>>> ce959a9... Erster funktionierender test mit LED
             message.flush();
             message.close();
             s.close();
@@ -44,19 +49,4 @@ public class InternetConnection extends AsyncTask<Void, Void, Void> {
 
         return null;
     }
-    public void test(String frequenz){
-         Socket t = null;
-         DataOutputStream messages = null;
-        try {
-            t = new Socket("192.168.2.122", 80);
-            messages = new DataOutputStream(t.getOutputStream());
-            messages.writeUTF(frequenz);
-            messages.close();
-            t.close();
-
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
-    };
 }
