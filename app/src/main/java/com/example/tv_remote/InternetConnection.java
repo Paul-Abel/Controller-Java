@@ -5,6 +5,7 @@ import android.os.AsyncTask;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
+import java.util.concurrent.TimeUnit;
 
 public class InternetConnection extends AsyncTask<String, Void, Void> {
     private Socket s = null;
@@ -17,28 +18,14 @@ public class InternetConnection extends AsyncTask<String, Void, Void> {
             s = new Socket("192.168.2.122", 80);
             message = new DataOutputStream(s.getOutputStream());
             message.writeUTF(frequenz);
+            TimeUnit.MILLISECONDS.sleep(10);
             message.flush();
             message.close();
             s.close();
         }
-        catch (IOException e) {
+        catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
         return null;
     }
-    public void test(String frequenz){
-         Socket t = null;
-         DataOutputStream messages = null;
-        try {
-            t = new Socket("192.168.2.122", 80);
-            messages = new DataOutputStream(t.getOutputStream());
-            messages.writeUTF(frequenz);
-            messages.close();
-            t.close();
-
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
-    };
 }
