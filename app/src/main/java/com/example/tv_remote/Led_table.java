@@ -44,6 +44,7 @@ public class Led_table extends AppCompatActivity {
     private Button led_smooth;
     private Button led_up;
     private Button led_down;
+    private Button test;
 
 
 
