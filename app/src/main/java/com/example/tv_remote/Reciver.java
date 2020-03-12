@@ -12,10 +12,15 @@ import android.view.MenuItem;
 
 public class Reciver extends AppCompatActivity {
 
+    private Toolbar toolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reciver);
+
+        toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle(R.string.reciver);
 
         toolbar();
     }
@@ -30,7 +35,7 @@ public class Reciver extends AppCompatActivity {
     @Override   //Navigation
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
-            case R.id.toolbar_led_tisch:
+            case R.id.toolbar_led_table:
                 Intent led = new Intent(this, Led.class);
                 startActivity(led);
                 return true;

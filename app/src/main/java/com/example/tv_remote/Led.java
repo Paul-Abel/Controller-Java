@@ -23,6 +23,7 @@ public class Led extends AppCompatActivity {
     private Button led_anzeige;
     private Button led_red;
     private Button led_blue;
+    private Toolbar toolbar;
 
 
 
@@ -30,11 +31,13 @@ public class Led extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_led);
+        setContentView(R.layout.activity_led_table);
 
+        toolbar = findViewById(R.id.toolbar);
         led_red = findViewById(R.id.led_red);
         led_blue = findViewById(R.id.led_blue);
         led_anzeige = findViewById(R.id.led_anzeige);
+        toolbar.setTitle(R.string.led_table);
 
         animatedbackground();
         toolbar();
@@ -81,7 +84,7 @@ public class Led extends AppCompatActivity {
     }
 
     public void toolbar(){  //Navigation wird eingefügt
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
     }
 

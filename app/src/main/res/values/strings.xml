@@ -6,8 +6,8 @@
     <string name="button">Button</string>
     <string name="reciver">Reciver</string>
     <string name="television">Television</string>
-    <string name="LED">LED</string>
+    <string name="led_table">LED-Table</string>
     <string name="An">An</string>
     <string name="Aus">Aus</string>
-    <string name="led_cupboard">LED cupboard</string>
+    <string name="led_cupboard">LED-Cupboard</string>
 </resources>
