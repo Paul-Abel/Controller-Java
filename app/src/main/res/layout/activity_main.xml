@@ -20,18 +20,32 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 <<<<<<< HEAD
+<<<<<<< HEAD
         android:text="@string/button"
 =======
+=======
+>>>>>>> a278dc4... LED_table works
 <<<<<<< HEAD
         android:text="@string/Aus"
 =======
+=======
+>>>>>>> af50cf2... LED_table works
 <<<<<<< HEAD
         android:text="@string/off"
 =======
         android:text="@string/Aus"
 >>>>>>> ce959a9... Erster funktionierender test mit LED
+<<<<<<< HEAD
 >>>>>>> 48b6b33... Erster funktionierender test mit LED
+<<<<<<< HEAD
 >>>>>>> 9648213... Erster funktionierender test mit LED
+=======
+=======
+=======
+        android:text="@string/off"
+>>>>>>> 035903b... LED_table works
+>>>>>>> af50cf2... LED_table works
+>>>>>>> a278dc4... LED_table works
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,15 +63,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 <<<<<<< HEAD
+<<<<<<< HEAD
         android:text="@string/An"
 =======
+=======
+>>>>>>> af50cf2... LED_table works
 <<<<<<< HEAD
         android:text="@string/on"
 =======
         android:text="@string/An"
 >>>>>>> ce959a9... Erster funktionierender test mit LED
+<<<<<<< HEAD
 >>>>>>> 48b6b33... Erster funktionierender test mit LED
+<<<<<<< HEAD
 >>>>>>> 9648213... Erster funktionierender test mit LED
+=======
+=======
+=======
+        android:text="@string/on"
+>>>>>>> 035903b... LED_table works
+>>>>>>> af50cf2... LED_table works
+>>>>>>> a278dc4... LED_table works
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

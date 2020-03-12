@@ -28,8 +28,8 @@
 =======
 =======
     <string name="led_table">LED-Table</string>
-    <string name="An">An</string>
-    <string name="Aus">Aus</string>
+    <string name="on">On</string>
+    <string name="off">Off</string>
     <string name="led_cupboard">LED-Cupboard</string>
 >>>>>>> e4ef53f... bugfix toolbar
 >>>>>>> 5a61ff9... bugfix toolbar
