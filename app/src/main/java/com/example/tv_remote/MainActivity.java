@@ -87,8 +87,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void sendeInfrarot(String infrarot){
         InternetConnection b = new InternetConnection();
-        //b.execute(infrarot);
-        b.test(infrarot);
+        b.execute(infrarot);
     }
 
 }
