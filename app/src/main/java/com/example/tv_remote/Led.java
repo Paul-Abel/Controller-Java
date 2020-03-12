@@ -24,12 +24,21 @@ public class Led extends AppCompatActivity {
     private Button led_red;
     private Button led_blue;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 5a61ff9... bugfix toolbar
 <<<<<<< HEAD
     private Toolbar toolbar;
 =======
 >>>>>>> 1a5d85a... LED ansteuern funktioniert
+<<<<<<< HEAD
 >>>>>>> df504d8... LED ansteuern funktioniert
+=======
+=======
+    private Toolbar toolbar;
+>>>>>>> 2fbeac3... bugfix toolbar
+>>>>>>> 5a61ff9... bugfix toolbar
 
 
 
@@ -38,8 +47,11 @@ public class Led extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 <<<<<<< HEAD
+<<<<<<< HEAD
         setContentView(R.layout.activity_led);
 =======
+=======
+>>>>>>> 5a61ff9... bugfix toolbar
 <<<<<<< HEAD
         setContentView(R.layout.activity_led_table);
 >>>>>>> df504d8... LED ansteuern funktioniert
@@ -52,12 +64,23 @@ public class Led extends AppCompatActivity {
         toolbar.setTitle(R.string.led_table);
 =======
         setContentView(R.layout.activity_led);
+=======
+        setContentView(R.layout.activity_led_table);
+>>>>>>> 2fbeac3... bugfix toolbar
 
+        toolbar = findViewById(R.id.toolbar);
         led_red = findViewById(R.id.led_red);
         led_blue = findViewById(R.id.led_blue);
         led_anzeige = findViewById(R.id.led_anzeige);
+<<<<<<< HEAD
 >>>>>>> 1a5d85a... LED ansteuern funktioniert
+<<<<<<< HEAD
 >>>>>>> df504d8... LED ansteuern funktioniert
+=======
+=======
+        toolbar.setTitle(R.string.led_table);
+>>>>>>> 2fbeac3... bugfix toolbar
+>>>>>>> 5a61ff9... bugfix toolbar
 
         animatedbackground();
         toolbar();
@@ -101,14 +124,23 @@ public class Led extends AppCompatActivity {
 
     public void toolbar(){  //Navigation wird eingefügt
 <<<<<<< HEAD
+<<<<<<< HEAD
         Toolbar toolbar = findViewById(R.id.toolbar);
 =======
+=======
+>>>>>>> 5a61ff9... bugfix toolbar
 <<<<<<< HEAD
         toolbar = findViewById(R.id.toolbar);
 =======
         Toolbar toolbar = findViewById(R.id.toolbar);
 >>>>>>> 1a5d85a... LED ansteuern funktioniert
+<<<<<<< HEAD
 >>>>>>> df504d8... LED ansteuern funktioniert
+=======
+=======
+        toolbar = findViewById(R.id.toolbar);
+>>>>>>> 2fbeac3... bugfix toolbar
+>>>>>>> 5a61ff9... bugfix toolbar
         setSupportActionBar(toolbar);
     }
 

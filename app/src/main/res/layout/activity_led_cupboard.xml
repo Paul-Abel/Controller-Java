@@ -3,7 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
     android:background="@drawable/gradient_2"
+=======
+    android:background="@drawable/gradient_list"
+>>>>>>> e4ef53f... bugfix toolbar
     tools:context=".led_cupboad">
 
     <include

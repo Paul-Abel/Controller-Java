@@ -53,8 +53,11 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
 <<<<<<< HEAD
+<<<<<<< HEAD
             case R.id.toolbar_led:
 =======
+=======
+>>>>>>> 5a61ff9... bugfix toolbar
 <<<<<<< HEAD
             case R.id.toolbar_led_table:
 <<<<<<< HEAD
@@ -64,6 +67,9 @@ public class MainActivity extends AppCompatActivity {
                 Intent led = new Intent(this, Led_table.class);
 =======
             case R.id.toolbar_led_tisch:
+=======
+            case R.id.toolbar_led_table:
+>>>>>>> e4ef53f... bugfix toolbar
                 Intent led = new Intent(this, Led.class);
 >>>>>>> 629eb64... LED ansteuern funktioniert
 >>>>>>> 1a5d85a... LED ansteuern funktioniert

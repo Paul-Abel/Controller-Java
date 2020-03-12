@@ -13,6 +13,7 @@ import android.view.MenuItem;
 public class led_cupboad extends AppCompatActivity {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     private Toolbar toolbar;
 
     @Override
@@ -28,6 +29,17 @@ public class led_cupboad extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_led_cupboad);
 >>>>>>> 629eb64... LED ansteuern funktioniert
+=======
+    private Toolbar toolbar;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_led_cupboard);
+
+        toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle(R.string.led_cupboard);
+>>>>>>> e4ef53f... bugfix toolbar
 
         toolbar();
     }
@@ -43,6 +55,7 @@ public class led_cupboad extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
 <<<<<<< HEAD
+<<<<<<< HEAD
             case R.id.toolbar_led_table:
 <<<<<<< HEAD
                 Intent led = new Intent(this, Led.class);
@@ -50,6 +63,9 @@ public class led_cupboad extends AppCompatActivity {
                 Intent led = new Intent(this, Led_table.class);
 =======
             case R.id.toolbar_led_tisch:
+=======
+            case R.id.toolbar_led_table:
+>>>>>>> e4ef53f... bugfix toolbar
                 Intent led = new Intent(this, Led.class);
 >>>>>>> 629eb64... LED ansteuern funktioniert
 >>>>>>> 1a5d85a... LED ansteuern funktioniert

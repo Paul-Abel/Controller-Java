@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 <<<<<<< HEAD
+<<<<<<< HEAD
     android:background="@drawable/gradient_list"
     tools:context=".Led">
 =======
@@ -265,6 +266,10 @@
         app:layout_constraintVertical_bias="0.118" />
 
 >>>>>>> 94bbbb8... new design on table
+=======
+    android:background="@drawable/gradient_list"
+    tools:context=".Led">
+>>>>>>> 2fbeac3... bugfix toolbar
 
     <include
         android:id="@+id/toolbar"
@@ -314,6 +319,9 @@
         app:layout_constraintVertical_bias="0.099" />
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 2fbeac3... bugfix toolbar
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -321,6 +329,7 @@
         android:text="@string/LED"
         android:textColor="@color/black"
         android:textSize="36sp"
+<<<<<<< HEAD
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/led_anzeige"
         app:layout_constraintHorizontal_bias="0.743"
@@ -334,11 +343,14 @@
         android:layout_height="57dp"
         android:background="@drawable/led_anzeige"
         android:clickable="false"
+=======
+>>>>>>> 2fbeac3... bugfix toolbar
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.11"
+        app:layout_constraintEnd_toStartOf="@+id/led_anzeige"
+        app:layout_constraintHorizontal_bias="0.743"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+<<<<<<< HEAD
         app:layout_constraintVertical_bias="0.115" />
 
     <include
@@ -347,6 +359,9 @@
         tools:layout_editor_absoluteX="-52dp"
         tools:layout_editor_absoluteY="270dp" />
 >>>>>>> 94bbbb8... new design on table
+=======
+        app:layout_constraintVertical_bias="0.099" />
+>>>>>>> 2fbeac3... bugfix toolbar
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
