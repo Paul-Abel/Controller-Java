@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    private Toolbar toolbar;
     private Button led_Aus;
     private Button led_An;
     private TextView testText;
@@ -26,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle(R.string.television);
         led_Aus = findViewById(R.id.button);
         led_An = findViewById(R.id.button2);
 
@@ -55,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
     @Override   //Navigation
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
-            case R.id.toolbar_led_tisch:
+            case R.id.toolbar_led_table:
                 Intent led = new Intent(this, Led.class);
                 startActivity(led);
                 return true;
