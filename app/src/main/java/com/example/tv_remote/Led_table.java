@@ -76,7 +76,6 @@ public class Led_table extends AppCompatActivity {
         led_up = findViewById(R.id.led_up);
         led_down = findViewById(R.id.led_down);
 
-        animatedbackground();
         toolbar();
 
         led_on.setOnClickListener(new View.OnClickListener()
@@ -269,14 +268,6 @@ public class Led_table extends AppCompatActivity {
     public void toolbar(){  //Navigation wird eingefügt
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-    }
-
-    public void animatedbackground(){
-        ConstraintLayout constraintLayout = findViewById(R.id.layout);
-        AnimationDrawable animationDrawable = (AnimationDrawable) constraintLayout.getBackground();
-        animationDrawable.setEnterFadeDuration(2000);
-        animationDrawable.setExitFadeDuration(4000);
-        animationDrawable.start();
     }
 
     public void aktualiesereFarbe() {
