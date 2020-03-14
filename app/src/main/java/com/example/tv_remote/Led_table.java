@@ -26,9 +26,6 @@ public class Led_table extends AppCompatActivity {
 
     private Toolbar toolbar;
     private Button led_panel;
-    private Button led_on, led_off;
-    private Button led_red, led_blue, led_green, led_light_red, led_light_green, led_light_blue, led_brown, led_orange, led_light_light_blue, led_purple, led_yellow, led_white;
-    private Button led_1H24, led_1H, led_change, led_smooth, led_up, led_down;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,26 +36,26 @@ public class Led_table extends AppCompatActivity {
         toolbar.setTitle(R.string.led_table);
 
         led_panel = findViewById(R.id.led_anzeige);
-        led_on = findViewById(R.id.led_on);
-        led_off = findViewById(R.id.led_off);
-        led_red = findViewById(R.id.led_red);
-        led_blue = findViewById(R.id.led_blue);
-        led_green = findViewById(R.id.led_green);
-        led_light_red = findViewById(R.id.led_light_red);
-        led_light_green = findViewById(R.id.led_light_green);
-        led_light_blue = findViewById(R.id.led_light_blue);
-        led_brown = findViewById(R.id.led_brwon);
-        led_orange = findViewById(R.id.led_orange);
-        led_light_light_blue = findViewById(R.id.led_light_light_blue);
-        led_purple = findViewById(R.id.led_purple);
-        led_yellow = findViewById(R.id.led_yellow);
-        led_white = findViewById(R.id.led_white);
-        led_1H24 = findViewById(R.id.led_1H24);
-        led_1H = findViewById(R.id.led_1H);
-        led_change = findViewById(R.id.led_change);
-        led_smooth = findViewById(R.id.led_smooth);
-        led_up = findViewById(R.id.led_up);
-        led_down = findViewById(R.id.led_down);
+        Button led_on = findViewById(R.id.led_on);
+        Button led_off = findViewById(R.id.led_off);
+        Button led_red = findViewById(R.id.led_red);
+        Button led_blue = findViewById(R.id.led_blue);
+        Button led_green = findViewById(R.id.led_green);
+        Button led_light_red = findViewById(R.id.led_light_red);
+        Button led_light_green = findViewById(R.id.led_light_green);
+        Button led_light_blue = findViewById(R.id.led_light_blue);
+        Button led_brown = findViewById(R.id.led_brwon);
+        Button led_orange = findViewById(R.id.led_orange);
+        Button led_light_light_blue = findViewById(R.id.led_light_light_blue);
+        Button led_purple = findViewById(R.id.led_purple);
+        Button led_yellow = findViewById(R.id.led_yellow);
+        Button led_white = findViewById(R.id.led_white);
+        Button led_1H24 = findViewById(R.id.led_1H24);
+        Button led_1H = findViewById(R.id.led_1H);
+        Button led_change = findViewById(R.id.led_change);
+        Button led_smooth = findViewById(R.id.led_smooth);
+        Button led_up = findViewById(R.id.led_up);
+        Button led_down = findViewById(R.id.led_down);
 
         led_on.setOnClickListener(new View.OnClickListener()
         {
