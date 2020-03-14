@@ -6,13 +6,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 @RequiresApi(api = Build.VERSION_CODES.M)
 public class Led_table extends AppCompatActivity {
@@ -230,14 +237,15 @@ public class Led_table extends AppCompatActivity {
     }
 
     public void showButtonclicked() {
-        int color = getColor(R.color.orange);
-        int normal = getColor(R.color.gray);
-        led_panel.setBackgroundColor(color);
-        led_panel.setBackgroundColor(normal);
+        Animation anim = new AlphaAnimation(0.0f, 1.0f);
+        anim.setDuration(500); //You can manage the blinking time with this parameter
+        led_panel.startAnimation(anim);
     }
 
     public void sendInfrarot(String infrarot){
         InternetConnection b = new InternetConnection();
         b.execute(infrarot);
     }
+
+
 }
