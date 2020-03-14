@@ -10,40 +10,40 @@
 
     <Button
         android:id="@+id/led_1H24"
-        android:layout_width="71dp"
-        android:layout_height="71dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:background="@drawable/round_button_white"
         android:text="@string/daytime"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/led_smooth"
-        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.148"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.787" />
+        app:layout_constraintVertical_bias="0.82" />
 
     <Button
         android:id="@+id/led_1H"
-        android:layout_width="71dp"
-        android:layout_height="71dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:background="@drawable/round_button_white"
         android:text="@string/onehour"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/led_change"
-        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.936" />
+        app:layout_constraintVertical_bias="0.96" />
 
     <Button
         android:id="@+id/led_smooth"
-        android:layout_width="71dp"
-        android:layout_height="71dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:background="@drawable/round_button_white"
@@ -53,12 +53,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.936" />
+        app:layout_constraintVertical_bias="0.96" />
 
     <Button
         android:id="@+id/led_down"
-        android:layout_width="71dp"
-        android:layout_height="71dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:background="@drawable/round_button_white"
@@ -66,15 +66,15 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toEndOf="@+id/led_change"
+        app:layout_constraintHorizontal_bias="0.85"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.936" />
+        app:layout_constraintVertical_bias="0.96"/>
 
     <Button
         android:id="@+id/led_change"
-        android:layout_width="71dp"
-        android:layout_height="71dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:background="@drawable/round_button_white"
@@ -84,12 +84,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.787" />
+        app:layout_constraintVertical_bias="0.82" />
 
     <Button
         android:id="@+id/led_up"
-        android:layout_width="71dp"
-        android:layout_height="71dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:background="@drawable/round_button_white"
@@ -97,43 +97,43 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toEndOf="@+id/led_smooth"
+        app:layout_constraintHorizontal_bias="0.85"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.787" />
+        app:layout_constraintVertical_bias="0.82" />
 
     <Button
         android:id="@+id/led_brwon"
-        android:layout_width="71dp"
-        android:layout_height="71dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:background="@drawable/round_button_brown"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/led_orange"
-        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.524" />
+        app:layout_constraintVertical_bias="0.54" />
 
     <Button
         android:id="@+id/led_white"
-        android:layout_width="71dp"
-        android:layout_height="71dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:background="@drawable/round_button_white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toEndOf="@+id/led_yellow"
+        app:layout_constraintHorizontal_bias="0.85"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.654" />
+        app:layout_constraintVertical_bias="0.68"/>
 
     <Button
         android:id="@+id/led_yellow"
-        android:layout_width="71dp"
-        android:layout_height="71dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:background="@drawable/round_button_yellow"
@@ -141,26 +141,28 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.654" />
+        app:layout_constraintVertical_bias="0.68
+" />
+
 
     <Button
         android:id="@+id/led_light_light_blue"
-        android:layout_width="71dp"
-        android:layout_height="71dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:background="@drawable/round_button_light_light_blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toEndOf="@+id/led_orange"
+        app:layout_constraintHorizontal_bias="0.85"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.524" />
+        app:layout_constraintVertical_bias="0.54"/>
 
     <Button
         android:id="@+id/led_orange"
-        android:layout_width="71dp"
-        android:layout_height="71dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:background="@drawable/round_button_orange"
@@ -168,28 +170,27 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.524" />
+        app:layout_constraintVertical_bias="0.54
+" />
 
     <Button
         android:id="@+id/led_purple"
-        android:layout_width="71dp"
-        android:layout_height="71dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:background="@drawable/round_button_purple"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/led_yellow"
-        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.654" />
-
-
+        app:layout_constraintVertical_bias="0.68" />
 
     <Button
         android:id="@+id/led_light_green"
-        android:layout_width="71dp"
-        android:layout_height="71dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:background="@drawable/round_button_light_green"
@@ -197,40 +198,40 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.403" />
+        app:layout_constraintVertical_bias="0.40" />
 
     <Button
         android:id="@+id/led_light_blue"
-        android:layout_width="71dp"
-        android:layout_height="71dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:background="@drawable/round_button_light_blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toEndOf="@+id/led_light_green"
+        app:layout_constraintHorizontal_bias="0.85"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.403" />
+        app:layout_constraintVertical_bias="0.40" />
 
     <Button
         android:id="@+id/led_light_red"
-        android:layout_width="71dp"
-        android:layout_height="71dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:background="@drawable/round_button_light_red"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/led_light_green"
-        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.403" />
+        app:layout_constraintVertical_bias="0.40" />
 
     <Button
         android:id="@+id/led_on"
-        android:layout_width="71dp"
-        android:layout_height="71dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:background="@drawable/round_button_black"
@@ -241,12 +242,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.118" />
+        app:layout_constraintVertical_bias="0.12" />
+
 
     <Button
         android:id="@+id/led_off"
-        android:layout_width="71dp"
-        android:layout_height="71dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:background="@drawable/round_button_black"
@@ -255,45 +257,44 @@
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toEndOf="@+id/led_green"
+        app:layout_constraintHorizontal_bias="0.85"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.118" />
-
-
+        app:layout_constraintVertical_bias="0.12" />
 
     <Button
         android:id="@+id/led_red"
-        android:layout_width="71dp"
-        android:layout_height="71dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:background="@drawable/round_button_red"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/led_green"
-        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.266" />
+        app:layout_constraintVertical_bias="0.26" />
 
     <Button
         android:id="@+id/led_blue"
-        android:layout_width="71dp"
-        android:layout_height="71dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:background="@drawable/round_button_blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toEndOf="@+id/led_green"
+        app:layout_constraintHorizontal_bias="0.85"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.266" />
+        app:layout_constraintVertical_bias="0.26
+" />
 
     <Button
         android:id="@+id/led_green"
-        android:layout_width="71dp"
-        android:layout_height="71dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:background="@drawable/round_button_green"
@@ -301,17 +302,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.266" />
+        app:layout_constraintVertical_bias="0.26" />
 
     <Button
         android:id="@+id/led_anzeige"
-        android:layout_width="111dp"
-        android:layout_height="57dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:background="@drawable/led_anzeige"
         android:clickable="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.102"
+        app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.12" />
@@ -319,8 +320,10 @@
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbar"
-        tools:layout_editor_absoluteX="-52dp"
-        tools:layout_editor_absoluteY="270dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -21,14 +21,13 @@ public class led_cupboad extends AppCompatActivity {
 
         toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle(R.string.led_cupboard);
-
         toolbar();
     }
 
     @Override   //Toolbarsytle wird eingefügt
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_example, menu);
+        inflater.inflate(R.menu.toolbar, menu);
         return true;
     }
 
