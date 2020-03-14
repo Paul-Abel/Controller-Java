@@ -5,24 +5,24 @@
 
     <item
         android:id="@+id/toolbar_led_table"
-        android:icon="@drawable/ic_led"
+        android:icon="@drawable/toolbar_icon_led_table"
         android:title="@string/led_table"
         app:showAsAction="always" />
 
     <item android:title="@string/television"
         android:id="@+id/toolbar_television"
         app:showAsAction="always"
-        android:icon="@drawable/ic_television"
+        android:icon="@drawable/toolbar_icon_television"
         tools:ignore="AlwaysShowAction" />
 
     <item android:title="@string/reciver"
         android:id="@+id/toolbar_reciver"
         app:showAsAction="always"
-        android:icon="@drawable/ic_reciver"/>
+        android:icon="@drawable/toolbar_icon_reciver"/>
 
     <item android:title="@string/led_cupboard"
         android:id="@+id/toolbar_led_cupboard"
         app:showAsAction="always"
-        android:icon="@drawable/ic_led_cupboard"
+        android:icon="@drawable/toolbar_icon_led_cupboard"
         />
 </menu>

@@ -1,20 +1,35 @@
 <resources>
+    //toolbar
     <string name="app_name">TV-Remote</string>
-    <string name="test_button">Test-Button</string>
-    <string name="test_text">Test-Text</string>
-    <string name="textview">TextView</string>
-    <string name="button">Button</string>
     <string name="reciver">Reciver</string>
     <string name="television">Television</string>
     <string name="led_table">LED-Table</string>
+    <string name="led_cupboard">LED-Cupboard</string>
+
+    //led table
     <string name="on">On</string>
     <string name="off">Off</string>
-    <string name="led_cupboard">LED-Cupboard</string>
-    //led table
-    <string name="up">UP</string>
-    <string name="down">DOWN</string>
+    <string name="brighter">UP</string>
+    <string name="darker">DOWN</string>
     <string name="change">C</string>
     <string name="smooth">S</string>
     <string name="daytime">1H24</string>
     <string name="onehour">+1H</string>
+
+    //reciver
+    <string name="on_off">On/Off</string>
+    <string name="menu">Menu</string>
+    <string name="open">Open</string>
+    <string name="control_up">/\\</string>
+    <string name="control_down">V</string>
+    <string name="control_left">&lt;</string>
+    <string name="control_right">&gt;</string>
+    <string name="setup">setup</string>
+    <string name="back">back</string>
+    <string name="backwards">&lt;&lt;</string>
+    <string name="forwards">&gt;&gt;</string>
+    <string name="play_pause">play/pause</string>
+    <string name="stop">stop</string>
+    <string name="previous">prev</string>
+    <string name="next">next</string>
 </resources>
