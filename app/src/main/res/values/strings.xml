@@ -10,4 +10,11 @@
     <string name="on">On</string>
     <string name="off">Off</string>
     <string name="led_cupboard">LED-Cupboard</string>
+    //led table
+    <string name="up">UP</string>
+    <string name="down">DOWN</string>
+    <string name="change">C</string>
+    <string name="smooth">S</string>
+    <string name="daytime">1H24</string>
+    <string name="onehour">+1H</string>
 </resources>
