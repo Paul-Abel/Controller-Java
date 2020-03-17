@@ -34,8 +34,8 @@ public class Led_table extends AppCompatActivity {
 
         toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle(R.string.led_table);
-
         led_panel = findViewById(R.id.led_anzeige);
+
         Button led_on = findViewById(R.id.led_on);
         Button led_off = findViewById(R.id.led_off);
         Button led_red = findViewById(R.id.led_red);

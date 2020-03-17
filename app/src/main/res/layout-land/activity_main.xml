@@ -10,7 +10,7 @@
 
 
     <Button
-        android:id="@+id/tv_remote_1"
+        android:id="@+id/tv_remote_on_off"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_centerHorizontal="true"
@@ -26,7 +26,7 @@
         app:layout_constraintVertical_bias="0.224" />
 
     <Button
-        android:id="@+id/tv_remote_3"
+        android:id="@+id/tv_remote_hdmi"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_centerHorizontal="true"
@@ -48,7 +48,7 @@
         tools:layout_editor_absoluteY="8dp" />
 
     <Button
-        android:id="@+id/tv_remote_2"
+        android:id="@+id/tv_remote_silence"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_centerHorizontal="true"
@@ -65,7 +65,7 @@
 
 
     <Button
-        android:id="@+id/tv_remote_12"
+        android:id="@+id/tv_remote_9"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_centerHorizontal="true"
@@ -81,7 +81,7 @@
         app:layout_constraintVertical_bias="0.698" />
 
     <Button
-        android:id="@+id/tv_remote_6"
+        android:id="@+id/tv_remote_3"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_centerHorizontal="true"
@@ -97,7 +97,7 @@
         app:layout_constraintVertical_bias="0.198" />
 
     <Button
-        android:id="@+id/tv_remote_17"
+        android:id="@+id/tv_remote_next"
         android:layout_width="125dp"
         android:layout_height="70dp"
         android:layout_centerHorizontal="true"
@@ -113,7 +113,7 @@
         app:layout_constraintVertical_bias="0.955" />
 
     <Button
-        android:id="@+id/tv_remote_10"
+        android:id="@+id/tv_remote_7"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_centerHorizontal="true"
@@ -129,7 +129,7 @@
         app:layout_constraintVertical_bias="0.698" />
 
     <Button
-        android:id="@+id/tv_remote_11"
+        android:id="@+id/tv_remote_8"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_centerHorizontal="true"
@@ -145,7 +145,7 @@
         app:layout_constraintVertical_bias="0.698" />
 
     <Button
-        android:id="@+id/tv_remote_9"
+        android:id="@+id/tv_remote_6"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_centerHorizontal="true"
@@ -161,7 +161,7 @@
         app:layout_constraintVertical_bias="0.448" />
 
     <Button
-        android:id="@+id/tv_remote_13"
+        android:id="@+id/tv_remote_0"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_centerHorizontal="true"
@@ -177,7 +177,7 @@
         app:layout_constraintVertical_bias="0.945" />
 
     <Button
-        android:id="@+id/tv_remote_5"
+        android:id="@+id/tv_remote_2"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_centerHorizontal="true"
@@ -193,7 +193,7 @@
         app:layout_constraintVertical_bias="0.198" />
 
     <Button
-        android:id="@+id/tv_remote_4"
+        android:id="@+id/tv_remote_1"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_centerHorizontal="true"
@@ -209,7 +209,7 @@
         app:layout_constraintVertical_bias="0.198" />
 
     <Button
-        android:id="@+id/tv_remote_8"
+        android:id="@+id/tv_remote_5"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_centerHorizontal="true"
@@ -225,7 +225,7 @@
         app:layout_constraintVertical_bias="0.448" />
 
     <Button
-        android:id="@+id/tv_remote_7"
+        android:id="@+id/tv_remote_4"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_centerHorizontal="true"
@@ -241,7 +241,7 @@
         app:layout_constraintVertical_bias="0.448" />
 
     <Button
-        android:id="@+id/tv_remote_18"
+        android:id="@+id/tv_remote_louder"
         android:layout_width="75dp"
         android:layout_height="100dp"
         android:layout_centerHorizontal="true"
@@ -257,7 +257,7 @@
         app:layout_constraintVertical_bias="0.226" />
 
     <Button
-        android:id="@+id/tv_remote_15"
+        android:id="@+id/tv_remote_quiter"
         android:layout_width="75dp"
         android:layout_height="100dp"
         android:layout_centerHorizontal="true"
@@ -273,7 +273,7 @@
         app:layout_constraintVertical_bias="0.662" />
 
     <Button
-        android:id="@+id/tv_remote_16"
+        android:id="@+id/tv_remote_down"
         android:layout_width="75dp"
         android:layout_height="100dp"
         android:layout_centerHorizontal="true"
@@ -289,7 +289,7 @@
         app:layout_constraintVertical_bias="0.673" />
 
     <Button
-        android:id="@+id/tv_remote_14"
+        android:id="@+id/tv_remote_up"
         android:layout_width="75dp"
         android:layout_height="100dp"
         android:layout_centerHorizontal="true"
