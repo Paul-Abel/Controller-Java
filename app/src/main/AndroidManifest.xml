@@ -11,12 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".led_cupboad"/>
+        <activity android:name=".tv_remote2"/>
+        <activity android:name=".led_cupboad" />
         <activity android:name=".Reciver" />
         <activity android:name=".Led_table" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
