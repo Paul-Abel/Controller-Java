@@ -19,34 +19,15 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
-    private Button led_Aus;
-    private Button led_An;
-    private TextView testText;
     float x1,x2,y1,y2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle(R.string.television);
-        led_Aus = findViewById(R.id.button);
-        led_An = findViewById(R.id.button2);
 
-        led_Aus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sendeInfrarot("16769565X");
-            }
-        });
-
-        led_An.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sendeInfrarot("16753245X");
-            }
-        });
         toolbar();
     }
 

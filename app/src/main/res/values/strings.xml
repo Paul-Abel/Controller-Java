@@ -33,4 +33,23 @@
     <string name="stop">stop</string>
     <string name="previous">prev</string>
     <string name="next">next</string>
+
+    //television
+    <string name="television_taster_1">1</string>
+    <string name="television_taster_2">2</string>
+    <string name="television_taster_3">3</string>
+    <string name="television_taster_4">4</string>
+    <string name="television_taster_5">5</string>
+    <string name="television_taster_6">6</string>
+    <string name="television_taster_7">7</string>
+    <string name="television_taster_8">8</string>
+    <string name="television_taster_9">9</string>
+    <string name="television_taster_0">0</string>
+    <string name="television_lauter">+</string>
+    <string name="television_leiser">-</string>
+    <string name="television_hoch">hoch</string>
+    <string name="television_runter">runter</string>
+    <string name="television_weiter">weiter</string>
+
+
 </resources>
