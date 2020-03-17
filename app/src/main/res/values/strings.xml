@@ -5,6 +5,7 @@
     <string name="television">Television</string>
     <string name="led_table">LED-Table</string>
     <string name="led_cupboard">LED-Cupboard</string>
+    <string name="tv_remote2">Television 2</string>
 
     //led table
     <string name="on">On</string>

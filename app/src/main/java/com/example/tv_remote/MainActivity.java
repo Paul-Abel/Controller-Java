@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private Button led_Aus;
     private Button led_An;
     private TextView testText;
+    float x1,x2,y1,y2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,8 +48,26 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         toolbar();
-        animatedbackground();
     }
+
+    public boolean onTouchEvent(MotionEvent touchEvent){
+        switch(touchEvent.getAction()){
+            case MotionEvent.ACTION_DOWN:
+                x1 = touchEvent.getX();
+                y1 = touchEvent.getY();
+                break;
+            case MotionEvent.ACTION_UP:
+                x2 = touchEvent.getX();
+                y2 = touchEvent.getY();
+                if(x1 > x2){
+                    Intent tv_remote2 = new Intent(this, tv_remote2.class);
+                    startActivity(tv_remote2);
+                }
+                break;
+        }
+        return false;
+    }
+
     @Override   //Toolbarsytle wird eingefügt
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -78,14 +98,6 @@ public class MainActivity extends AppCompatActivity {
     public void toolbar(){  //Navigation wird eingefügt
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-    }
-
-    public void animatedbackground(){
-        ConstraintLayout constraintLayout = findViewById(R.id.layout);
-        AnimationDrawable animationDrawable = (AnimationDrawable) constraintLayout.getBackground();
-        animationDrawable.setEnterFadeDuration(2000);
-        animationDrawable.setExitFadeDuration(4000);
-        animationDrawable.start();
     }
 
     public void sendeInfrarot(String infrarot){
