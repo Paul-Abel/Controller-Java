@@ -10,6 +10,10 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
+import android.view.View;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.widget.Button;
 
 public class tv_remote2 extends AppCompatActivity {
 
@@ -24,7 +28,160 @@ public class tv_remote2 extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle(R.string.tv_remote2);
 
+        Button tv_menu = findViewById(R.id.tv_menu);
+        Button tv_guide = findViewById(R.id.tv_guide);
+        Button tv_source = findViewById(R.id.source);
+        Button tv_info = findViewById(R.id.tv_info);
+        Button tv_tools = findViewById(R.id.tv_tools);
+        Button tv_return = findViewById(R.id.tv_return);
+        Button tv_exit = findViewById(R.id.tv_exit);
+        Button tv_forward = findViewById(R.id.tv_forward);
+        Button tv_backward = findViewById(R.id.tv_backward);
+        Button tv_break = findViewById(R.id.tv_break);
+        Button tv_play = findViewById(R.id.tv_play);
+        Button tv_record = findViewById(R.id.tv_record);
+        Button tv_stop = findViewById(R.id.tv_stop);
+        Button tv_right = findViewById(R.id.tv_right);
+        Button tv_left = findViewById(R.id.tv_left);
+        Button tv_up = findViewById(R.id.tv_up);
+        Button tv_down = findViewById(R.id.tv_down);
+        Button tv_ok = findViewById(R.id.tv_ok);
+
+        tv_menu.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v){
+                showButtonclicked();
+                sendInfrarot("3772799143X");
+            }
+        });
+        tv_guide.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v){
+                showButtonclicked();
+                sendInfrarot("3772838413X");
+            }
+        });
+        tv_source.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v){
+                showButtonclicked();
+                sendInfrarot("3772809343X");
+            }
+        });
+        tv_info.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v){
+                showButtonclicked();
+                sendInfrarot("3772839943X");
+            }
+        });
+        tv_tools.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v){
+                showButtonclicked();
+                sendInfrarot("3772830253X");
+            }
+        });
+        tv_return.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v){
+                showButtonclicked();
+                sendInfrarot("3772783333X");
+            }
+        });
+        tv_forward.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v){
+                showButtonclicked();
+                sendInfrarot("3772781293X");
+            }
+        });
+        tv_backward.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v){
+                showButtonclicked();
+                sendInfrarot("3772818013X");
+            }
+        });
+        tv_exit.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v){
+                showButtonclicked();
+                sendInfrarot("3772822603X");
+            }
+        });
+        tv_break.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v){
+                showButtonclicked();
+                sendInfrarot("3772797613X");
+            }
+        });
+        tv_play.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v){
+                showButtonclicked();
+                sendInfrarot("3772834333X");
+            }
+        });
+        tv_record.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v){
+                showButtonclicked();
+                sendInfrarot("3772813933X");
+            }
+        });
+        tv_stop.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v){
+                showButtonclicked();
+                sendInfrarot("3772801693X");
+            }
+        });
+        tv_right.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v){
+                showButtonclicked();
+                sendInfrarot("3772794553X");
+            }
+        });
+        tv_left.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v){
+                showButtonclicked();
+                sendInfrarot("3772819033X");
+            }
+        });
+        tv_down.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v){
+                showButtonclicked();
+                sendInfrarot("3772810873X");
+            }
+        });
+        tv_up.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v){
+                showButtonclicked();
+                sendInfrarot("3772778233X");
+            }
+        });
+        tv_ok.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v){
+                showButtonclicked();
+                sendInfrarot("3772782313X");
+            }
+        });
+
         toolbar();
+    }
+
+    public void showButtonclicked() {
+        Animation anim = new AlphaAnimation(0.0f, 1.0f);
+        anim.setDuration(500); //You can manage the blinking time with this parameter
+        Button tv_on_off = findViewById(R.id.tv_menu);
+        tv_on_off.startAnimation(anim);
     }
 
     public boolean onTouchEvent(MotionEvent touchEvent){
@@ -79,5 +236,9 @@ public class tv_remote2 extends AppCompatActivity {
     public void toolbar(){  //Navigation wird eingefügt
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+    }
+    public void sendInfrarot(String infrarot){
+        InternetConnection b = new InternetConnection();
+        b.execute(infrarot);
     }
 }

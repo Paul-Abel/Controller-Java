@@ -3,10 +3,8 @@ package com.example.tv_remote;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
-import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -16,7 +14,6 @@ import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.Button;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button tv_on_off = findViewById(R.id.tv_remote_on_off);
         Button tv_hdmi = findViewById(R.id.tv_remote_hdmi);
-        Button tv_silence = findViewById(R.id.tv_remote_silence);
+        Button tv_silence = findViewById(R.id.tv_remote_quiet);
         Button tv_0 = findViewById(R.id.tv_remote_0);
         Button tv_1 = findViewById(R.id.tv_remote_1);
         Button tv_2 = findViewById(R.id.tv_remote_2);
@@ -230,7 +227,7 @@ public class MainActivity extends AppCompatActivity {
     public void showButtonclicked() {
         Animation anim = new AlphaAnimation(0.0f, 1.0f);
         anim.setDuration(500); //You can manage the blinking time with this parameter
-        Button tv_on_off = findViewById(R.id.tv_remote_on_off);
+        Button tv_on_off = findViewById(R.id.tv_remote_quiet);
         tv_on_off.startAnimation(anim);
     }
 

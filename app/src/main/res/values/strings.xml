@@ -45,11 +45,25 @@
     <string name="television_taster_8">8</string>
     <string name="television_taster_9">9</string>
     <string name="television_taster_0">0</string>
-    <string name="television_lauter">+</string>
-    <string name="television_leiser">-</string>
-    <string name="television_hoch">hoch</string>
-    <string name="television_runter">runter</string>
-    <string name="television_weiter">weiter</string>
-
+    <string name="television_louder">+</string>
+    <string name="television_quiter">-</string>
+    <string name="television_up">up</string>
+    <string name="television_down">down</string>
+    <string name="television_next">next</string>
+    <string name="television_on">on/off</string>
+    <string name="television_quiet">quiet</string>
+    <string name="television_hdmi">HDMI</string>
+    //television second page
+    <string name="television_source">source</string>
+    <string name="television_menu">menu</string>
+    <string name="television_guide">guide</string>
+    <string name="television_tools">tools</string>
+    <string name="television_info">info</string>
+    <string name="television_return">return</string>
+    <string name="television_exit">exit</string>
+    <string name="television_break">break</string>
+    <string name="television_play">play</string>
+    <string name="television_stop">stop</string>
+    <string name="television_record">record</string>
 
 </resources>
