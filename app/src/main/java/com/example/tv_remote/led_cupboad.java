@@ -4,16 +4,28 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.widget.Button;
+import android.widget.ImageView;
 
 public class led_cupboad extends AppCompatActivity {
 
     private Toolbar toolbar;
+    ImageView colorpick;
+    Bitmap bitmap;
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +33,42 @@ public class led_cupboad extends AppCompatActivity {
 
         toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle(R.string.led_cupboard);
+
+        colorpick = findViewById(R.id.colorpick);
+        colorpick.setDrawingCacheEnabled(true);
+        colorpick.buildDrawingCache(true);
+
+        Button cupboard_on = findViewById(R.id.cupboard_on);
+        Button cupboard_off = findViewById(R.id.cupboard_off);
+
+        colorpick.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if(event.getAction() == MotionEvent.ACTION_DOWN || event.getAction() == MotionEvent.ACTION_MOVE){
+                    bitmap = colorpick.getDrawingCache();
+                    int pixel = bitmap.getPixel((int)event.getX(), (int)event.getY());
+                    showButtonclicked();
+                    sendInfrarot(pixel+"X");
+                }
+                return false;
+            }
+        });
+
+        cupboard_on.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v){
+                showButtonclicked();
+                sendInfrarot("16236607X");
+            }
+        });
+        cupboard_off.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v){
+                showButtonclicked();
+                sendInfrarot("16203967X");
+            }
+        });
+
         toolbar();
     }
 
@@ -55,5 +103,17 @@ public class led_cupboad extends AppCompatActivity {
     public void toolbar(){  //Navigation wird eingefügt
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+    }
+
+    public void showButtonclicked() {
+        Animation anim = new AlphaAnimation(0.0f, 1.0f);
+        anim.setDuration(500); //You can manage the blinking time with this parameter
+        Button cupboard_on = findViewById(R.id.cupboard_on);
+        cupboard_on.startAnimation(anim);
+    }
+
+    public void sendInfrarot(String infrarot){
+        InternetConnection b = new InternetConnection();
+        b.execute(infrarot);
     }
 }
