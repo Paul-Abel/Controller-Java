@@ -117,6 +117,6 @@ public class LedCupboard extends AppCompatActivity {
 
     private void sendInfrared(String infrared){
         InternetConnection b = new InternetConnection();
-        b.execute(infrared);
+        b.execute(infrared, "192.168.2.122");
     }
 }

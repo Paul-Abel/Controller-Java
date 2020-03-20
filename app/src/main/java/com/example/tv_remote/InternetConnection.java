@@ -7,16 +7,16 @@ import java.io.IOException;
 import java.net.Socket;
 import java.util.concurrent.TimeUnit;
 
-class InternetConnection extends AsyncTask<String, Void, Void> {
+class InternetConnection extends AsyncTask<String, String, Void> {
 
     @Override
     protected Void doInBackground(String... strings) {
         Socket s;
         DataOutputStream message;
         String frequency = strings[0];
+        String ipAddress = strings[1];
         try {
-
-            s = new Socket("192.168.2.122", 80);
+            s = new Socket(ipAddress, 80);
             message = new DataOutputStream(s.getOutputStream());
             message.writeUTF(frequency);
             TimeUnit.MILLISECONDS.sleep(10);

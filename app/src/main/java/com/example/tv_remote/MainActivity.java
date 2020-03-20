@@ -221,7 +221,7 @@ private float x1;
 
     private void sendInfrared(String infrared){
         InternetConnection b = new InternetConnection();
-        b.execute(infrared);
+        b.doInBackground(infrared, "192.168.2.122");
     }
 
     private void showButtonClicked() {
