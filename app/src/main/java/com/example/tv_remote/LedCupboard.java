@@ -7,7 +7,6 @@ import androidx.appcompat.widget.Toolbar;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -19,36 +18,37 @@ import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.ImageView;
 
-public class led_cupboad extends AppCompatActivity {
+public class LedCupboard extends AppCompatActivity {
 
-    private Toolbar toolbar;
-    ImageView colorpick;
-    Bitmap bitmap;
+    private ImageView colour_pick;
+    private Bitmap bitmap;
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Toolbar toolbar;
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_led_cupboard);
 
         toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle(R.string.led_cupboard);
 
-        colorpick = findViewById(R.id.colorpick);
-        colorpick.setDrawingCacheEnabled(true);
-        colorpick.buildDrawingCache(true);
+        colour_pick = findViewById(R.id.colour_pick);
+        colour_pick.setDrawingCacheEnabled(true);
+        colour_pick.buildDrawingCache(true);
 
         Button cupboard_on = findViewById(R.id.cupboard_on);
         Button cupboard_off = findViewById(R.id.cupboard_off);
 
-        colorpick.setOnTouchListener(new View.OnTouchListener() {
+        colour_pick.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 if(event.getAction() == MotionEvent.ACTION_DOWN || event.getAction() == MotionEvent.ACTION_MOVE){
-                    bitmap = colorpick.getDrawingCache();
+                    bitmap = colour_pick.getDrawingCache();
                     int pixel = bitmap.getPixel((int)event.getX(), (int)event.getY());
-                    showButtonclicked();
-                    sendInfrarot(pixel+"X");
+                    showButtonClicked();
+                    sendInfrared(pixel+"X");
                 }
                 return false;
             }
@@ -57,22 +57,22 @@ public class led_cupboad extends AppCompatActivity {
         cupboard_on.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
-                showButtonclicked();
-                sendInfrarot("16236607X");
+                showButtonClicked();
+                sendInfrared("16236607X");
             }
         });
         cupboard_off.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
-                showButtonclicked();
-                sendInfrarot("16203967X");
+                showButtonClicked();
+                sendInfrared("16203967X");
             }
         });
 
         toolbar();
     }
 
-    @Override   //Toolbarsytle wird eingefügt
+    @Override   //insert toolbar layout
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.toolbar, menu);
@@ -83,7 +83,7 @@ public class led_cupboad extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.toolbar_led_table:
-                Intent led = new Intent(this, Led_table.class);
+                Intent led = new Intent(this, LedTable.class);
                 startActivity(led);
                 return true;
             case R.id.toolbar_television:
@@ -91,29 +91,29 @@ public class led_cupboad extends AppCompatActivity {
                 startActivity(television);
                 return true;
             case
-                R.id.toolbar_reciver:
-                Intent reciver = new Intent(this, Reciver.class);
-                startActivity(reciver);
+                R.id.toolbar_receiver:
+                Intent receiver = new Intent(this, Receiver.class);
+                startActivity(receiver);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
 
-    public void toolbar(){  //Navigation wird eingefügt
+    private void toolbar(){  //Insert toolbar
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
     }
 
-    public void showButtonclicked() {
+    private void showButtonClicked() {
         Animation anim = new AlphaAnimation(0.0f, 1.0f);
         anim.setDuration(500); //You can manage the blinking time with this parameter
         Button cupboard_on = findViewById(R.id.cupboard_on);
         cupboard_on.startAnimation(anim);
     }
 
-    public void sendInfrarot(String infrarot){
+    private void sendInfrared(String infrared){
         InternetConnection b = new InternetConnection();
-        b.execute(infrarot);
+        b.execute(infrared);
     }
 }

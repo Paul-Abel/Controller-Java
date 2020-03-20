@@ -1,7 +1,7 @@
 <resources>
     //toolbar
     <string name="app_name">TV-Remote</string>
-    <string name="reciver">Reciver</string>
+    <string name="receiver">Receiver</string>
     <string name="television">Television</string>
     <string name="led_table">LED-Table</string>
     <string name="led_cupboard">LED-Cupboard</string>
@@ -15,9 +15,9 @@
     <string name="change">C</string>
     <string name="smooth">S</string>
     <string name="daytime">1H24</string>
-    <string name="onehour">+1H</string>
+    <string name="one_hour">+1H</string>
 
-    //reciver
+    //receiver
     <string name="on_off">On/Off</string>
     <string name="menu">Menu</string>
     <string name="open">Open</string>
@@ -45,14 +45,15 @@
     <string name="television_taster_8">8</string>
     <string name="television_taster_9">9</string>
     <string name="television_taster_0">0</string>
-    <string name="television_louder">+</string>
-    <string name="television_quiter">-</string>
+    <string name="television_turn_up_sound">+</string>
+    <string name="television_turn_down_sound">-</string>
     <string name="television_up">up</string>
     <string name="television_down">down</string>
     <string name="television_next">next</string>
     <string name="television_on">on/off</string>
     <string name="television_quiet">quiet</string>
-    <string name="television_hdmi">HDMI</string>
+    <string name="television_HDMI">HDMI</string>
+
     //television second page
     <string name="television_source">source</string>
     <string name="television_menu">menu</string>
@@ -66,4 +67,7 @@
     <string name="television_stop">stop</string>
     <string name="television_record">record</string>
 
+
+    //image Description
+    <string name="image_desc_colours">Contains multiple colours u can pick</string>
 </resources>

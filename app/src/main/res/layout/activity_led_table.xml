@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_2"
-    tools:context=".Led_table">
+    tools:context=".LedTable">
 
     <include
         android:id="@+id/toolbar"
@@ -18,7 +18,7 @@
 
 
     <Button
-        android:id="@+id/led_anzeige"
+        android:id="@+id/led_panel"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:background="@drawable/led_panel"
@@ -147,7 +147,7 @@
         app:layout_constraintVertical_bias="0.40" />
 
     <Button
-        android:id="@+id/led_brwon"
+        android:id="@+id/led_brown"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_centerHorizontal="true"
@@ -284,7 +284,7 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:background="@drawable/led_round_button_white"
-        android:text="@string/onehour"
+        android:text="@string/one_hour"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

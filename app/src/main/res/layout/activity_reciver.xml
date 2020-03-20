@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_2"
-    tools:context=".Reciver">
+    tools:context=".Receiver">
 
     <include
         android:id="@+id/toolbar"
@@ -14,12 +14,12 @@
         tools:layout_editor_absoluteY="270dp" />
 
     <Button
-        android:id="@+id/reciver_on_off"
+        android:id="@+id/receiver_on_off"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:background="@drawable/reciver_round_gray"
+        android:background="@drawable/receiver_round_gray"
         android:text="@string/on_off"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -30,12 +30,12 @@
         app:layout_constraintVertical_bias="0.11" />
 
     <Button
-        android:id="@+id/reciver_menu"
+        android:id="@+id/receiver_menu"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:background="@drawable/reciver_round_gray"
+        android:background="@drawable/receiver_round_gray"
         android:text="@string/menu"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -46,12 +46,12 @@
         app:layout_constraintVertical_bias="0.11" />
 
     <Button
-        android:id="@+id/reciver_open"
+        android:id="@+id/receiver_open"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:background="@drawable/reciver_round_gray"
+        android:background="@drawable/receiver_round_gray"
         android:text="@string/open"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -62,44 +62,44 @@
         app:layout_constraintVertical_bias="0.11" />
 
     <Button
-        android:id="@+id/reciver_up"
+        android:id="@+id/receiver_up"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:background="@drawable/reciver_rectangle_gray"
+        android:background="@drawable/receiver_rectangle_gray"
         android:text="@string/control_up"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/reciver_ok"
-        app:layout_constraintEnd_toEndOf="@+id/reciver_ok"
+        app:layout_constraintBottom_toTopOf="@+id/receiver_ok"
+        app:layout_constraintEnd_toEndOf="@+id/receiver_ok"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/reciver_ok"
+        app:layout_constraintStart_toStartOf="@+id/receiver_ok"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/reciver_left"
+        android:id="@+id/receiver_left"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:background="@drawable/reciver_rectangle_gray"
+        android:background="@drawable/receiver_rectangle_gray"
         android:text="@string/control_left"
         android:textSize="40sp"
-        app:layout_constraintBottom_toBottomOf="@+id/reciver_ok"
-        app:layout_constraintEnd_toStartOf="@+id/reciver_ok"
+        app:layout_constraintBottom_toBottomOf="@+id/receiver_ok"
+        app:layout_constraintEnd_toStartOf="@+id/receiver_ok"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/reciver_ok"
+        app:layout_constraintTop_toTopOf="@+id/receiver_ok"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/reciver_ok"
+        android:id="@+id/receiver_ok"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:background="@drawable/reciver_rectangle_gray_without_border"
+        android:background="@drawable/receiver_rectangle_gray_without_border"
         android:text="@android:string/ok"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -109,44 +109,44 @@
         app:layout_constraintVertical_bias="0.40"/>
 
     <Button
-        android:id="@+id/reciver_right"
+        android:id="@+id/receiver_right"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:background="@drawable/reciver_rectangle_gray"
+        android:background="@drawable/receiver_rectangle_gray"
         android:text="@string/control_right"
         android:textSize="40sp"
-        app:layout_constraintBottom_toBottomOf="@+id/reciver_ok"
+        app:layout_constraintBottom_toBottomOf="@+id/receiver_ok"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/reciver_ok"
-        app:layout_constraintTop_toTopOf="@+id/reciver_ok"
+        app:layout_constraintStart_toEndOf="@+id/receiver_ok"
+        app:layout_constraintTop_toTopOf="@+id/receiver_ok"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/reciver_down"
+        android:id="@+id/receiver_down"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:background="@drawable/reciver_rectangle_gray"
+        android:background="@drawable/receiver_rectangle_gray"
         android:text="@string/control_down"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/reciver_ok"
+        app:layout_constraintEnd_toEndOf="@+id/receiver_ok"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/reciver_ok"
-        app:layout_constraintTop_toBottomOf="@+id/reciver_ok"
+        app:layout_constraintStart_toStartOf="@+id/receiver_ok"
+        app:layout_constraintTop_toBottomOf="@+id/receiver_ok"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/reciver_setup"
+        android:id="@+id/receiver_setup"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:background="@drawable/reciver_round_gray"
+        android:background="@drawable/receiver_round_gray"
         android:text="@string/setup"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -157,12 +157,12 @@
         app:layout_constraintVertical_bias="0.55" />
 
     <Button
-        android:id="@+id/reciver_back"
+        android:id="@+id/receiver_back"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:background="@drawable/reciver_round_gray"
+        android:background="@drawable/receiver_round_gray"
         android:text="@string/back"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -173,12 +173,12 @@
         app:layout_constraintVertical_bias="0.55" />
 
     <Button
-        android:id="@+id/reciver_backward"
+        android:id="@+id/receiver_backward"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:background="@drawable/reciver_rectangle_gray"
+        android:background="@drawable/receiver_rectangle_gray"
         android:text="@string/backwards"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -189,12 +189,12 @@
         app:layout_constraintVertical_bias="0.73" />
 
     <Button
-        android:id="@+id/reciver_play_pause"
+        android:id="@+id/receiver_play_pause"
         android:layout_width="150dp"
         android:layout_height="75dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:background="@drawable/reciver_rectangle_gray"
+        android:background="@drawable/receiver_rectangle_gray"
         android:text="@string/play_pause"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -205,12 +205,12 @@
         app:layout_constraintVertical_bias="0.73" />
 
     <Button
-        android:id="@+id/reciver_forward"
+        android:id="@+id/receiver_forward"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:background="@drawable/reciver_rectangle_gray"
+        android:background="@drawable/receiver_rectangle_gray"
         android:text="@string/forwards"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -221,12 +221,12 @@
         app:layout_constraintVertical_bias="0.73" />
 
     <Button
-        android:id="@+id/reciver_previous"
+        android:id="@+id/receiver_previous"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:background="@drawable/reciver_rectangle_gray"
+        android:background="@drawable/receiver_rectangle_gray"
         android:text="@string/previous"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -237,12 +237,12 @@
         app:layout_constraintVertical_bias="0.9" />
 
     <Button
-        android:id="@+id/reciver_stop"
+        android:id="@+id/receiver_stop"
         android:layout_width="150dp"
         android:layout_height="75dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:background="@drawable/reciver_rectangle_gray"
+        android:background="@drawable/receiver_rectangle_gray"
         android:text="@string/stop"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -253,12 +253,12 @@
         app:layout_constraintVertical_bias="0.9" />
 
     <Button
-        android:id="@+id/reciver_next"
+        android:id="@+id/receiver_next"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:background="@drawable/reciver_rectangle_gray"
+        android:background="@drawable/receiver_rectangle_gray"
         android:text="@string/next"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
