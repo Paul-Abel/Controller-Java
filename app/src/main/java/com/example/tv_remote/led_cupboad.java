@@ -47,8 +47,11 @@ public class led_cupboad extends AppCompatActivity {
                 if(event.getAction() == MotionEvent.ACTION_DOWN || event.getAction() == MotionEvent.ACTION_MOVE){
                     bitmap = colorpick.getDrawingCache();
                     int pixel = bitmap.getPixel((int)event.getX(), (int)event.getY());
-                    showButtonclicked();
-                    sendInfrarot(pixel+"X");
+                    if(pixel != 0) {
+                        showButtonclicked();
+                        String html = Integer.toHexString(pixel) + "X";
+                        sendInfrarot(html);
+                    }
                 }
                 return false;
             }
@@ -58,14 +61,14 @@ public class led_cupboad extends AppCompatActivity {
         {
             public void onClick(View v){
                 showButtonclicked();
-                sendInfrarot("16236607X");
+                sendInfrarot("ff057cb9X");
             }
         });
         cupboard_off.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
                 showButtonclicked();
-                sendInfrarot("16203967X");
+                sendInfrarot("00000000X");
             }
         });
 
