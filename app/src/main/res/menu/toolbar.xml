@@ -15,10 +15,10 @@
         android:icon="@drawable/toolbar_icon_television"
         tools:ignore="AlwaysShowAction" />
 
-    <item android:title="@string/reciver"
-        android:id="@+id/toolbar_reciver"
+    <item android:title="@string/receiver"
+        android:id="@+id/toolbar_receiver"
         app:showAsAction="always"
-        android:icon="@drawable/toolbar_icon_reciver"/>
+        android:icon="@drawable/toolbar_icon_receiver"/>
 
     <item android:title="@string/led_cupboard"
         android:id="@+id/toolbar_led_cupboard"

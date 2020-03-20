@@ -15,10 +15,10 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.Button;
 
-public class tv_remote2 extends AppCompatActivity {
+public class TVRemote2 extends AppCompatActivity {
 
     private Toolbar toolbar;
-    float x1,x2,y1,y2;
+    private float x1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,134 +50,134 @@ public class tv_remote2 extends AppCompatActivity {
         tv_menu.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
-                showButtonclicked();
-                sendInfrarot("3772799143X");
+                showButtonClicked();
+                sendInfrared("3772799143X");
             }
         });
         tv_guide.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
-                showButtonclicked();
-                sendInfrarot("3772838413X");
+                showButtonClicked();
+                sendInfrared("3772838413X");
             }
         });
         tv_source.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
-                showButtonclicked();
-                sendInfrarot("3772809343X");
+                showButtonClicked();
+                sendInfrared("3772809343X");
             }
         });
         tv_info.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
-                showButtonclicked();
-                sendInfrarot("3772839943X");
+                showButtonClicked();
+                sendInfrared("3772839943X");
             }
         });
         tv_tools.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
-                showButtonclicked();
-                sendInfrarot("3772830253X");
+                showButtonClicked();
+                sendInfrared("3772830253X");
             }
         });
         tv_return.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
-                showButtonclicked();
-                sendInfrarot("3772783333X");
+                showButtonClicked();
+                sendInfrared("3772783333X");
             }
         });
         tv_forward.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
-                showButtonclicked();
-                sendInfrarot("3772781293X");
+                showButtonClicked();
+                sendInfrared("3772781293X");
             }
         });
         tv_backward.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
-                showButtonclicked();
-                sendInfrarot("3772818013X");
+                showButtonClicked();
+                sendInfrared("3772818013X");
             }
         });
         tv_exit.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
-                showButtonclicked();
-                sendInfrarot("3772822603X");
+                showButtonClicked();
+                sendInfrared("3772822603X");
             }
         });
         tv_break.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
-                showButtonclicked();
-                sendInfrarot("3772797613X");
+                showButtonClicked();
+                sendInfrared("3772797613X");
             }
         });
         tv_play.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
-                showButtonclicked();
-                sendInfrarot("3772834333X");
+                showButtonClicked();
+                sendInfrared("3772834333X");
             }
         });
         tv_record.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
-                showButtonclicked();
-                sendInfrarot("3772813933X");
+                showButtonClicked();
+                sendInfrared("3772813933X");
             }
         });
         tv_stop.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
-                showButtonclicked();
-                sendInfrarot("3772801693X");
+                showButtonClicked();
+                sendInfrared("3772801693X");
             }
         });
         tv_right.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
-                showButtonclicked();
-                sendInfrarot("3772794553X");
+                showButtonClicked();
+                sendInfrared("3772794553X");
             }
         });
         tv_left.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
-                showButtonclicked();
-                sendInfrarot("3772819033X");
+                showButtonClicked();
+                sendInfrared("3772819033X");
             }
         });
         tv_down.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
-                showButtonclicked();
-                sendInfrarot("3772810873X");
+                showButtonClicked();
+                sendInfrared("3772810873X");
             }
         });
         tv_up.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
-                showButtonclicked();
-                sendInfrarot("3772778233X");
+                showButtonClicked();
+                sendInfrared("3772778233X");
             }
         });
         tv_ok.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
-                showButtonclicked();
-                sendInfrarot("3772782313X");
+                showButtonClicked();
+                sendInfrared("3772782313X");
             }
         });
 
         toolbar();
     }
 
-    public void showButtonclicked() {
+   private  void showButtonClicked() {
         Animation anim = new AlphaAnimation(0.0f, 1.0f);
         anim.setDuration(500); //You can manage the blinking time with this parameter
         Button tv_on_off = findViewById(R.id.tv_menu);
@@ -185,14 +185,13 @@ public class tv_remote2 extends AppCompatActivity {
     }
 
     public boolean onTouchEvent(MotionEvent touchEvent){
+        float x2;
         switch(touchEvent.getAction()){
             case MotionEvent.ACTION_DOWN:
                 x1 = touchEvent.getX();
-                y1 = touchEvent.getY();
                 break;
             case MotionEvent.ACTION_UP:
                 x2 = touchEvent.getX();
-                y2 = touchEvent.getY();
                 if(x1 < x2){
                     Intent television = new Intent(this, MainActivity.class);
                     startActivity(television);
@@ -202,7 +201,7 @@ public class tv_remote2 extends AppCompatActivity {
         return false;
     }
 
-    @Override   //Toolbarsytle wird eingefügt
+    @Override   //Insert toolbar layout
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.toolbar, menu);
@@ -216,16 +215,16 @@ public class tv_remote2 extends AppCompatActivity {
                 Intent television = new Intent(this, MainActivity.class);
                 startActivity(television);
                 return true;
-            case R.id.toolbar_reciver:
-                Intent reciver = new Intent(this, Reciver.class);
-                startActivity(reciver);
+            case R.id.toolbar_receiver:
+                Intent receiver = new Intent(this, Receiver.class);
+                startActivity(receiver);
                 return true;
             case R.id.toolbar_led_cupboard:
-                Intent Led_cupboad = new Intent(this, led_cupboad.class);
-                startActivity(Led_cupboad);
+                Intent Led_cupboard = new Intent(this, LedCupboard.class);
+                startActivity(Led_cupboard);
                 return true;
             case R.id.toolbar_led_table:
-                Intent LED_table = new Intent(this, Led_table.class);
+                Intent LED_table = new Intent(this, LedTable.class);
                 startActivity(LED_table);
                 return true;
             default:
@@ -233,12 +232,12 @@ public class tv_remote2 extends AppCompatActivity {
         }
     }
 
-    public void toolbar(){  //Navigation wird eingefügt
+    private void toolbar(){  //Insert toolbar
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
     }
-    public void sendInfrarot(String infrarot){
+    private void sendInfrared(String infrared){
         InternetConnection b = new InternetConnection();
-        b.execute(infrarot);
+        b.execute(infrared);
     }
 }
