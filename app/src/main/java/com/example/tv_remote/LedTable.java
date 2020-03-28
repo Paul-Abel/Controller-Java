@@ -17,7 +17,7 @@ import android.view.animation.Animation;
 import android.widget.Button;
 
 @RequiresApi(api = Build.VERSION_CODES.M)
-public class LedTable extends AppCompatActivity {
+public class  LedTable extends AppCompatActivity {
 
     private Toolbar toolbar;
     private Button led_panel;
@@ -236,8 +236,6 @@ public class LedTable extends AppCompatActivity {
 
     private void sendInfrared(String infrared){
         InternetConnection b = new InternetConnection();
-        b.execute(infrared,"192.168.2.122");
+        b.execute(infrared,"192.168.2.132");
     }
-
-
 }

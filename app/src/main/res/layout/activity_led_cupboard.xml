@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_2"
+    android:background="@mipmap/dark_background"
     tools:context=".LedCupboard">
 
     <ImageView
         android:id="@+id/colour_pick"
         android:layout_width="411dp"
         android:layout_height="475dp"
-        android:src="@mipmap/colour_pick_background"
         android:contentDescription="@string/image_desc_colours"
+        android:src="@mipmap/colour_pick_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
