@@ -236,6 +236,6 @@ public class  LedTable extends AppCompatActivity {
 
     private void sendInfrared(String infrared){
         InternetConnection b = new InternetConnection();
-        b.execute(infrared,"192.168.2.132");
+        b.execute(infrared,"192.168.2.122");
     }
 }

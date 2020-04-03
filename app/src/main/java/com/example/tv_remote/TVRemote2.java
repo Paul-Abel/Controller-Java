@@ -31,7 +31,6 @@ public class TVRemote2 extends AppCompatActivity {
         Button tv_menu = findViewById(R.id.tv_menu);
         Button tv_guide = findViewById(R.id.tv_guide);
         Button tv_source = findViewById(R.id.source);
-        Button tv_info = findViewById(R.id.tv_info);
         Button tv_tools = findViewById(R.id.tv_tools);
         Button tv_return = findViewById(R.id.tv_return);
         Button tv_exit = findViewById(R.id.tv_exit);
@@ -46,6 +45,7 @@ public class TVRemote2 extends AppCompatActivity {
         Button tv_up = findViewById(R.id.tv_up);
         Button tv_down = findViewById(R.id.tv_down);
         Button tv_ok = findViewById(R.id.tv_ok);
+        Button tv_next = findViewById(R.id.tv_remote_next);
 
         tv_menu.setOnClickListener(new View.OnClickListener()
         {
@@ -66,13 +66,6 @@ public class TVRemote2 extends AppCompatActivity {
             public void onClick(View v){
                 showButtonClicked();
                 sendInfrared("3772809343X");
-            }
-        });
-        tv_info.setOnClickListener(new View.OnClickListener()
-        {
-            public void onClick(View v){
-                showButtonClicked();
-                sendInfrared("3772839943X");
             }
         });
         tv_tools.setOnClickListener(new View.OnClickListener()
@@ -173,11 +166,22 @@ public class TVRemote2 extends AppCompatActivity {
                 sendInfrared("3772782313X");
             }
         });
+        tv_next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                nextPage();
+            }
+        });
 
         toolbar();
     }
 
-   private  void showButtonClicked() {
+    private void nextPage(){
+        Intent television = new Intent(this, MainActivity.class);
+        startActivity(television);
+    }
+
+    private void showButtonClicked() {
         Animation anim = new AlphaAnimation(0.0f, 1.0f);
         anim.setDuration(500); //You can manage the blinking time with this parameter
         Button tv_on_off = findViewById(R.id.tv_menu);
@@ -193,8 +197,7 @@ public class TVRemote2 extends AppCompatActivity {
             case MotionEvent.ACTION_UP:
                 x2 = touchEvent.getX();
                 if(x1 < x2){
-                    Intent television = new Intent(this, MainActivity.class);
-                    startActivity(television);
+                    nextPage();
                 }
             break;
         }

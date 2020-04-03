@@ -9,13 +9,14 @@
 
     <ImageView
         android:id="@+id/colour_pick"
-        android:layout_width="399dp"
-        android:layout_height="325dp"
+        android:layout_width="462dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="64dp"
         android:contentDescription="@string/image_desc_colours"
         android:src="@mipmap/colour_pick_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.193"
+        app:layout_constraintHorizontal_bias="0.167"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"

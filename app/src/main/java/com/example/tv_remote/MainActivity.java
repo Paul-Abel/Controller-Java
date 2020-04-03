@@ -45,6 +45,8 @@ private float x1;
         Button tv_turn_down_sound = findViewById(R.id.tv_remote_quiet_sound);
         Button tv_up = findViewById(R.id.tv_remote_up);
         Button tv_down = findViewById(R.id.tv_remote_down);
+        Button tv_info = findViewById(R.id.tv_remote_info);
+        Button tv_next = findViewById(R.id.tv_remote_next);
 
         tv_on_off.setOnClickListener(new View.OnClickListener()
         {
@@ -58,6 +60,13 @@ private float x1;
             public void onClick(View v){
                 showButtonClicked();
                 sendInfrared("3772829998X");
+            }
+        });
+        tv_info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showButtonClicked();
+                sendInfrared("3772839943X");
             }
         });
         tv_silence.setOnClickListener(new View.OnClickListener()
@@ -165,6 +174,12 @@ private float x1;
                 sendInfrared("3772778743X");
             }
         });
+        tv_next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                nextPage();
+            }
+        });
 
 
         toolbar();
@@ -179,8 +194,7 @@ private float x1;
             case MotionEvent.ACTION_UP:
                 x2 = touchEvent.getX();
                 if(x1 > x2){
-                    Intent tv_remote2 = new Intent(this, TVRemote2.class);
-                    startActivity(tv_remote2);
+                    nextPage();
                 }
                 break;
         }
@@ -212,6 +226,11 @@ private float x1;
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    private void nextPage(){
+        Intent tv_remote2 = new Intent(this, TVRemote2.class);
+        startActivity(tv_remote2);
     }
 
     private void toolbar(){  //Insert Toolbar
