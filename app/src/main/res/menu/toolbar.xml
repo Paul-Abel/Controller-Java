@@ -23,6 +23,10 @@
     <item android:title="@string/led_cupboard"
         android:id="@+id/toolbar_led_cupboard"
         app:showAsAction="always"
-        android:icon="@drawable/toolbar_icon_led_cupboard"
-        />
+        android:icon="@drawable/toolbar_icon_led_cupboard" />
+
+    <item android:id="@+id/toolbar_room_light"
+        android:title="@string/room_light"
+        app:showAsAction="never"/>
+
 </menu>

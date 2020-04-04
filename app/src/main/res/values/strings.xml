@@ -6,6 +6,7 @@
     <string name="led_table">LED-Table</string>
     <string name="led_cupboard">LED-Cupboard</string>
     <string name="tv_remote2">Television 2</string>
+    <string name="room_light">Room-Light On/Off</string>
 
     //led table
     <string name="on">On</string>
@@ -67,7 +68,7 @@
     <string name="television_stop">stop</string>
     <string name="television_record">record</string>
 
-
     //image Description
     <string name="image_desc_colours">Contains multiple colours u can pick</string>
+
 </resources>

@@ -14,10 +14,11 @@ import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-private float x1;
+private float x1,y1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -177,7 +178,7 @@ private float x1;
         tv_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                nextPage();
+                secondPage();
             }
         });
 
@@ -186,15 +187,23 @@ private float x1;
     }
 
     public boolean onTouchEvent(MotionEvent touchEvent){
-        float x2;
+        float x2,y2;
         switch(touchEvent.getAction()){
             case MotionEvent.ACTION_DOWN:
                 x1 = touchEvent.getX();
+                y1 = touchEvent.getY();
                 break;
             case MotionEvent.ACTION_UP:
                 x2 = touchEvent.getX();
-                if(x1 > x2){
-                    nextPage();
+                y2 = touchEvent.getY();
+                if(x1 < x2 && (y1-y2)<(x2-x1)){
+                    ledTable();
+                }
+                else if(x1 > x2 && (y1-y2)<(x1-x2)){
+                    receiver();
+                }
+                else if(y1 > y2){
+                    secondPage();
                 }
                 break;
         }
@@ -212,25 +221,39 @@ private float x1;
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.toolbar_led_table:
-                Intent led = new Intent(this, LedTable.class);
-                startActivity(led);
+                ledTable();
                 return true;
             case R.id.toolbar_receiver:
-                Intent receiver = new Intent(this, Receiver.class);
-                startActivity(receiver);
+                receiver();
                 return true;
             case R.id.toolbar_led_cupboard:
                 Intent Led_cupboard = new Intent(this, LedCupboard.class);
                 startActivity(Led_cupboard);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                return true;
+            case R.id.toolbar_room_light:
+                Toast.makeText(getApplicationContext(), "Button not at work", Toast.LENGTH_SHORT).show();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
 
-    private void nextPage(){
+    private void receiver(){
+        Intent receiver = new Intent(this, Receiver.class);
+        startActivity(receiver);
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+    }
+
+    private void ledTable(){
+        Intent led = new Intent(this, LedTable.class);
+        startActivity(led);
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+    }
+    private void secondPage(){
         Intent tv_remote2 = new Intent(this, TVRemote2.class);
         startActivity(tv_remote2);
+        overridePendingTransition(R.anim.slide_in_bottom, R.anim.slide_out_top);
     }
 
     private void toolbar(){  //Insert Toolbar

@@ -11,14 +11,17 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.Button;
+import android.widget.Toast;
 
 @RequiresApi(api = Build.VERSION_CODES.M)
 public class  LedTable extends AppCompatActivity {
 
+    private float x1;
     private Toolbar toolbar;
     private Button led_panel;
 
@@ -203,20 +206,44 @@ public class  LedTable extends AppCompatActivity {
         return true;
     }
 
+    public boolean onTouchEvent(MotionEvent touchEvent){
+        float x2;
+        switch(touchEvent.getAction()){
+            case MotionEvent.ACTION_DOWN:
+                x1 = touchEvent.getX();
+                break;
+            case MotionEvent.ACTION_UP:
+                x2 = touchEvent.getX();
+                if(x1 > x2){
+                    Intent television = new Intent(this, MainActivity.class);
+                    startActivity(television);
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                }
+                break;
+        }
+        return false;
+    }
+
     @Override   //Navigation
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.toolbar_television:
                 Intent television = new Intent(this, MainActivity.class);
                 startActivity(television);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 return true;
             case R.id.toolbar_receiver:
                 Intent receiver = new Intent(this, Receiver.class);
                 startActivity(receiver);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 return true;
             case R.id.toolbar_led_cupboard:
                 Intent Led_cupboard = new Intent(this, LedCupboard.class);
                 startActivity(Led_cupboard);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                return true;
+            case R.id.toolbar_room_light:
+                Toast.makeText(getApplicationContext(), "Button not at work", Toast.LENGTH_SHORT).show();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

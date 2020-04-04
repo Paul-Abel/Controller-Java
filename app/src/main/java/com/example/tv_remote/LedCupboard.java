@@ -17,9 +17,11 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class LedCupboard extends AppCompatActivity {
 
+    private float x1;
     private ImageView colour_pick;
     private Bitmap bitmap;
 
@@ -82,21 +84,44 @@ public class LedCupboard extends AppCompatActivity {
         return true;
     }
 
+    public boolean onTouchEvent(MotionEvent touchEvent){
+        float x2;
+        switch(touchEvent.getAction()){
+            case MotionEvent.ACTION_DOWN:
+                x1 = touchEvent.getX();
+                break;
+            case MotionEvent.ACTION_UP:
+                x2 = touchEvent.getX();
+                if(x1 < x2){
+                    Intent receiver = new Intent(this, Receiver.class);
+                    startActivity(receiver);
+                    overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+                }
+                break;
+        }
+        return false;
+    }
+
     @Override   //Navigation
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.toolbar_led_table:
                 Intent led = new Intent(this, LedTable.class);
                 startActivity(led);
+                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
                 return true;
             case R.id.toolbar_television:
                 Intent television = new Intent(this, MainActivity.class);
                 startActivity(television);
+                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
                 return true;
-            case
-                R.id.toolbar_receiver:
+            case R.id.toolbar_receiver:
                 Intent receiver = new Intent(this, Receiver.class);
                 startActivity(receiver);
+                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+                return true;
+            case R.id.toolbar_room_light:
+                Toast.makeText(getApplicationContext(), "Button not at work", Toast.LENGTH_SHORT).show();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
