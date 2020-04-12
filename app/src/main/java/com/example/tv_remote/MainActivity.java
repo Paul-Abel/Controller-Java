@@ -30,7 +30,6 @@ private float x1,y1;
         toolbar.setTitle(R.string.television);
 
         Button tv_on_off = findViewById(R.id.tv_remote_on_off);
-        Button tv_HDMI = findViewById(R.id.tv_remote_HDMI);
         Button tv_silence = findViewById(R.id.tv_remote_quiet);
         Button tv_0 = findViewById(R.id.tv_remote_0);
         Button tv_1 = findViewById(R.id.tv_remote_1);
@@ -48,6 +47,9 @@ private float x1,y1;
         Button tv_down = findViewById(R.id.tv_remote_down);
         Button tv_info = findViewById(R.id.tv_remote_info);
         Button tv_next = findViewById(R.id.tv_remote_next);
+        Button tv_a = findViewById(R.id.tv_remote_a);
+        Button tv_pre_ch = findViewById(R.id.tv_remote_pre_ch);
+        Button tv_return = findViewById(R.id.tv_remote_return);
 
         tv_on_off.setOnClickListener(new View.OnClickListener()
         {
@@ -56,15 +58,7 @@ private float x1,y1;
                 sendInfrared("3772793023X");
             }
         });
-        tv_HDMI.setOnClickListener(new View.OnClickListener()
-        {
-            public void onClick(View v){
-                showButtonClicked();
-                sendInfrared("3772829998X");
-            }
-        });
         tv_info.setOnClickListener(new View.OnClickListener() {
-            @Override
             public void onClick(View v) {
                 showButtonClicked();
                 sendInfrared("3772839943X");
@@ -175,10 +169,31 @@ private float x1,y1;
                 sendInfrared("3772778743X");
             }
         });
+        tv_a.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v){
+                showButtonClicked();
+                sendInfrared("3772790473X");
+            }
+        });
+        tv_pre_ch.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v){
+                showButtonClicked();
+                sendInfrared("3772827703X");
+            }
+        });
+        tv_return.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v){
+                showButtonClicked();
+                sendInfrared("3772783333X");
+            }
+        });
         tv_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                secondPage();
+                thirdPage();
             }
         });
 
@@ -205,6 +220,9 @@ private float x1,y1;
                 else if(y1 > y2){
                     secondPage();
                 }
+                /*else if(y1 < y2){
+                    thirdPage();
+                }*/
                 break;
         }
         return false;
@@ -237,6 +255,12 @@ private float x1,y1;
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    private void thirdPage(){
+        Intent thirdPage = new Intent(this,TVRemote3.class);
+        startActivity(thirdPage);
+        overridePendingTransition(R.anim.slide_in_top,R.anim.slide_out_bottom);
     }
 
     private void receiver(){

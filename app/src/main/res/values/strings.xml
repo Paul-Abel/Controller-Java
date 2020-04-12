@@ -54,6 +54,8 @@
     <string name="television_on">on/off</string>
     <string name="television_quiet">quiet</string>
     <string name="television_HDMI">HDMI</string>
+    <string name="television_pre_ch">pre-ch</string>
+    <string name="television_a">A</string>
 
     //television second page
     <string name="television_source">source</string>
