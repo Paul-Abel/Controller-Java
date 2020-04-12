@@ -39,14 +39,14 @@ public class TVRemote2 extends AppCompatActivity {
         Button tv_backward = findViewById(R.id.tv_backward);
         Button tv_break = findViewById(R.id.tv_break);
         Button tv_play = findViewById(R.id.tv_play);
-        Button tv_record = findViewById(R.id.tv_record);
         Button tv_stop = findViewById(R.id.tv_stop);
         Button tv_right = findViewById(R.id.tv_right);
         Button tv_left = findViewById(R.id.tv_left);
         Button tv_up = findViewById(R.id.tv_up);
         Button tv_down = findViewById(R.id.tv_down);
         Button tv_ok = findViewById(R.id.tv_ok);
-        Button tv_next = findViewById(R.id.tv_remote_next);
+        Button tv_HDMI = findViewById(R.id.tv_HDMI);
+        Button tv_record = findViewById(R.id.tv_record);
 
         tv_menu.setOnClickListener(new View.OnClickListener()
         {
@@ -118,13 +118,6 @@ public class TVRemote2 extends AppCompatActivity {
                 sendInfrared("3772834333X");
             }
         });
-        tv_record.setOnClickListener(new View.OnClickListener()
-        {
-            public void onClick(View v){
-                showButtonClicked();
-                sendInfrared("3772813933X");
-            }
-        });
         tv_stop.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
@@ -167,20 +160,27 @@ public class TVRemote2 extends AppCompatActivity {
                 sendInfrared("3772782313X");
             }
         });
-        tv_next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                firstPage();
+        tv_HDMI.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v){
+                showButtonClicked();
+                sendInfrared("3772829998X");
             }
         });
-
+        tv_record.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v){
+                showButtonClicked();
+                sendInfrared("3772813933X");
+            }
+        });
         toolbar();
     }
 
     private void showButtonClicked() {
         Animation anim = new AlphaAnimation(0.0f, 1.0f);
         anim.setDuration(500); //You can manage the blinking time with this parameter
-        Button tv_on_off = findViewById(R.id.tv_menu);
+        Button tv_on_off = findViewById(R.id.tv_HDMI);
         tv_on_off.startAnimation(anim);
     }
 
@@ -194,10 +194,10 @@ public class TVRemote2 extends AppCompatActivity {
             case MotionEvent.ACTION_UP:
                 x2 = touchEvent.getX();
                 y2 = touchEvent.getY();
-                if(x1 < x2 && (y1-y2)<(x2-x1)){
+                if(x1 < x2 && (y2-y1)<(x2-x1)){
                     ledTable();
                 }
-                else if(x1 > x2 && (y1-y2)<(x1-x2)){
+                else if(x1 > x2 && (y2-y1)<(x1-x2)){
                     receiver();
                 }
                 else if(y1 < y2){
