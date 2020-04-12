@@ -130,7 +130,7 @@
         android:layout_marginStart="0dp"
         app:layout_constraintRight_toRightOf="@+id/fourth_column"
         app:layout_constraintTop_toTopOf="@+id/first_row"
-/>
+        />
 
     <TableLayout
         android:layout_width="0dp"
