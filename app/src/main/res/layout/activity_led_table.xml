@@ -1,322 +1,404 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@mipmap/led_table_background"
-    tools:context=".LedTable">
+    tools:context=".TVRemote3">
 
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        tools:layout_editor_absoluteX="-52dp"
+        tools:layout_editor_absoluteY="270dp" />
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="52dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="42dp">
 
 
-    <Button
-        android:id="@+id/led_panel"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:background="@drawable/led_panel"
-        android:clickable="false"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.148"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/led_on"
-        app:layout_constraintVertical_bias="0.0" />
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="20dp"
+            android:paddingLeft="32dp"
+            android:paddingRight="32dp"
+            android:paddingTop="20dp">
 
-    <Button
-        android:id="@+id/led_on"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:background="@drawable/led_round_button_black"
-        android:text="@string/on"
-        android:textColor="@color/white"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.12" />
+            <TableRow
+                android:id="@+id/first_tablerow"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp">
 
-    <Button
-        android:id="@+id/led_off"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:background="@drawable/led_round_button_black"
-        android:text="@string/off"
-        android:textColor="@color/white"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.851"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/led_on"
-        app:layout_constraintVertical_bias="0.0" />
+                <Button
+                    android:id="@+id/led_panel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/toolbar"
+                    android:layout_weight="1"
+                    android:background="@drawable/led_panel"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="10dp"
+                    style="?android:attr/buttonBarButtonStyle"/>
 
-    <Button
-        android:id="@+id/led_red"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:background="@drawable/led_round_button_red"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.148"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/led_green"
-        app:layout_constraintVertical_bias="0.0" />
+                <Button
+                    android:id="@+id/led_on"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/toolbar"
+                    android:layout_weight="1"
+                    android:background="@drawable/led_round_button_black"
+                    android:text="@string/on"
+                    android:textColor="@color/white"
+                    android:textSize="25sp"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginEnd="7dp"
+                    style="?android:attr/buttonBarButtonStyle"/>
 
-    <Button
-        android:id="@+id/led_green"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:background="@drawable/led_round_button_green"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/led_on"
-        app:layout_constraintVertical_bias="0.018" />
+                <Button
+                    android:id="@+id/led_off"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/toolbar"
+                    android:layout_weight="1"
+                    android:background="@drawable/led_round_button_black"
+                    android:text="@string/off"
+                    android:textColor="@color/white"
+                    android:textSize="25sp"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginEnd="7dp"
+                    style="?android:attr/buttonBarButtonStyle"/>
+            </TableRow>
 
-    <Button
-        android:id="@+id/led_blue"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:background="@drawable/led_round_button_blue"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.851"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/led_green"
-        app:layout_constraintVertical_bias="0.0" />
+            <TableRow
+                android:id="@+id/second_tablerow"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp">
 
-    <Button
-        android:id="@+id/led_light_red"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:background="@drawable/led_round_button_light_red"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.148"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/led_light_green"
-        app:layout_constraintVertical_bias="0.0" />
+                <Button
+                    android:id="@+id/led_red"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/toolbar"
+                    android:layout_weight="1"
+                    android:background="@drawable/led_round_button_red"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginEnd="7dp"
+                    style="?android:attr/buttonBarButtonStyle"/>
 
-    <Button
-        android:id="@+id/led_light_green"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:background="@drawable/led_round_button_light_green"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/led_green"
-        app:layout_constraintVertical_bias="0.021" />
+                <Button
+                    android:id="@+id/led_green"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/toolbar"
+                    android:layout_weight="1"
+                    android:background="@drawable/led_round_button_green"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginEnd="7dp"
+                    style="?android:attr/buttonBarButtonStyle"/>
 
-    <Button
-        android:id="@+id/led_light_blue"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:background="@drawable/led_round_button_light_blue"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.851"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/led_light_green"
-        app:layout_constraintVertical_bias="0.0" />
+                <Button
+                    android:id="@+id/led_blue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/toolbar"
+                    android:layout_weight="1"
+                    android:background="@drawable/led_round_button_blue"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginEnd="7dp"
+                    style="?android:attr/buttonBarButtonStyle"/>
+            </TableRow>
 
-    <Button
-        android:id="@+id/led_brown"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:background="@drawable/led_round_button_brown"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.148"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/led_orange"
-        app:layout_constraintVertical_bias="0.0" />
+            <TableRow
+                android:id="@+id/third_tablerow"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp">
 
-    <Button
-        android:id="@+id/led_orange"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:background="@drawable/led_round_button_orange"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/led_light_green"
-        app:layout_constraintVertical_bias="0.032" />
+                <Button
+                    android:id="@+id/led_light_red"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/toolbar"
+                    android:layout_weight="1"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginEnd="7dp"
+                    android:background="@drawable/led_round_button_light_red"
+                    style="?android:attr/buttonBarButtonStyle"/>
 
-    <Button
-        android:id="@+id/led_light_light_blue"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:background="@drawable/led_round_button_light_light_blue"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.851"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/led_orange"
-        app:layout_constraintVertical_bias="0.0" />
+                <Button
+                    android:id="@+id/led_light_green"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/toolbar"
+                    android:layout_weight="1"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginEnd="7dp"
+                    android:background="@drawable/led_round_button_light_green"
+                    style="?android:attr/buttonBarButtonStyle"/>
 
-    <Button
-        android:id="@+id/led_purple"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:background="@drawable/led_round_button_purple"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.148"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/led_yellow"
-        app:layout_constraintVertical_bias="0.0" />
+                <Button
+                    android:id="@+id/led_light_blue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/toolbar"
+                    android:layout_weight="1"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginEnd="7dp"
+                    android:background="@drawable/led_round_button_light_blue"
+                    style="?android:attr/buttonBarButtonStyle"/>
+            </TableRow>
 
-    <Button
-        android:id="@+id/led_white"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:background="@drawable/led_round_button_white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.851"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/led_yellow"
-        app:layout_constraintVertical_bias="0.0" />
+            <TableRow
+                android:id="@+id/fourth_tablerow"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp">
 
-    <Button
-        android:id="@+id/led_yellow"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:background="@drawable/led_round_button_yellow"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/led_orange"
-        app:layout_constraintVertical_bias="0.05" />
+                <Button
+                    android:id="@+id/led_brown"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/toolbar"
+                    android:layout_weight="1"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginEnd="7dp"
+                    android:background="@drawable/led_round_button_brown"
+                    style="?android:attr/buttonBarButtonStyle"/>
 
-    <Button
-        android:id="@+id/led_1H"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:background="@drawable/led_round_button_white"
-        android:text="@string/one_hour"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.148"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/led_smooth" />
+                <Button
+                    android:id="@+id/led_orange"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/toolbar"
+                    android:layout_weight="1"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginEnd="7dp"
+                    android:background="@drawable/led_round_button_orange"
+                    style="?android:attr/buttonBarButtonStyle"/>
 
-    <Button
-        android:id="@+id/led_up"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:background="@drawable/led_round_button_white"
-        android:text="@string/brighter"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.851"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/led_change"
-        app:layout_constraintVertical_bias="0.0" />
+                <Button
+                    android:id="@+id/led_light_light_blue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/toolbar"
+                    android:layout_weight="1"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginEnd="7dp"
+                    android:background="@drawable/led_round_button_light_light_blue"
+                    style="?android:attr/buttonBarButtonStyle"/>
+            </TableRow>
 
-    <Button
-        android:id="@+id/led_change"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:background="@drawable/led_round_button_white"
-        android:text="@string/change"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/led_yellow"
-        app:layout_constraintVertical_bias="0.132" />
+            <TableRow
+                android:id="@+id/fifth_tablerow"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp">
 
-    <Button
-        android:id="@+id/led_down"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:background="@drawable/led_round_button_white"
-        android:text="@string/darker"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.851"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/led_smooth" />
+                <Button
+                    android:id="@+id/led_purple"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/toolbar"
+                    android:layout_weight="1"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginEnd="7dp"
+                    android:background="@drawable/led_round_button_purple"
+                    style="?android:attr/buttonBarButtonStyle"/>
 
-    <Button
-        android:id="@+id/led_1H24"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:background="@drawable/led_round_button_white"
-        android:text="@string/daytime"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.148"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/led_change"
-        app:layout_constraintVertical_bias="0.0" />
+                <Button
+                    android:id="@+id/led_yellow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/toolbar"
+                    android:layout_weight="1"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginEnd="7dp"
+                    android:background="@drawable/led_round_button_yellow"
+                    style="?android:attr/buttonBarButtonStyle"/>
 
-    <Button
-        android:id="@+id/led_smooth"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:background="@drawable/led_round_button_white"
-        android:text="@string/smooth"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/led_change" />
+                <Button
+                    android:id="@+id/led_white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/toolbar"
+                    android:layout_weight="1"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginEnd="7dp"
+                    android:background="@drawable/led_round_button_white"
+                    style="?android:attr/buttonBarButtonStyle"/>
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/sixth_tablerow"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp">
+
+                <Button
+                    android:id="@+id/led_1H24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/toolbar"
+                    android:layout_weight="1"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginEnd="7dp"
+                    android:background="@drawable/led_round_button_white"
+                    android:text="@string/daytime"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    style="?android:attr/buttonBarButtonStyle"/>
+
+                <Button
+                    android:id="@+id/led_change"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/toolbar"
+                    android:layout_weight="1"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginEnd="7dp"
+                    android:background="@drawable/led_round_button_white"
+                    android:text="@string/change"
+                    android:textSize="25sp"
+                    android:textColor="@color/black"
+                    style="?android:attr/buttonBarButtonStyle"/>
+
+                <Button
+                    android:id="@+id/led_up"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/toolbar"
+                    android:layout_weight="1"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginEnd="7dp"
+                    android:background="@drawable/led_round_button_white"
+                    android:text="@string/brighter"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    style="?android:attr/buttonBarButtonStyle"/>
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/seventh_tablerow"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp">
+
+                <Button
+                    android:id="@+id/led_1H"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/toolbar"
+                    android:layout_weight="1"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginEnd="7dp"
+                    android:background="@drawable/led_round_button_white"
+                    android:text="@string/one_hour"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    style="?android:attr/buttonBarButtonStyle"/>
+
+                <Button
+                    android:id="@+id/led_smooth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/toolbar"
+                    android:layout_weight="1"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginEnd="7dp"
+                    android:background="@drawable/led_round_button_white"
+                    android:text="@string/smooth"
+                    android:textSize="25sp"
+                    android:textColor="@color/black"
+                    style="?android:attr/buttonBarButtonStyle"/>
+
+                <Button
+                    android:id="@+id/led_down"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/toolbar"
+                    android:layout_weight="1"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginEnd="7dp"
+                    android:background="@drawable/led_round_button_white"
+                    android:text="@string/darker"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    style="?android:attr/buttonBarButtonStyle"/>
+            </TableRow>
+        </TableLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-

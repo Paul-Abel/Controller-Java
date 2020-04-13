@@ -27,12 +27,12 @@ public class TVRemote3 extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle(R.string.tv_remote2);
 
-        Button test = findViewById(R.id.button);
+        Button test = findViewById(R.id.led_up);
 
         test.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
-                sendInfrared("KEYCODE_MENU");
+                sendInfrared("");
             }
         });
     }

@@ -6,6 +6,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColorSecondary">@color/white</item>
     </style>
 
     <style name="ToolbarTitle" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
@@ -15,7 +16,7 @@
 
     <style name="CostumPopupStyle" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:colorBackground">@color/white</item>
-        <item name="android:textColor">@color/red</item>
+        <item name="android:textColor">@color/black</item>
     </style>
 
 </resources>

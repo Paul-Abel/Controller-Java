@@ -22,7 +22,7 @@
 
     <item android:title="@string/led_cupboard"
         android:id="@+id/toolbar_led_cupboard"
-        app:showAsAction="always"
+        app:showAsAction="never"
         android:icon="@drawable/toolbar_icon_led_cupboard" />
 
     <item android:id="@+id/toolbar_room_light"
