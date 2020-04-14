@@ -211,18 +211,18 @@ private float x1,y1;
             case MotionEvent.ACTION_UP:
                 x2 = touchEvent.getX();
                 y2 = touchEvent.getY();
-                if(x1 < x2 && (y1-y2)<(x2-x1)){
+                if(x1 < x2 && (y1-y2)<(x2-x1) && (-(y1-y2) < (x2-x1))){
                     ledTable();
                 }
-                else if(x1 > x2 && (y1-y2)<(x1-x2)){
+                else if(x1 > x2 && (y1-y2)<(x1-x2) && (-(y2-y1) < (x1-x2))){
                     receiver();
                 }
                 else if(y1 > y2){
                     secondPage();
                 }
-                /*else if(y1 < y2){
+                else if(y1 < y2){
                     thirdPage();
-                }*/
+                }
                 break;
         }
         return false;

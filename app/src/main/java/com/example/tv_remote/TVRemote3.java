@@ -25,9 +25,9 @@ public class TVRemote3 extends AppCompatActivity {
         setContentView(R.layout.activity_tv_remote3);
 
         toolbar = findViewById(R.id.toolbar);
-        toolbar.setTitle(R.string.tv_remote2);
+        toolbar.setTitle(R.string.tv_fire_tv);
 
-        Button test = findViewById(R.id.led_up);
+        Button test = findViewById(R.id.button);
 
         test.setOnClickListener(new View.OnClickListener()
         {
@@ -35,6 +35,7 @@ public class TVRemote3 extends AppCompatActivity {
                 sendInfrared("");
             }
         });
+        toolbar();
     }
 
     public boolean onTouchEvent(MotionEvent touchEvent){
@@ -47,10 +48,10 @@ public class TVRemote3 extends AppCompatActivity {
             case MotionEvent.ACTION_UP:
                 x2 = touchEvent.getX();
                 y2 = touchEvent.getY();
-                if(x1 < x2 && (y2-y1)<(x2-x1)){
+                if(x1 < x2 && (y1-y2) < (x2-x1)){
                     ledTable();
                 }
-                else if(x1 > x2 && (y2-y1)<(x1-x2)){
+                else if(x1 > x2 && (y1-y2) < (x1-x2)){
                     receiver();
                 }
                 else if(y1 > y2){
