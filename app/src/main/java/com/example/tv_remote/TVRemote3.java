@@ -118,7 +118,6 @@ public class TVRemote3 extends AppCompatActivity {
     }
 
     private void sendInfrared(String infrared){
-        InternetConnection b = new InternetConnection();
-        b.execute(infrared, "192.168.2.136");
+        new InternetConnection().execute(infrared, "192.168.2.136");
     }
 }

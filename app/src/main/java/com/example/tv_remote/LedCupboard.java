@@ -140,8 +140,7 @@ public class LedCupboard extends AppCompatActivity {
         cupboard_on.startAnimation(anim);
     }
 
-    private void sendInfrared(String infrared){
-        InternetConnection b = new InternetConnection();
-        b.execute(infrared, "192.168.2.130");
+    private void sendInfrared(String infrared) {
+        new InternetConnection().execute(infrared, "192.168.2.130");
     }
 }

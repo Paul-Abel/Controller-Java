@@ -7,14 +7,14 @@ import java.io.IOException;
 import java.net.Socket;
 import java.util.concurrent.TimeUnit;
 
-class InternetConnection extends AsyncTask<String, String, Void> {
+public class InternetConnection extends AsyncTask<String, Void, Void> {
 
     @Override
-    protected Void doInBackground(String... strings) {
+    protected Void doInBackground(String... params) {
         Socket s;
         DataOutputStream message;
-        String frequency = strings[0];
-        String ipAddress = strings[1];
+        String frequency = params[0];
+        String ipAddress = params[1];
         try {
             s = new Socket(ipAddress, 80);
             message = new DataOutputStream(s.getOutputStream());
