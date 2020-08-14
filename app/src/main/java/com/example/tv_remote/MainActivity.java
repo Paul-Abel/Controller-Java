@@ -16,7 +16,7 @@ import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends ToolbarActivity {
 
 private float x1,y1;
 
@@ -193,7 +193,7 @@ private float x1,y1;
         tv_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                thirdPage();
+                secondPage();
             }
         });
 
@@ -211,69 +211,27 @@ private float x1,y1;
             case MotionEvent.ACTION_UP:
                 x2 = touchEvent.getX();
                 y2 = touchEvent.getY();
-                if(x1 < x2 && (y1-y2)<(x2-x1) && (-(y1-y2) < (x2-x1))){
-                    ledTable();
+                if(x1 < x2 && (y1-y2)*2 < (x2-x1) && (-2*(y1-y2) < (x2-x1))){
+                    Intent led = new Intent(this, LedTable.class);
+                    startActivity(led);
+                    overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
                 }
-                else if(x1 > x2 && (y1-y2)<(x1-x2) && (-(y2-y1) < (x1-x2))){
-                    receiver();
+                else if(x1 > x2 && (y1-y2)*2 < (x1-x2) && (-2*(y2-y1) < (x1-x2))){
+                    Intent receiver = new Intent(this, LedCupboard.class);
+                    startActivity(receiver);
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 }
                 else if(y1 > y2){
                     secondPage();
                 }
                 else if(y1 < y2){
-                    thirdPage();
+                    secondPage();
                 }
                 break;
         }
         return false;
     }
 
-    @Override   //Insert toolbar layout
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.toolbar, menu);
-        return true;
-    }
-
-    @Override   //Navigation
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.toolbar_led_table:
-                ledTable();
-                return true;
-            case R.id.toolbar_receiver:
-                receiver();
-                return true;
-            case R.id.toolbar_led_cupboard:
-                Intent Led_cupboard = new Intent(this, LedCupboard.class);
-                startActivity(Led_cupboard);
-                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                return true;
-            case R.id.toolbar_room_light:
-                Toast.makeText(getApplicationContext(), "Button not at work", Toast.LENGTH_SHORT).show();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
-
-    private void thirdPage(){
-        Intent thirdPage = new Intent(this,TVRemote3.class);
-        startActivity(thirdPage);
-        overridePendingTransition(R.anim.slide_in_top,R.anim.slide_out_bottom);
-    }
-
-    private void receiver(){
-        Intent receiver = new Intent(this, Receiver.class);
-        startActivity(receiver);
-        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-    }
-
-    private void ledTable(){
-        Intent led = new Intent(this, LedTable.class);
-        startActivity(led);
-        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
-    }
     private void secondPage(){
         Intent tv_remote2 = new Intent(this, TVRemote2.class);
         startActivity(tv_remote2);
@@ -285,10 +243,6 @@ private float x1,y1;
         setSupportActionBar(toolbar);
     }
 
-    private void sendInfrared(String infrared){
-        new InternetConnection().execute(infrared, "192.168.2.132");
-    }
-
     private void showButtonClicked() {
         Animation anim = new AlphaAnimation(0.0f, 1.0f);
         anim.setDuration(500); //You can manage the blinking time with this parameter
@@ -296,4 +250,7 @@ private float x1,y1;
         tv_on_off.startAnimation(anim);
     }
 
+    private void sendInfrared(String infrared){
+        new InternetConnection().execute(infrared, "192.168.2.102");
+    }
 }

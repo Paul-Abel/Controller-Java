@@ -6,8 +6,9 @@
     <string name="led_table">LED-Table</string>
     <string name="led_cupboard">LED-Cupboard</string>
     <string name="tv_remote2">Television 2</string>
-    <string name="room_light">Room-Light On/Off</string>
+    <string name="room_light">Room-Light ON/OFF</string>
     <string name="tv_fire_tv">FireTV</string>
+    <string name="table_ventilator">Table-Ventilator ON/OFF</string>
 
     //led table
     <string name="on">On</string>

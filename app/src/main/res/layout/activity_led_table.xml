@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@mipmap/led_table_background"
-    tools:context=".TVRemote3">
+    tools:context=".LedTable">
 
     <include
         android:id="@+id/toolbar"
@@ -20,10 +20,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="52dp"
+        android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="42dp">
-
 
         <TableLayout
             android:layout_width="match_parent"

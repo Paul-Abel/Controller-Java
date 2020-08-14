@@ -17,16 +17,19 @@
 
     <item android:title="@string/receiver"
         android:id="@+id/toolbar_receiver"
-        app:showAsAction="always"
+        app:showAsAction="never"
         android:icon="@drawable/toolbar_icon_receiver"/>
 
     <item android:title="@string/led_cupboard"
         android:id="@+id/toolbar_led_cupboard"
-        app:showAsAction="never"
+        app:showAsAction="always"
         android:icon="@drawable/toolbar_icon_led_cupboard" />
 
     <item android:id="@+id/toolbar_room_light"
         android:title="@string/room_light"
         app:showAsAction="never"/>
 
+    <item android:id="@+id/toolbar_table_ventilator"
+        android:title="@string/table_ventilator"
+        app:showAsAction="never"/>
 </menu>

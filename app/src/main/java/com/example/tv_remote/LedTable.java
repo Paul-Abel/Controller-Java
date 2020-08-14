@@ -19,7 +19,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 @RequiresApi(api = Build.VERSION_CODES.M)
-public class  LedTable extends AppCompatActivity {
+public class  LedTable extends ToolbarActivity {
 
     private float x1;
     private Toolbar toolbar;
@@ -199,13 +199,6 @@ public class  LedTable extends AppCompatActivity {
         toolbar();
     }
 
-    @Override   //Insert toolbar layout
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.toolbar, menu);
-        return true;
-    }
-
     public boolean onTouchEvent(MotionEvent touchEvent){
         float x2;
         switch(touchEvent.getAction()){
@@ -219,35 +212,14 @@ public class  LedTable extends AppCompatActivity {
                     startActivity(television);
                     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 }
+                else if(x1 < x2){
+                    Intent LedCupboard = new Intent(this, LedCupboard.class);
+                    startActivity(LedCupboard);
+                    overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+                }
                 break;
         }
         return false;
-    }
-
-    @Override   //Navigation
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.toolbar_television:
-                Intent television = new Intent(this, MainActivity.class);
-                startActivity(television);
-                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                return true;
-            case R.id.toolbar_receiver:
-                Intent receiver = new Intent(this, Receiver.class);
-                startActivity(receiver);
-                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                return true;
-            case R.id.toolbar_led_cupboard:
-                Intent Led_cupboard = new Intent(this, LedCupboard.class);
-                startActivity(Led_cupboard);
-                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                return true;
-            case R.id.toolbar_room_light:
-                Toast.makeText(getApplicationContext(), "Button not at work", Toast.LENGTH_SHORT).show();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
     }
 
     private void toolbar(){  //Insert Toolbar
@@ -262,6 +234,6 @@ public class  LedTable extends AppCompatActivity {
     }
 
     private void sendInfrared(String infrared){
-        new InternetConnection().execute(infrared,"192.168.2.122");
+        new InternetConnection().execute(infrared,"192.168.2.101");
     }
 }
