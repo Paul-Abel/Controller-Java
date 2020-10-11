@@ -49,4 +49,28 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.9" />
 
+    <Button
+        android:id="@+id/switchToLEDCupboard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ledStringCubpboard"
+        app:layout_constraintBottom_toTopOf="@+id/cupboard_on"
+        app:layout_constraintEnd_toEndOf="@+id/colour_pick"
+        app:layout_constraintHorizontal_bias="0.201"
+        app:layout_constraintStart_toStartOf="@+id/colour_pick"
+        app:layout_constraintTop_toTopOf="@+id/colour_pick"
+        app:layout_constraintVertical_bias="0.148" />
+
+    <Button
+        android:id="@+id/switchToLEDString"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ledStringTable"
+        app:layout_constraintBottom_toTopOf="@+id/cupboard_off"
+        app:layout_constraintEnd_toEndOf="@+id/colour_pick"
+        app:layout_constraintHorizontal_bias="0.801"
+        app:layout_constraintStart_toStartOf="@+id/colour_pick"
+        app:layout_constraintTop_toTopOf="@+id/colour_pick"
+        app:layout_constraintVertical_bias="0.148" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

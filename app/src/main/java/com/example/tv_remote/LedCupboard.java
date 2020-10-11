@@ -1,29 +1,24 @@
 package com.example.tv_remote;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 public class LedCupboard extends ToolbarActivity {
 
     private float x1;
     private ImageView colour_pick;
     private Bitmap bitmap;
+    private String currentID = "192.168.2.125";
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
@@ -42,6 +37,8 @@ public class LedCupboard extends ToolbarActivity {
 
         Button cupboard_on = findViewById(R.id.cupboard_on);
         Button cupboard_off = findViewById(R.id.cupboard_off);
+        Button switchToLED = findViewById(R.id.switchToLEDString);
+        Button switchToCupboard = findViewById(R.id.switchToLEDCupboard);
 
         colour_pick.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -71,6 +68,20 @@ public class LedCupboard extends ToolbarActivity {
             public void onClick(View v){
                 showButtonClicked();
                 sendInfrared("00000000X");
+            }
+        });
+        switchToCupboard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showButtonClicked();
+                currentID = "192.168.2.125";
+            }
+        });
+        switchToLED.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showButtonClicked();
+                currentID = "192.168.2.161";
             }
         });
 
@@ -113,6 +124,6 @@ public class LedCupboard extends ToolbarActivity {
     }
 
     private void sendInfrared(String infrared) {
-        new InternetConnection().execute(infrared, "192.168.2.125");    //new one ending 138 old ending 125
+        new InternetConnection().execute(infrared, currentID);    //125
     }
 }

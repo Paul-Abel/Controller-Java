@@ -9,6 +9,7 @@
     <string name="room_light">Room-Light ON/OFF</string>
     <string name="tv_fire_tv">FireTV</string>
     <string name="table_ventilator">Table-Ventilator ON/OFF</string>
+    <string name="pc_energyConservation">PC Power Saving Mode</string>
 
     //led table
     <string name="on">On</string>
@@ -71,6 +72,10 @@
     <string name="television_play">play</string>
     <string name="television_stop">stop</string>
     <string name="television_record">record</string>
+
+    //led strings
+    <string name="ledStringCubpboard">Cupboard</string>
+    <string name="ledStringTable">LED</string>
 
     //image Description
     <string name="image_desc_colours">Contains multiple colours u can pick</string>

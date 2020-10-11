@@ -1,14 +1,9 @@
 package com.example.tv_remote;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
@@ -30,7 +25,7 @@ private float x1,y1;
         toolbar.setTitle(R.string.television);
 
         Button tv_on_off = findViewById(R.id.tv_remote_on_off);
-        Button tv_silence = findViewById(R.id.tv_remote_quiet);
+        Button tv_mute = findViewById(R.id.tv_remote_quiet);
         Button tv_0 = findViewById(R.id.tv_remote_0);
         Button tv_1 = findViewById(R.id.tv_remote_1);
         Button tv_2 = findViewById(R.id.tv_remote_2);
@@ -64,7 +59,7 @@ private float x1,y1;
                 sendInfrared("3772839943X");
             }
         });
-        tv_silence.setOnClickListener(new View.OnClickListener()
+        tv_mute.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
                 showButtonClicked();
@@ -193,7 +188,7 @@ private float x1,y1;
         tv_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                secondPage();
+                Toast.makeText(getApplicationContext(), "Buttom 'Next' isn't working!", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -211,31 +206,29 @@ private float x1,y1;
             case MotionEvent.ACTION_UP:
                 x2 = touchEvent.getX();
                 y2 = touchEvent.getY();
-                if(x1 < x2 && (y1-y2)*2 < (x2-x1) && (-2*(y1-y2) < (x2-x1))){
+                if(x1 < x2 && (y1-y2)*4 < (x2-x1) && (-4*(y1-y2) < (x2-x1))){
                     Intent led = new Intent(this, LedTable.class);
                     startActivity(led);
                     overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
                 }
-                else if(x1 > x2 && (y1-y2)*2 < (x1-x2) && (-2*(y2-y1) < (x1-x2))){
+                else if(x1 > x2 && (y1-y2)*4 < (x1-x2) && (-4*(y2-y1) < (x1-x2))){
                     Intent receiver = new Intent(this, LedCupboard.class);
                     startActivity(receiver);
                     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 }
                 else if(y1 > y2){
-                    secondPage();
+                    Intent tv_remote2 = new Intent(this, TVRemote2.class);
+                    startActivity(tv_remote2);
+                    overridePendingTransition(R.anim.slide_in_bottom, R.anim.slide_out_top);
                 }
                 else if(y1 < y2){
-                    secondPage();
+                    Intent tv_remote2 = new Intent(this, TVRemote2.class);
+                    startActivity(tv_remote2);
+                    overridePendingTransition(R.anim.slide_in_top, R.anim.slide_out_bottom);
                 }
                 break;
         }
         return false;
-    }
-
-    private void secondPage(){
-        Intent tv_remote2 = new Intent(this, TVRemote2.class);
-        startActivity(tv_remote2);
-        overridePendingTransition(R.anim.slide_in_bottom, R.anim.slide_out_top);
     }
 
     private void toolbar(){  //Insert Toolbar
@@ -251,6 +244,6 @@ private float x1,y1;
     }
 
     private void sendInfrared(String infrared){
-        new InternetConnection().execute(infrared, "192.168.2.102");
+        new InternetConnection().execute(infrared, "192.168.2.102");    //102
     }
 }

@@ -43,12 +43,17 @@ public class ToolbarActivity extends AppCompatActivity{
             case R.id.toolbar_room_light:
                 Toast.makeText(getApplicationContext(), "light on/off", Toast.LENGTH_SHORT).show();
                 InternetConnection a = new InternetConnection();
-                a.execute("16111111X","192.168.2.102");
+                a.execute("-555X","192.168.2.154");
                 return true;
             case R.id.toolbar_table_ventilator:
                 Toast.makeText(getApplicationContext(), "Ventilator on/off", Toast.LENGTH_SHORT).show();
                 InternetConnection b = new InternetConnection();
-                b.execute("300X","192.168.2.101");
+                b.execute("300X","192.168.2.101");  //normaly 300X 192.168.2.101 just testing partyCube with 16753245
+                return true;
+            case R.id.toolbar_pc_energyConservation:
+                Toast.makeText(getApplicationContext(), "PC get in power saving  mode.", Toast.LENGTH_SHORT).show();
+                InternetConnection c = new InternetConnection();
+                c.execute("powerSavingModeX","192.168.2.102");
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

@@ -1,20 +1,14 @@
 package com.example.tv_remote;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.Button;
-import android.widget.Toast;
 
 public class TVRemote2 extends ToolbarActivity {
 
@@ -169,28 +163,26 @@ public class TVRemote2 extends ToolbarActivity {
             case MotionEvent.ACTION_UP:
                 x2 = touchEvent.getX();
                 y2 = touchEvent.getY();
-                if (x1 < x2 && (y2 - y1) * 2 < (x2 - x1) && (-2 * (y1 - y2) < (x2 - x1))) {
+                if (x1 < x2 && (y2 - y1) * 4 < (x2 - x1) && (-4 * (y1 - y2) < (x2 - x1))) {
                     Intent led = new Intent(this, LedTable.class);
                     startActivity(led);
                     overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
-                } else if (x1 > x2 && (y2 - y1) * 2 < (x1 - x2) && (-2 * (y2 - y1) < (x1 - x2))) {
+                } else if (x1 > x2 && (y2 - y1) * 4 < (x1 - x2) && (-4 * (y2 - y1) < (x1 - x2))) {
                     Intent receiver = new Intent(this, LedCupboard.class);
                     startActivity(receiver);
                     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 } else if (y1 < y2) {
-                    firstPage();
+                    Intent television = new Intent(this, MainActivity.class);
+                    startActivity(television);
+                    overridePendingTransition(R.anim.slide_in_top, R.anim.slide_out_bottom);
                 } else if (y1 > y2) {
-                    firstPage();
+                    Intent television = new Intent(this, MainActivity.class);
+                    startActivity(television);
+                    overridePendingTransition(R.anim.slide_in_bottom, R.anim.slide_out_top);
                 }
                 break;
         }
         return false;
-    }
-
-    private void firstPage() {
-        Intent television = new Intent(this, MainActivity.class);
-        startActivity(television);
-        overridePendingTransition(R.anim.slide_in_top, R.anim.slide_out_bottom);
     }
 
     private void toolbar() {  //Insert toolbar
