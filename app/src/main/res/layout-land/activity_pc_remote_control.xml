@@ -7,9 +7,16 @@
     android:background="@mipmap/dark_background"
     tools:context=".pcRemote.pcRemoteControl">
 
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"
+        tools:layout_editor_absoluteX="-52dp"
+        tools:layout_editor_absoluteY="270dp" />
+
     <ImageView
         android:id="@+id/mousePad"
         android:layout_width="421dp"
+        android:layout_marginTop="50dp"
         android:layout_height="match_parent"
         android:contentDescription="@string/imageMousePadDescription"
         android:src="@mipmap/mouse_pad"
@@ -20,8 +27,9 @@
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="250dp"
-        android:layout_height="95dp"
+        android:layout_height="80dp"
         android:orientation="horizontal"
+        android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/mousePad"
         app:layout_constraintTop_toTopOf="parent">
@@ -54,7 +62,7 @@
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="250dp"
-        android:layout_height="95dp"
+        android:layout_height="80dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/mousePad"
@@ -80,7 +88,7 @@
     <LinearLayout
         android:id="@+id/linearLayout4"
         android:layout_width="250dp"
-        android:layout_height="95dp"
+        android:layout_height="80dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/mousePad"
@@ -105,7 +113,7 @@
 
     <LinearLayout
         android:layout_width="250dp"
-        android:layout_height="95dp"
+        android:layout_height="80dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/mousePad"
