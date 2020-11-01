@@ -10,6 +10,7 @@
     <string name="tv_fire_tv">FireTV</string>
     <string name="table_ventilator">Table-Ventilator ON/OFF</string>
     <string name="pc_energyConservation">PC Power Saving Mode</string>
+    <string name="pcRemoteControl">PC</string>
 
     //led table
     <string name="on">On</string>
@@ -26,7 +27,7 @@
     <string name="menu">Menu</string>
     <string name="open">Open</string>
     <string name="control_up">/\\</string>
-    <string name="control_down">V</string>
+    <string name="control_down">\\/</string>
     <string name="control_left">&lt;</string>
     <string name="control_right">&gt;</string>
     <string name="setup">setup</string>
@@ -77,7 +78,30 @@
     <string name="ledStringCubpboard">Cupboard</string>
     <string name="ledStringTable">LED</string>
 
+    //pc remote control
+    <string name="leftClick">left click</string>
+    <string name="rightClick">right click</string>
+    <string name="alertPasswordDialogHintTest">Password</string>
+
+    //activity keyboard
+    <string name="leftArrow">&lt;-</string>
+    <string name="rightArrow">-&gt;</string>
+    <string name="esc">ESC</string>
+    <string name="tab">TAB</string>
+    <string name="enter">ENTER</string>
+    <string name="windows">Win</string>
+    <string name="altF4">alt+F4</string>
+    <string name="winE">Win+e</string>
+    <string name="keyboardHintMessage">Write your message here!</string>
+
+    //music control
+    <string name="startStop">play stop </string>
+
     //image Description
     <string name="image_desc_colours">Contains multiple colours u can pick</string>
+    <string name="title_activity_pc_remote_control">pcRemoteControl</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="imageMousePadDescription">mous pad image</string>
 
 </resources>
