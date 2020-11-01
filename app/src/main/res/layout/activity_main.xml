@@ -278,7 +278,6 @@
                 android:textColor="@color/black"
                 style="?android:attr/buttonBarButtonStyle"/>
         </TableRow>
-
     </TableLayout>
 
     <Button
