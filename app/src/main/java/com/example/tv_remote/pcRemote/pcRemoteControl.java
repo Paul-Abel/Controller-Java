@@ -68,14 +68,14 @@ public class pcRemoteControl extends ToolbarActivity implements View.OnTouchList
             }
         });
 
-        powerSavingMode.setOnClickListener(new View.OnClickListener() {
+        lockScreen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 putSendJSON("CMD","lockScreen");
             }
         });
 
-        lockScreen.setOnClickListener(new View.OnClickListener() {
+        powerSavingMode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openAlertDialog();
