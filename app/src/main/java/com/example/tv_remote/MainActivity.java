@@ -1,7 +1,5 @@
 package com.example.tv_remote;
 
-import androidx.appcompat.widget.Toolbar;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -10,6 +8,8 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.Toast;
+
+import androidx.appcompat.widget.Toolbar;
 
 public class MainActivity extends ToolbarActivity {
 
@@ -50,139 +50,139 @@ private float x1,y1;
         {
             public void onClick(View v){
                 showButtonClicked();
-                sendInfrared("3772793023X");
+                sendInfrared("3772793023");
             }
         });
         tv_info.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 showButtonClicked();
-                sendInfrared("3772839943X");
+                sendInfrared("3772839943");
             }
         });
         tv_mute.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
                 showButtonClicked();
-                sendInfrared("3772837903X");
+                sendInfrared("3772837903");
             }
         });
         tv_0.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
                 showButtonClicked();
-                sendInfrared("3772811383X");
+                sendInfrared("3772811383");
             }
         });
         tv_1.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
                 showButtonClicked();
-                sendInfrared("3772784863X");
+                sendInfrared("3772784863");
             }
         });
         tv_2.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
                 showButtonClicked();
-                sendInfrared("3772817503X");
+                sendInfrared("3772817503");
             }
         });
         tv_3.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
                 showButtonClicked();
-                sendInfrared("3772801183X");
+                sendInfrared("3772801183");
             }
         });
         tv_4.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
                 showButtonClicked();
-                sendInfrared("3772780783X");
+                sendInfrared("3772780783");
             }
         });
         tv_5.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
                 showButtonClicked();
-                sendInfrared("3772813423X");
+                sendInfrared("3772813423");
             }
         });
         tv_6.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
                 showButtonClicked();
-                sendInfrared("3772797103X");
+                sendInfrared("3772797103");
             }
         });
         tv_7.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
                 showButtonClicked();
-                sendInfrared("3772788943X");
+                sendInfrared("3772788943");
             }
         });
         tv_8.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
                 showButtonClicked();
-                sendInfrared("3772821583X");
+                sendInfrared("3772821583");
             }
         });
         tv_9.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
                 showButtonClicked();
-                sendInfrared("3772805263X");
+                sendInfrared("3772805263");
             }
         });
         tv_turn_up_sound.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
                 showButtonClicked();
-                sendInfrared("3772833823X");
+                sendInfrared("3772833823");
             }
         });
         tv_turn_down_sound.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
                 showButtonClicked();
-                sendInfrared("3772829743X");
+                sendInfrared("3772829743");
             }
         });
         tv_up.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
                 showButtonClicked();
-                sendInfrared("3772795063X");
+                sendInfrared("3772795063");
             }
         });
         tv_down.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
                 showButtonClicked();
-                sendInfrared("3772778743X");
+                sendInfrared("3772778743");
             }
         });
         tv_a.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
                 showButtonClicked();
-                sendInfrared("3772790473X");
+                sendInfrared("3772790473");
             }
         });
         tv_pre_ch.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
                 showButtonClicked();
-                sendInfrared("3772827703X");
+                sendInfrared("3772827703");
             }
         });
         tv_return.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
                 showButtonClicked();
-                sendInfrared("3772783333X");
+                sendInfrared("3772783333");
             }
         });
         tv_next.setOnClickListener(new View.OnClickListener() {
@@ -244,6 +244,6 @@ private float x1,y1;
     }
 
     private void sendInfrared(String infrared){
-        new InternetConnection().execute(infrared, "192.168.2.102");    //102
+        new InternetConnection().execute(infrared + "X", "192.168.2.102");    //"X" used as ending signal by esp ,102
     }
 }

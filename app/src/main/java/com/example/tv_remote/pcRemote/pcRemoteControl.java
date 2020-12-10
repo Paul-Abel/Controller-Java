@@ -28,6 +28,8 @@ public class pcRemoteControl extends ToolbarActivity implements View.OnTouchList
     private GestureDetector mGestureDetector;
     private int initX, initY;
     boolean mouseMoved = false, multiTouch = false;
+    public static String currentPcIP = "192.168.2.118";
+    private boolean wLan = true;
 
     @Override
     protected void onPause() {
@@ -56,10 +58,27 @@ public class pcRemoteControl extends ToolbarActivity implements View.OnTouchList
         Button lockScreen = findViewById(R.id.lockScreen);
         Button rightClick = findViewById(R.id.rightClick);
         Button leftClick = findViewById(R.id.leftClick);
-        //Button menu = findViewById(R.id.menu);
+        Button menu = findViewById(R.id.menu);
         Button musicControl = findViewById(R.id.musicControl);
         Button keyboard = findViewById(R.id.keyboard);
-        //Button volume = findViewById(R.id.volume);
+        Button volume = findViewById(R.id.volume);
+
+        volume.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Thread thread = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            WakeOnLan.main();
+                        }catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+                thread.start();
+            }
+        });
 
         shutdown.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,6 +119,22 @@ public class pcRemoteControl extends ToolbarActivity implements View.OnTouchList
             @Override
             public void onClick(View v) {
                 startKeyboardActivity();
+            }
+        });
+
+        menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(wLan){
+                    currentPcIP = "192.168.2.118";
+                    wLan = false;
+                    Toast.makeText(getApplicationContext(), "wLan", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    currentPcIP = "192.168.2.149";
+                    wLan = true;
+                    Toast.makeText(getApplicationContext(), "Lan", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -170,9 +205,9 @@ public class pcRemoteControl extends ToolbarActivity implements View.OnTouchList
         setSupportActionBar(toolbar);
     }
 
-    private void sendInfrared(String textString){
+    public static void sendInfrared(String textString){
         InternetConnection.changeBooleanTrue();
-        new InternetConnection().execute(textString, "192.168.2.149");  //149 when  lan connected, 118 when w-lan
+        new InternetConnection().execute(textString, currentPcIP);  //149 when  lan connected, 118 when w-lan
     }
 
     @Override
@@ -298,4 +333,5 @@ public class pcRemoteControl extends ToolbarActivity implements View.OnTouchList
             Toast.makeText(getApplicationContext(), "password was written down", Toast.LENGTH_SHORT).show();
         }
     }
+
 }

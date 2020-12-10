@@ -53,140 +53,140 @@ public class  LedTable extends ToolbarActivity {
         {
             public void onClick(View v){
                 showButtonClicked();
-                sendInfrared("16753245X");
+                sendInfrared("16753245");
             }
         });
         led_off.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
                 showButtonClicked();
-                sendInfrared("16769565X");
+                sendInfrared("16769565");
             }
         });
         led_red.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showButtonClicked();
-                sendInfrared("16738455X");
+                sendInfrared("16738455");
             }
         });
         led_green.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showButtonClicked();
-                sendInfrared("16750695X");
+                sendInfrared("16750695");
             }
         });
         led_blue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showButtonClicked();
-                sendInfrared("16756815X");
+                sendInfrared("16756815");
             }
         });
         led_light_red.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showButtonClicked();
-                sendInfrared("16724175X");
+                sendInfrared("16724175");
             }
         });
         led_light_green.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showButtonClicked();
-                sendInfrared("16718055X");
+                sendInfrared("16718055");
             }
         });
         led_light_blue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showButtonClicked();
-                sendInfrared("16743045X");
+                sendInfrared("16743045");
             }
         });
         led_brown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showButtonClicked();
-                sendInfrared("16716015X");
+                sendInfrared("16716015");
             }
         });
         led_orange.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showButtonClicked();
-                sendInfrared("16726215X");
+                sendInfrared("16726215");
             }
         });
         led_light_light_blue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showButtonClicked();
-                sendInfrared("16734885X");
+                sendInfrared("16734885");
             }
         });
         led_purple.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showButtonClicked();
-                sendInfrared("16728765X");
+                sendInfrared("16728765");
             }
         });
         led_yellow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showButtonClicked();
-                sendInfrared("16730805X");
+                sendInfrared("16730805");
             }
         });
         led_white.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showButtonClicked();
-                sendInfrared("16732845X");
+                sendInfrared("16732845");
             }
         });
         led_1H24.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showButtonClicked();
-                sendInfrared("16712445X");
+                sendInfrared("16712445");
             }
         });
         led_1H.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showButtonClicked();
-                sendInfrared("16761405X");
+                sendInfrared("16761405");
             }
         });
         led_change.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showButtonClicked();
-                sendInfrared("16720605X");
+                sendInfrared("16720605");
             }
         });
         led_smooth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showButtonClicked();
-                sendInfrared("16769055X");
+                sendInfrared("16769055");
             }
         });
         led_up.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showButtonClicked();
-                sendInfrared("16754775X");
+                sendInfrared("16754775");
             }
         });
         led_down.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showButtonClicked();
-                sendInfrared("16748655X");
+                sendInfrared("16748655");
             }
         });
 
@@ -228,6 +228,6 @@ public class  LedTable extends ToolbarActivity {
     }
 
     private void sendInfrared(String infrared){
-        new InternetConnection().execute(infrared,"192.168.2.101");
+        new InternetConnection().execute(infrared + "X","192.168.2.101");   //"X" used as ending signal by esp
     }
 }

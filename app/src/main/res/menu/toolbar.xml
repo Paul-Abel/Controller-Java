@@ -33,10 +33,6 @@
         android:title="@string/table_ventilator"
         app:showAsAction="never"/>
 
-    <item android:id="@+id/toolbar_pc_energyConservation"
-        android:title="@string/pc_energyConservation"
-        app:showAsAction="never"/>
-
     <item android:id="@+id/toolbar_pc_remoteControl"
         android:title="@string/pcRemoteControl"
         app:showAsAction="never"/>

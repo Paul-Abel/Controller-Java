@@ -135,7 +135,7 @@ public class Keyboard extends AppCompatActivity {
         try {
             computerMessage.put("action", action);
             computerMessage.put("message", message);
-            sendInfrared(computerMessage.toString());
+            pcRemoteControl.sendInfrared(computerMessage.toString());
         } catch (JSONException ex) {
             ex.printStackTrace();
         }
@@ -145,14 +145,9 @@ public class Keyboard extends AppCompatActivity {
         JSONObject computerMessage = new JSONObject();
         try {
             computerMessage.put("action", action);
-            sendInfrared(computerMessage.toString());
+            pcRemoteControl.sendInfrared(computerMessage.toString());
         } catch (JSONException ex) {
             ex.printStackTrace();
         }
-    }
-
-    private void sendInfrared(String textString){
-        InternetConnection.changeBooleanTrue();
-        new InternetConnection().execute(textString, "192.168.2.149");  //149 when lan connected, 118 whe w-lan
     }
 }

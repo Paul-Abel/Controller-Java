@@ -45,112 +45,112 @@ public class Receiver extends ToolbarActivity {
         {
             public void onClick(View v){
                 showButtonClicked();
-                sendInfrared("2724022455X");
+                sendInfrared("2724022455");
             }
         });
         receiver_menu.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
                 showButtonClicked();
-                sendInfrared("2724012510X");
+                sendInfrared("2724012510");
             }
         });
         receiver_open.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
                 showButtonClicked();
-                sendInfrared("2724048720X");
+                sendInfrared("2724048720");
             }
         });
         receiver_up.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
                 showButtonClicked();
-                sendInfrared("2724004350X");
+                sendInfrared("2724004350");
             }
         });
         receiver_left.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
                 showButtonClicked();
-                sendInfrared("2724039285X");
+                sendInfrared("2724039285");
             }
         });
         receiver_ok.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
                 showButtonClicked();
-                sendInfrared("2724037755X");
+                sendInfrared("2724037755");
             }
         });
         receiver_right.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
                 showButtonClicked();
-                sendInfrared("2724049485X");
+                sendInfrared("2724049485");
             }
         });
         receiver_down.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
                 showButtonClicked();
-                sendInfrared("2724036990X");
+                sendInfrared("2724036990");
             }
         });
         receiver_setup.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
                 showButtonClicked();
-                sendInfrared("2724005115X");
+                sendInfrared("2724005115");
             }
         });
         receiver_back.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
                 showButtonClicked();
-                sendInfrared("2724021435X");
+                sendInfrared("2724021435");
             }
         });
         receiver_backward.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
                 showButtonClicked();
-                sendInfrared("2724042855X");
+                sendInfrared("2724042855");
             }
         });
         receiver_play_pause.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
                 showButtonClicked();
-                sendInfrared("2724046935X");
+                sendInfrared("2724046935");
             }
         });
         receiver_forward.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
                 showButtonClicked();
-                sendInfrared("2724055095X");
+                sendInfrared("2724055095");
             }
         });
         receiver_previous.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
                 showButtonClicked();
-                sendInfrared("2724054075X");
+                sendInfrared("2724054075");
             }
         });
         receiver_stop.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
                 showButtonClicked();
-                sendInfrared("2724014295X");
+                sendInfrared("2724014295");
             }
         });
         receiver_next.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
                 showButtonClicked();
-                sendInfrared("2724013275X");
+                sendInfrared("2724013275");
             }
         });
 
@@ -193,6 +193,6 @@ public class Receiver extends ToolbarActivity {
     }
 
     private void sendInfrared(String infrared){
-        new InternetConnection().execute(infrared, "192.168.2.102");
+        new InternetConnection().execute(infrared + "X", "192.168.2.102");  //"X" used as ending signal by esp ,102
     }
 }

@@ -19,7 +19,7 @@
         android:layout_marginTop="50dp"
         android:layout_height="match_parent"
         android:contentDescription="@string/imageMousePadDescription"
-        android:src="@mipmap/mouse_pad"
+        android:src="@mipmap/mouse"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="VectorDrawableCompat" />
@@ -40,6 +40,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text=""
+            android:background="@mipmap/onoff"
             tools:ignore="ButtonStyle" />
 
         <Button
@@ -47,6 +48,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@mipmap/zzz"
+            android:backgroundTint="@color/light_blue"
             android:text=""
             tools:ignore="ButtonStyle" />
 
@@ -55,6 +58,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@mipmap/lock"
             android:text=""
             tools:ignore="ButtonStyle" />
     </LinearLayout>
@@ -73,6 +77,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/ic_pc_menu"
+            android:backgroundTint="@color/light_blue"
             android:text=""
             tools:ignore="ButtonStyle" />
 
@@ -81,6 +87,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@mipmap/sound"
             android:text=""
             tools:ignore="ButtonStyle" />
     </LinearLayout>
@@ -99,6 +106,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@mipmap/music"
+            android:backgroundTint="@color/light_blue"
             android:text=""
             tools:ignore="ButtonStyle" />
 
@@ -107,6 +116,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@mipmap/keyboard"
             android:text=""
             tools:ignore="ButtonStyle" />
     </LinearLayout>

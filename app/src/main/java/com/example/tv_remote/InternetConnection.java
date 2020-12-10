@@ -2,7 +2,6 @@ package com.example.tv_remote;
 
 import android.os.AsyncTask;
 import android.util.Log;
-import android.widget.Toast;
 
 import java.io.DataOutputStream;
 import java.io.IOException;

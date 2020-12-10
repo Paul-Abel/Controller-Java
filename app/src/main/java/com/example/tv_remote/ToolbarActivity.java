@@ -52,12 +52,6 @@ public class ToolbarActivity extends AppCompatActivity{
                 InternetConnection b = new InternetConnection();
                 b.execute("300X","192.168.2.101");  //normaly 300X 192.168.2.101 just testing partyCube with 16753245
                 return true;
-            case R.id.toolbar_pc_energyConservation:
-                Toast.makeText(getApplicationContext(), "PC get in power saving  mode.", Toast.LENGTH_SHORT).show();
-                InternetConnection.changeBooleanFalse();
-                InternetConnection c = new InternetConnection();
-                c.execute("powerSavingModeX","192.168.2.102");
-                return true;
             case R.id.toolbar_pc_remoteControl:
                 Intent pcRemoteControl = new Intent(this, com.example.tv_remote.pcRemote.pcRemoteControl.class);
                 startActivity(pcRemoteControl);

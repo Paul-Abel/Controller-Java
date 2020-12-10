@@ -48,7 +48,7 @@ public class LedCupboard extends ToolbarActivity {
                     int pixel = bitmap.getPixel((int)event.getX(), (int)event.getY());
                     if(pixel != 0) {
                         showButtonClicked();
-                        String html = Integer.toHexString(pixel) + "X";
+                        String html = Integer.toHexString(pixel);
                         sendInfrared(html);
                     }
                 }
@@ -60,14 +60,14 @@ public class LedCupboard extends ToolbarActivity {
         {
             public void onClick(View v){
                 showButtonClicked();
-                sendInfrared("ff057cb9X");
+                sendInfrared("ffa700ff");   //start code blue: ff057cb9 purple: ffa700ff
             }
         });
         cupboard_off.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
                 showButtonClicked();
-                sendInfrared("00000000X");
+                sendInfrared("00000000");
             }
         });
         switchToCupboard.setOnClickListener(new View.OnClickListener() {
@@ -81,7 +81,7 @@ public class LedCupboard extends ToolbarActivity {
             @Override
             public void onClick(View v) {
                 showButtonClicked();
-                currentID = "192.168.2.161";
+                currentID = "192.168.2.143";    //161
             }
         });
 
@@ -124,6 +124,6 @@ public class LedCupboard extends ToolbarActivity {
     }
 
     private void sendInfrared(String infrared) {
-        new InternetConnection().execute(infrared, currentID);    //125
+        new InternetConnection().execute(infrared + "X", currentID);    //"X" used as ending signal by esp
     }
 }

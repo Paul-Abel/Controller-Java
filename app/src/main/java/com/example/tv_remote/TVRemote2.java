@@ -45,109 +45,109 @@ public class TVRemote2 extends ToolbarActivity {
         tv_menu.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 showButtonClicked();
-                sendInfrared("3772799143X");
+                sendInfrared("3772799143");
             }
         });
         tv_guide.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 showButtonClicked();
-                sendInfrared("3772838413X");
+                sendInfrared("3772838413");
             }
         });
         tv_source.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 showButtonClicked();
-                sendInfrared("3772809343X");
+                sendInfrared("3772809343");
             }
         });
         tv_tools.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 showButtonClicked();
-                sendInfrared("3772830253X");
+                sendInfrared("3772830253");
             }
         });
         tv_return.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 showButtonClicked();
-                sendInfrared("3772783333X");
+                sendInfrared("3772783333");
             }
         });
         tv_forward.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 showButtonClicked();
-                sendInfrared("3772781293X");
+                sendInfrared("3772781293");
             }
         });
         tv_backward.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 showButtonClicked();
-                sendInfrared("3772818013X");
+                sendInfrared("3772818013");
             }
         });
         tv_exit.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 showButtonClicked();
-                sendInfrared("3772822603X");
+                sendInfrared("3772822603");
             }
         });
         tv_break.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 showButtonClicked();
-                sendInfrared("3772797613X");
+                sendInfrared("3772797613");
             }
         });
         tv_play.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 showButtonClicked();
-                sendInfrared("3772834333X");
+                sendInfrared("3772834333");
             }
         });
         tv_stop.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 showButtonClicked();
-                sendInfrared("3772801693X");
+                sendInfrared("3772801693");
             }
         });
         tv_right.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 showButtonClicked();
-                sendInfrared("3772794553X");
+                sendInfrared("3772794553");
             }
         });
         tv_left.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 showButtonClicked();
-                sendInfrared("3772819033X");
+                sendInfrared("3772819033");
             }
         });
         tv_down.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 showButtonClicked();
-                sendInfrared("3772810873X");
+                sendInfrared("3772810873");
             }
         });
         tv_up.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 showButtonClicked();
-                sendInfrared("3772778233X");
+                sendInfrared("3772778233");
             }
         });
         tv_ok.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 showButtonClicked();
-                sendInfrared("3772782313X");
+                sendInfrared("3772782313");
             }
         });
         tv_HDMI.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 showButtonClicked();
-                sendInfrared("3772829998X");
+                sendInfrared("3772829998");
             }
         });
         tv_record.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 showButtonClicked();
-                sendInfrared("3772813933X");
+                sendInfrared("3772813933");
             }
         });
         toolbar();
@@ -198,7 +198,7 @@ public class TVRemote2 extends ToolbarActivity {
     }
 
     private void sendInfrared(String infrared) {
-        new InternetConnection().execute(infrared, "192.168.2.102");
+        new InternetConnection().execute(infrared + "X", "192.168.2.102");    //"X" used as ending signal by esp ,102
     }
 }
 
