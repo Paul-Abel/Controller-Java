@@ -36,4 +36,8 @@
     <item android:id="@+id/toolbar_pc_remoteControl"
         android:title="@string/pcRemoteControl"
         app:showAsAction="never"/>
+
+    <item android:id="@+id/toolbar_alarm_clock"
+        android:title="@string/alarm"
+        app:showAsAction="never"/>
 </menu>

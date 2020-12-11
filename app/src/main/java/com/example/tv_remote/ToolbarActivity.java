@@ -57,6 +57,11 @@ public class ToolbarActivity extends AppCompatActivity{
                 startActivity(pcRemoteControl);
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 return true;
+            case R.id.toolbar_alarm_clock:
+                Intent alarmClock = new Intent(this, AlarmClock.class);
+                startActivity(alarmClock);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }

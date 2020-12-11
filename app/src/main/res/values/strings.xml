@@ -11,6 +11,7 @@
     <string name="table_ventilator">Table-Ventilator ON/OFF</string>
     <string name="pc_energyConservation">PC Power Saving Mode</string>
     <string name="pcRemoteControl">PC</string>
+    <string name="alarm">Alarm</string>
 
     //led table
     <string name="on">On</string>
@@ -102,6 +103,18 @@
     <string name="title_activity_pc_remote_control">pcRemoteControl</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
-    <string name="imageMousePadDescription">mous pad image</string>
+    <string name="imageMousePadDescription">mouse pad image</string>
+
+    //alarm clock
+    <string name="moToFr">Mo to Fr</string>
+    <string name="everyDay">every day</string>
+    <string name="userFrame">user frame</string>
+    <string name="alarms">alarms</string>
+    <string name="saveAlarm">save</string>
+    <string name="M">M</string>
+    <string name="T">T</string>
+    <string name="W">W</string>
+    <string name="F">F</string>
+    <string name="S">S</string>
 
 </resources>

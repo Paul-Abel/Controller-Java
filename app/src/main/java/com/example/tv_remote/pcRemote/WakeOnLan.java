@@ -9,7 +9,7 @@ public class WakeOnLan {
 
     public static void main() {
         String ipStr = "255.255.255.255";   //send broadcast
-        String macStr = "";
+        String macStr = "D4-3D-7E-F5-EC-73";
 
         try {
             byte[] macBytes = getMacBytes(macStr);
@@ -35,7 +35,7 @@ public class WakeOnLan {
         }
 
     }
-    
+
     private static byte[] getMacBytes(String macStr) throws IllegalArgumentException {
         byte[] bytes = new byte[6];
         String[] hex = macStr.split("(\\:|\\-)");   //(\:|\-)
