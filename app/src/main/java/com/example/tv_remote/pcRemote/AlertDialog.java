@@ -15,7 +15,7 @@ public class AlertDialog extends AppCompatDialogFragment {
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(getActivity());
-        ((android.app.AlertDialog.Builder) builder).setTitle("Attention!")
+        builder.setTitle("Attention!")
                 .setMessage("You pushed the button to turn PC into power saving mode! Are you sure about that?")    //Are you sure want to turn PC into power saving mode?"
                 .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
                     @Override
@@ -28,7 +28,7 @@ public class AlertDialog extends AppCompatDialogFragment {
                         listener.onYesClicked();
                     }
                 });
-        return ((android.app.AlertDialog.Builder) builder).create();
+        return builder.create();
     }
 
     public interface AlertDialogListener {

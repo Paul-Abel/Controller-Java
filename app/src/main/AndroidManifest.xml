@@ -14,7 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:targetApi="n">
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".AlarmClockList" />
+        <activity android:name=".AlarmClock" />
         <activity
             android:name=".pcRemote.AlertPasswordDialog"
             tools:ignore="Instantiatable" />
@@ -24,7 +25,7 @@
         <activity android:name=".LedCupboard" />
         <activity android:name=".Receiver" />
         <activity android:name=".LedTable" />
-        <activity android:name=".AlarmClock">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
