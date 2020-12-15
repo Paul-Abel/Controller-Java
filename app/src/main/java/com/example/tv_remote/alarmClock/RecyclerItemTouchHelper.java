@@ -1,6 +1,4 @@
-package com.example.tv_remote;
-
-import androidx.recyclerview.widget.ItemTouchHelper;
+package com.example.tv_remote.alarmClock;
 
 import android.content.DialogInterface;
 import android.graphics.Canvas;
@@ -12,7 +10,10 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.tv_remote.R;
 
 public class RecyclerItemTouchHelper extends ItemTouchHelper.SimpleCallback {
 

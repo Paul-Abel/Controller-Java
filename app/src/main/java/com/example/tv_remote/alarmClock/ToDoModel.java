@@ -1,4 +1,4 @@
-package com.example.tv_remote;
+package com.example.tv_remote.alarmClock;
 
 public class ToDoModel {
     private int id, status;

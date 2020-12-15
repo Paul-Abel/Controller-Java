@@ -1,4 +1,4 @@
-package com.example.tv_remote;
+package com.example.tv_remote.alarmClock;
 
 import android.content.ContentValues;
 import android.content.Context;

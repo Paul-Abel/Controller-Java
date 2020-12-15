@@ -1,4 +1,4 @@
-package com.example.tv_remote;
+package com.example.tv_remote.alarmClock;
 
 import android.app.Activity;
 import android.content.DialogInterface;
@@ -17,6 +17,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 
+import com.example.tv_remote.R;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
 import java.util.Objects;

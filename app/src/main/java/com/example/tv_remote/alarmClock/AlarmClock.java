@@ -1,4 +1,4 @@
-package com.example.tv_remote;
+package com.example.tv_remote.alarmClock;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,10 @@ import android.widget.TableLayout;
 import android.widget.TimePicker;
 
 import androidx.appcompat.widget.Toolbar;
+
+import com.example.tv_remote.InternetConnection;
+import com.example.tv_remote.R;
+import com.example.tv_remote.ToolbarActivity;
 
 public class AlarmClock extends ToolbarActivity {
     private static String time;
@@ -156,7 +160,7 @@ public class AlarmClock extends ToolbarActivity {
                     time = time + ":";
                     for(char i = 0; i < 7; i++){
                         if(checkBoxList[i]){
-                            time += textViewList[i];
+                            time += textViewList[i];    //ich weiß das es doof ist aber sonst müsste nochmal viel umschreiben und das nicht jetzt
                         }
                     }
                 }

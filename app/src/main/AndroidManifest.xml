@@ -14,8 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:targetApi="n">
-        <activity android:name=".AlarmClockList" />
-        <activity android:name=".AlarmClock" />
+        <activity android:name=".alarmClock.AlarmClockList" />
+        <activity android:name=".alarmClock.AlarmClock" />
         <activity
             android:name=".pcRemote.AlertPasswordDialog"
             tools:ignore="Instantiatable" />

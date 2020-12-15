@@ -1,4 +1,4 @@
-package com.example.tv_remote;
+package com.example.tv_remote.alarmClock;
 
 import android.os.Bundle;
 
@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.tv_remote.R;
 
 import java.util.Collections;
 import java.util.List;
