@@ -113,6 +113,7 @@
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
     <string name="imageMousePadDescription">mouse pad image</string>
+    <string name="buchhorchLogo">Is the logo of our friendship group</string>
 
     //alarm clock
     <string name="moToFr">Mo to Fr</string>
@@ -128,7 +129,8 @@
     <string name="save">Save</string>
     <string name="new_task">New Task</string>
 
-    //content descriptions
-    <string name="buchhorchLogo">Is the logo of our friendship group</string>
+    //room light dimming
+    <string name="zeroPercentage">0%</string>
+
 
 </resources>

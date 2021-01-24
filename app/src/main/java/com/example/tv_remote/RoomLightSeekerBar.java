@@ -1,15 +1,17 @@
 package com.example.tv_remote;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.drawerlayout.widget.DrawerLayout;
-
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.SeekBar;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.tv_remote.alarmClock.AlarmClock;
 import com.example.tv_remote.pcRemote.pcRemoteControl;
@@ -20,6 +22,8 @@ public class RoomLightSeekerBar extends ToolbarActivity {
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle actionBarDrawerToggle;
     NavigationView navigationView;
+    private TextView percentageLook;
+    private int currentPercentage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +35,26 @@ public class RoomLightSeekerBar extends ToolbarActivity {
         toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle(R.string.light_dimming);
         setUpToolbar();
+
+        percentageLook = (TextView) findViewById(R.id.textView);
+        SeekBar seekBar = (SeekBar) findViewById(R.id.seekBar);
+
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @SuppressLint("SetTextI18n")
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                percentageLook.setText("" + progress + "%");
+                currentPercentage = progress;
+            }
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+            }
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                String sendString = String.valueOf(currentPercentage);
+                sendInfrared(sendString);
+            }
+        });
 
         toolbar();
 
@@ -85,6 +109,10 @@ public class RoomLightSeekerBar extends ToolbarActivity {
         });
     }
 
+    private void sendInfrared(String infrared){
+        new InternetConnection().execute(infrared + "X", "192.168.2.118");    //change id to the used esp
+    }
+
     private void toolbar(){  //Insert toolbar
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -92,9 +120,9 @@ public class RoomLightSeekerBar extends ToolbarActivity {
 
     public void setUpToolbar() {
         drawerLayout = findViewById(R.id.drawerLayout);
-        Toolbar stoolbar = findViewById(R.id.drawer);
-        setSupportActionBar(stoolbar);
-        actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, stoolbar, R.string.app_name, R.string.app_name);
+        Toolbar secToolbar = findViewById(R.id.drawer);
+        setSupportActionBar(secToolbar);
+        actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, secToolbar, R.string.app_name, R.string.app_name);
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.getDrawerArrowDrawable().setColor(getResources().getColor(R.color.black));
         actionBarDrawerToggle.syncState();
