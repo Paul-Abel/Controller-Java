@@ -1,221 +1,251 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:id="@+id/drawerLayout"
+    android:fitsSystemWindows="true"
+    android:minWidth="19dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:background="@mipmap/dark_background"
     tools:context=".alarmClock.AlarmClock">
 
-    <include
-        android:id="@+id/toolbar"
-        layout="@layout/toolbar"
-        tools:layout_editor_absoluteX="-52dp"
-        tools:layout_editor_absoluteY="270dp"/>
-
-    <TimePicker
-        android:id="@+id/timePicker"
+    <ScrollView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:timePickerMode="clock"
-        android:numbersTextColor="#34ff14"
-        android:numbersSelectorColor="#FF69B4"
-        android:headerBackground="#00000000"
-        android:numbersBackgroundColor="#00000000"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp" />
+        android:layout_height="match_parent">
 
-    <CheckBox
-        android:id="@+id/checkBoxMoToFr"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/moToFr"
-        android:textColor="@color/white"
-        android:background="@drawable/check_box_size"
-        android:layout_marginStart="20dp"
-        android:checked="false"
-        tools:checked="true"
-        app:layout_constraintBottom_toBottomOf="@+id/checkBoxEveryDay"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/checkBoxEveryDay" />
-
-    <CheckBox
-        android:id="@+id/checkBoxEveryDay"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/everyDay"
-        android:textColor="@color/white"
-        android:background="@drawable/check_box_size"
-        android:checked="true"
-        tools:checked="false"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/checkBoxUserFrame"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/checkBoxMoToFr"
-        app:layout_constraintTop_toBottomOf="@+id/timePicker"
-        app:layout_constraintVertical_bias="0" />
-
-    <CheckBox
-        android:id="@+id/checkBoxUserFrame"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/userFrame"
-        android:textColor="@color/white"
-        android:background="@drawable/check_box_size"
-        android:layout_marginEnd="20dp"
-        android:checked="false"
-        tools:checked="true"
-        app:layout_constraintBottom_toBottomOf="@+id/checkBoxEveryDay"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/checkBoxEveryDay" />
-
-    <TableLayout
-        android:id="@+id/xmlHideTable"
-        android:layout_width="250dp"
-        android:layout_height="75dp"
-        android:visibility="invisible"
-        tools:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBoxEveryDay">
-
-        <TableRow
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <CheckBox
-                android:id="@+id/checkBoxMo"
-                android:layout_width="wrap_content"
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/toolbar"
+                tools:layout_editor_absoluteX="-52dp"
+                tools:layout_editor_absoluteY="270dp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TimePicker
+            android:id="@+id/timePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:timePickerMode="clock"
+            android:numbersTextColor="#34ff14"
+            android:numbersSelectorColor="#FF69B4"
+            android:headerBackground="#00000000"
+            android:numbersBackgroundColor="#00000000"
+            android:layout_marginTop="50dp"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <CheckBox
+            android:id="@+id/checkBoxMoToFr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/moToFr"
+            android:textColor="@color/white"
+            android:background="@drawable/check_box_size"
+            android:layout_marginStart="20dp"
+            android:checked="false"
+            tools:checked="true"
+            app:layout_constraintBottom_toBottomOf="@+id/checkBoxEveryDay"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/checkBoxEveryDay" />
+
+        <CheckBox
+            android:id="@+id/checkBoxEveryDay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/everyDay"
+            android:textColor="@color/white"
+            android:background="@drawable/check_box_size"
+            android:checked="true"
+            tools:checked="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/checkBoxUserFrame"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/checkBoxMoToFr"
+            app:layout_constraintTop_toBottomOf="@+id/timePicker"
+            app:layout_constraintVertical_bias="0" />
+
+        <CheckBox
+            android:id="@+id/checkBoxUserFrame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/userFrame"
+            android:textColor="@color/white"
+            android:background="@drawable/check_box_size"
+            android:layout_marginEnd="20dp"
+            android:checked="false"
+            tools:checked="true"
+            app:layout_constraintBottom_toBottomOf="@+id/checkBoxEveryDay"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/checkBoxEveryDay" />
+
+        <TableLayout
+            android:id="@+id/xmlHideTable"
+            android:layout_width="250dp"
+            android:layout_height="75dp"
+            android:visibility="invisible"
+            tools:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/checkBoxEveryDay">
+
+            <TableRow
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                android:layout_weight="1">
 
-            <CheckBox
-                android:id="@+id/checkBoxTu"
-                android:layout_width="wrap_content"
+                <CheckBox
+                    android:id="@+id/checkBoxMo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxTu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxWe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxTh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxFr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxSa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxSu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                android:layout_weight="1">
 
-            <CheckBox
-                android:id="@+id/checkBoxWe"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
+                <TextView
+                    android:id="@+id/monday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/M"
+                    android:textColor="@color/orange" />
 
-            <CheckBox
-                android:id="@+id/checkBoxTh"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
+                <TextView
+                    android:id="@+id/tuesday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/T"
+                    android:textColor="@color/orange" />
 
-            <CheckBox
-                android:id="@+id/checkBoxFr"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
+                <TextView
+                    android:id="@+id/wednesday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/W"
+                    android:textColor="@color/orange" />
 
-            <CheckBox
-                android:id="@+id/checkBoxSa"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
+                <TextView
+                    android:id="@+id/thursday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/T"
+                    android:textColor="@color/orange" />
 
-            <CheckBox
-                android:id="@+id/checkBoxSu"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
-        </TableRow>
+                <TextView
+                    android:id="@+id/friday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/F"
+                    android:textColor="@color/orange" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
+                <TextView
+                    android:id="@+id/saturday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/S"
+                    android:textColor="@color/orange" />
 
-            <TextView
-                android:id="@+id/monday"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="@string/M"
-                android:textColor="@color/orange" />
+                <TextView
+                    android:id="@+id/sunday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/S"
+                    android:textColor="@color/orange" />
+            </TableRow>
 
-            <TextView
-                android:id="@+id/tuesday"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="@string/T"
-                android:textColor="@color/orange" />
+        </TableLayout>
 
-            <TextView
-                android:id="@+id/wednesday"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="@string/W"
-                android:textColor="@color/orange" />
+        <Button
+            android:id="@+id/saveAlarm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/addAlarm"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/xmlHideTable"
+            app:layout_constraintTop_toBottomOf="@+id/xmlHideTable" />
 
-            <TextView
-                android:id="@+id/thursday"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="@string/T"
-                android:textColor="@color/orange" />
+        <Button
+            android:id="@+id/alarms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/alarms"
+            app:layout_constraintBottom_toBottomOf="@+id/saveAlarm"
+            app:layout_constraintEnd_toEndOf="@+id/xmlHideTable"
+            app:layout_constraintTop_toTopOf="@+id/saveAlarm"
+            app:layout_constraintVertical_bias="0.0" />
 
-            <TextView
-                android:id="@+id/friday"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="@string/F"
-                android:textColor="@color/orange" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <TextView
-                android:id="@+id/saturday"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="@string/S"
-                android:textColor="@color/orange" />
-
-            <TextView
-                android:id="@+id/sunday"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="@string/S"
-                android:textColor="@color/orange" />
-        </TableRow>
-
-    </TableLayout>
-
-    <Button
-        android:id="@+id/saveAlarm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/addAlarm"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/xmlHideTable"
-        app:layout_constraintTop_toBottomOf="@+id/xmlHideTable" />
-
-    <Button
-        android:id="@+id/alarms"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/alarms"
-        app:layout_constraintBottom_toBottomOf="@+id/saveAlarm"
-        app:layout_constraintEnd_toEndOf="@+id/xmlHideTable"
-        app:layout_constraintTop_toTopOf="@+id/saveAlarm"
-        app:layout_constraintVertical_bias="0.0" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigation_menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:headerLayout="@layout/header"
+        app:menu="@menu/drawer_menu">
+    </com.google.android.material.navigation.NavigationView>
+</androidx.drawerlayout.widget.DrawerLayout>

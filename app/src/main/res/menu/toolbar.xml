@@ -1,43 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:tools="http://schemas.android.com/tools"
+<menu
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/toolbar_led_table"
-        android:icon="@drawable/toolbar_icon_led_table"
-        android:title="@string/led_table"
-        app:showAsAction="always" />
-
-    <item android:title="@string/television"
-        android:id="@+id/toolbar_television"
-        app:showAsAction="always"
-        android:icon="@drawable/toolbar_icon_television"
-        tools:ignore="AlwaysShowAction" />
-
-    <item android:title="@string/receiver"
-        android:id="@+id/toolbar_receiver"
-        app:showAsAction="never"
-        android:icon="@drawable/toolbar_icon_receiver"/>
-
-    <item android:title="@string/led_cupboard"
-        android:id="@+id/toolbar_led_cupboard"
-        app:showAsAction="always"
-        android:icon="@drawable/toolbar_icon_led_cupboard" />
-
-    <item android:id="@+id/toolbar_room_light"
+        android:id="@+id/toolbar_room_light"
+        android:icon="@drawable/toolbar_ic_led_table"
         android:title="@string/room_light"
-        app:showAsAction="never"/>
+        app:showAsAction="always"/>
 
-    <item android:id="@+id/toolbar_table_ventilator"
-        android:title="@string/table_ventilator"
-        app:showAsAction="never"/>
+    <item
+        android:id="@+id/toolbar_left_page"
+        android:icon="@drawable/toolbar_ic_left"
+        android:title="@string/left_page"
+        app:showAsAction="ifRoom"/>
 
-    <item android:id="@+id/toolbar_pc_remoteControl"
-        android:title="@string/pcRemoteControl"
-        app:showAsAction="never"/>
-
-    <item android:id="@+id/toolbar_alarm_clock"
-        android:title="@string/alarm"
-        app:showAsAction="never"/>
+    <item
+        android:id="@+id/toolbar_right_page"
+        android:icon="@drawable/toolbar_ic_right"
+        android:title="@string/right_page"
+        app:showAsAction="ifRoom"/>
 </menu>

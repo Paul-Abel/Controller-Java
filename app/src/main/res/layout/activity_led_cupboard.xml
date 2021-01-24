@@ -1,76 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:id="@+id/drawerLayout"
+    android:fitsSystemWindows="true"
+    android:minWidth="19dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:background="@mipmap/dark_background"
-    tools:context=".LedCupboard">
+    tools:context=".LedTable">
 
-    <ImageView
-        android:id="@+id/colour_pick"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:contentDescription="@string/image_desc_colours"
-        android:src="@mipmap/colour_pick_background"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        tools:ignore="MissingConstraints" />
-
-    <include
-        android:id="@+id/toolbar"
-        layout="@layout/toolbar"
-        tools:layout_editor_absoluteX="-52dp"
-        tools:layout_editor_absoluteY="270dp" />
-
-    <Button
-        android:id="@+id/cupboard_on"
+    <ScrollView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/on"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.90" />
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/cupboard_off"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/off"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.8"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.9" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <Button
-        android:id="@+id/switchToLEDCupboard"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/ledStringCubpboard"
-        app:layout_constraintBottom_toTopOf="@+id/cupboard_on"
-        app:layout_constraintEnd_toEndOf="@+id/colour_pick"
-        app:layout_constraintHorizontal_bias="0.201"
-        app:layout_constraintStart_toStartOf="@+id/colour_pick"
-        app:layout_constraintTop_toTopOf="@+id/colour_pick"
-        app:layout_constraintVertical_bias="0.148" />
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/toolbar"
+                tools:layout_editor_absoluteX="-52dp"
+                tools:layout_editor_absoluteY="270dp" />
+        </LinearLayout>
+    </ScrollView>
 
-    <Button
-        android:id="@+id/switchToLEDString"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/ledStringTable"
-        app:layout_constraintBottom_toTopOf="@+id/cupboard_off"
-        app:layout_constraintEnd_toEndOf="@+id/colour_pick"
-        app:layout_constraintHorizontal_bias="0.801"
-        app:layout_constraintStart_toStartOf="@+id/colour_pick"
-        app:layout_constraintTop_toTopOf="@+id/colour_pick"
-        app:layout_constraintVertical_bias="0.148" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/colour_pick"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/image_desc_colours"
+            android:src="@mipmap/colour_pick_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/cupboard_on"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/on"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.90" />
+
+        <Button
+            android:id="@+id/cupboard_off"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/off"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.9" />
+
+        <Button
+            android:id="@+id/switchToLEDCupboard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ledStringCubpboard"
+            app:layout_constraintBottom_toTopOf="@+id/cupboard_on"
+            app:layout_constraintEnd_toEndOf="@+id/colour_pick"
+            app:layout_constraintHorizontal_bias="0.201"
+            app:layout_constraintStart_toStartOf="@+id/colour_pick"
+            app:layout_constraintTop_toTopOf="@+id/colour_pick"
+            app:layout_constraintVertical_bias="0.148" />
+
+        <Button
+            android:id="@+id/switchToLEDString"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ledStringTable"
+            app:layout_constraintBottom_toTopOf="@+id/cupboard_off"
+            app:layout_constraintEnd_toEndOf="@+id/colour_pick"
+            app:layout_constraintHorizontal_bias="0.801"
+            app:layout_constraintStart_toStartOf="@+id/colour_pick"
+            app:layout_constraintTop_toTopOf="@+id/colour_pick"
+            app:layout_constraintVertical_bias="0.148" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigation_menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:headerLayout="@layout/header"
+        app:menu="@menu/drawer_menu">
+    </com.google.android.material.navigation.NavigationView>
+</androidx.drawerlayout.widget.DrawerLayout>

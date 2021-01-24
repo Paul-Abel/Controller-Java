@@ -1,363 +1,390 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/layout"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:id="@+id/drawerLayout"
+    android:fitsSystemWindows="true"
+    android:minWidth="19dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:background="@mipmap/dark_background"
     tools:context=".MainActivity">
 
-    <androidx.constraintlayout.widget.Guideline
+    <ScrollView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/first_column"
-        app:layout_constraintGuide_percent=".10"
-        android:orientation="vertical"/>
+        android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/second_column"
-        app:layout_constraintGuide_percent=".366666666666666"
-        android:orientation="vertical"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/third_column"
-        app:layout_constraintGuide_percent=".63333333333333"
-        android:orientation="vertical"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/fourth_column"
-        app:layout_constraintGuide_percent=".90"
-        android:orientation="vertical"/>
-
-    <!--Start horizontal-->
-    <androidx.constraintlayout.widget.Guideline
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/first_row"
-        app:layout_constraintGuide_percent=".10"
-        android:orientation="horizontal"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/first_five_row"
-        app:layout_constraintGuide_percent=".11"
-        android:orientation="horizontal"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/second_row"
-        app:layout_constraintGuide_percent=".21"
-        android:orientation="horizontal"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/third_row"
-        app:layout_constraintGuide_percent=".25"
-        android:orientation="horizontal"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/fourth_row"
-        app:layout_constraintGuide_percent=".65"
-        android:orientation="horizontal"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/fifth_row"
-        app:layout_constraintGuide_percent=".73"
-        android:orientation="horizontal"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/sixth_row"
-        app:layout_constraintGuide_percent=".83"
-        android:orientation="horizontal"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/seventh_row"
-        app:layout_constraintGuide_percent=".85"
-        android:orientation="horizontal"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/eighth_row"
-        app:layout_constraintGuide_percent="0.95"
-        android:orientation="horizontal"/>
-
-
-    <Button
-        android:id="@+id/tv_remote_on_off"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:background="@mipmap/on_off"
-        android:layout_marginStart="13dp"
-        app:layout_constraintLeft_toLeftOf="@+id/first_column"
-        app:layout_constraintTop_toTopOf="@+id/first_row" />
-
-    <Button
-        android:id="@+id/tv_remote_quiet"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/receiver_rectangle_gray"
-        android:drawableTop="@drawable/ic_volume_off"
-        app:layout_constraintBottom_toBottomOf="@+id/second_row"
-        app:layout_constraintLeft_toLeftOf="@+id/second_column"
-        app:layout_constraintRight_toRightOf="@+id/third_column"
-        app:layout_constraintTop_toTopOf="@+id/first_five_row" />
-
-    <Button
-        android:id="@+id/tv_remote_info"
-        android:layout_width="92dp"
-        android:layout_height="86dp"
-        android:background="@mipmap/info"
-        android:layout_marginStart="0dp"
-        app:layout_constraintRight_toRightOf="@+id/fourth_column"
-        app:layout_constraintTop_toTopOf="@+id/first_row"
-        />
-
-    <TableLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/fourth_row"
-        app:layout_constraintLeft_toLeftOf="@+id/first_column"
-        app:layout_constraintRight_toRightOf="@+id/fourth_column"
-        app:layout_constraintTop_toTopOf="@+id/third_row">
-
-        <TableRow
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <Button
-                android:id="@+id/tv_remote_1"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="@string/television_taster_1"
-                android:textSize="20sp"
-                style="?android:attr/buttonBarButtonStyle"/>
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/toolbar"
+                tools:layout_editor_absoluteX="-52dp"
+                tools:layout_editor_absoluteY="270dp" />
+        </LinearLayout>
+    </ScrollView>
 
-            <Button
-                android:id="@+id/tv_remote_2"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="@string/television_taster_2"
-                android:textSize="20sp"
-                style="?android:attr/buttonBarButtonStyle"/>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-            <Button
-                android:id="@+id/tv_remote_3"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="@string/television_taster_3"
-                android:textSize="20sp"
-                style="?android:attr/buttonBarButtonStyle"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/first_column"
+            app:layout_constraintGuide_percent=".10"
+            android:orientation="vertical"/>
 
-        </TableRow>
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/second_column"
+            app:layout_constraintGuide_percent=".366666666666666"
+            android:orientation="vertical"/>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/third_column"
+            app:layout_constraintGuide_percent=".63333333333333"
+            android:orientation="vertical"/>
 
-            <Button
-                android:id="@+id/tv_remote_4"
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/fourth_column"
+            app:layout_constraintGuide_percent=".90"
+            android:orientation="vertical"/>
+
+        <!--Start horizontal-->
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/first_row"
+            app:layout_constraintGuide_percent=".10"
+            android:orientation="horizontal"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/first_five_row"
+            app:layout_constraintGuide_percent=".11"
+            android:orientation="horizontal"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/second_row"
+            app:layout_constraintGuide_percent=".21"
+            android:orientation="horizontal"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/third_row"
+            app:layout_constraintGuide_percent=".25"
+            android:orientation="horizontal"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/fourth_row"
+            app:layout_constraintGuide_percent=".65"
+            android:orientation="horizontal"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/fifth_row"
+            app:layout_constraintGuide_percent=".73"
+            android:orientation="horizontal"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/sixth_row"
+            app:layout_constraintGuide_percent=".83"
+            android:orientation="horizontal"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/seventh_row"
+            app:layout_constraintGuide_percent=".85"
+            android:orientation="horizontal"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/eighth_row"
+            app:layout_constraintGuide_percent="0.95"
+            android:orientation="horizontal"/>
+
+
+        <Button
+            android:id="@+id/tv_remote_on_off"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@mipmap/on_off"
+            android:layout_marginStart="13dp"
+            app:layout_constraintLeft_toLeftOf="@+id/first_column"
+            app:layout_constraintTop_toTopOf="@+id/first_row" />
+
+        <Button
+            android:id="@+id/tv_remote_quiet"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/receiver_rectangle_gray"
+            android:drawableTop="@drawable/ic_volume_off"
+            app:layout_constraintBottom_toBottomOf="@+id/second_row"
+            app:layout_constraintLeft_toLeftOf="@+id/second_column"
+            app:layout_constraintRight_toRightOf="@+id/third_column"
+            app:layout_constraintTop_toTopOf="@+id/first_five_row" />
+
+        <Button
+            android:id="@+id/tv_remote_info"
+            android:layout_width="92dp"
+            android:layout_height="86dp"
+            android:background="@mipmap/info"
+            android:layout_marginStart="0dp"
+            app:layout_constraintRight_toRightOf="@+id/fourth_column"
+            app:layout_constraintTop_toTopOf="@+id/first_row"
+            />
+
+        <TableLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/fourth_row"
+            app:layout_constraintLeft_toLeftOf="@+id/first_column"
+            app:layout_constraintRight_toRightOf="@+id/fourth_column"
+            app:layout_constraintTop_toTopOf="@+id/third_row">
+
+            <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="@string/television_taster_4"
-                android:textSize="20sp"
-                style="?android:attr/buttonBarButtonStyle"/>
+                android:layout_weight="1">
 
-            <Button
-                android:id="@+id/tv_remote_5"
+                <Button
+                    android:id="@+id/tv_remote_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/television_taster_1"
+                    android:textSize="20sp"
+                    style="?android:attr/buttonBarButtonStyle"/>
+
+                <Button
+                    android:id="@+id/tv_remote_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/television_taster_2"
+                    android:textSize="20sp"
+                    style="?android:attr/buttonBarButtonStyle"/>
+
+                <Button
+                    android:id="@+id/tv_remote_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/television_taster_3"
+                    android:textSize="20sp"
+                    style="?android:attr/buttonBarButtonStyle"/>
+
+            </TableRow>
+
+            <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="@string/television_taster_5"
-                android:textSize="20sp"
-                style="?android:attr/buttonBarButtonStyle"/>
+                android:layout_weight="1">
 
-            <Button
-                android:id="@+id/tv_remote_6"
+                <Button
+                    android:id="@+id/tv_remote_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/television_taster_4"
+                    android:textSize="20sp"
+                    style="?android:attr/buttonBarButtonStyle"/>
+
+                <Button
+                    android:id="@+id/tv_remote_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/television_taster_5"
+                    android:textSize="20sp"
+                    style="?android:attr/buttonBarButtonStyle"/>
+
+                <Button
+                    android:id="@+id/tv_remote_6"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/television_taster_6"
+                    android:textSize="20sp"
+                    style="?android:attr/buttonBarButtonStyle"/>
+
+            </TableRow>
+
+            <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="@string/television_taster_6"
-                android:textSize="20sp"
-                style="?android:attr/buttonBarButtonStyle"/>
+                android:layout_weight="1">
 
-        </TableRow>
+                <Button
+                    android:id="@+id/tv_remote_7"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/television_taster_7"
+                    android:textSize="20sp"
+                    style="?android:attr/buttonBarButtonStyle"/>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
+                <Button
+                    android:id="@+id/tv_remote_8"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/television_taster_8"
+                    android:textSize="20sp"
+                    style="?android:attr/buttonBarButtonStyle"/>
 
-            <Button
-                android:id="@+id/tv_remote_7"
+                <Button
+                    android:id="@+id/tv_remote_9"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/television_taster_9"
+                    android:textSize="20sp"
+                    style="?android:attr/buttonBarButtonStyle"/>
+
+            </TableRow>
+
+            <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="@string/television_taster_7"
-                android:textSize="20sp"
-                style="?android:attr/buttonBarButtonStyle"/>
+                android:layout_weight="1">
 
-            <Button
-                android:id="@+id/tv_remote_8"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="@string/television_taster_8"
-                android:textSize="20sp"
-                style="?android:attr/buttonBarButtonStyle"/>
+                <Button
+                    android:id="@+id/tv_remote_return"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/receiver_rectangle_gray"
+                    android:text="@string/television_return"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    style="?android:attr/buttonBarButtonStyle"/>
 
-            <Button
-                android:id="@+id/tv_remote_9"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="@string/television_taster_9"
-                android:textSize="20sp"
-                style="?android:attr/buttonBarButtonStyle"/>
+                <Button
+                    android:id="@+id/tv_remote_0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/television_taster_0"
+                    android:textSize="20sp"
+                    style="?android:attr/buttonBarButtonStyle"/>
 
-        </TableRow>
+                <Button
+                    android:id="@+id/tv_remote_pre_ch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/receiver_rectangle_gray"
+                    android:text="@string/television_pre_ch"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    style="?android:attr/buttonBarButtonStyle"/>
+            </TableRow>
+        </TableLayout>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
+        <Button
+            android:id="@+id/tv_remote_up"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/receiver_rectangle_gray"
+            android:text="@string/television_up"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/sixth_row"
+            app:layout_constraintLeft_toLeftOf="@+id/third_column"
+            app:layout_constraintRight_toRightOf="@+id/fourth_column"
+            app:layout_constraintTop_toTopOf="@+id/fifth_row" />
 
-            <Button
-                android:id="@+id/tv_remote_return"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@drawable/receiver_rectangle_gray"
-                android:text="@string/television_return"
-                android:textSize="20sp"
-                android:textColor="@color/black"
-                style="?android:attr/buttonBarButtonStyle"/>
+        <Button
+            android:id="@+id/tv_remote_down"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/receiver_rectangle_gray"
+            android:text="@string/television_down"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/eighth_row"
+            app:layout_constraintLeft_toLeftOf="@+id/third_column"
+            app:layout_constraintRight_toRightOf="@+id/fourth_column"
+            app:layout_constraintTop_toTopOf="@+id/seventh_row" />
 
-            <Button
-                android:id="@+id/tv_remote_0"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="@string/television_taster_0"
-                android:textSize="20sp"
-                style="?android:attr/buttonBarButtonStyle"/>
+        <Button
+            android:id="@+id/tv_remote_next"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/receiver_rectangle_gray"
+            android:text="@string/television_next"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/eighth_row"
+            app:layout_constraintLeft_toLeftOf="@+id/second_column"
+            app:layout_constraintRight_toRightOf="@+id/third_column"
+            app:layout_constraintTop_toTopOf="@+id/seventh_row" />
 
-            <Button
-                android:id="@+id/tv_remote_pre_ch"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@drawable/receiver_rectangle_gray"
-                android:text="@string/television_pre_ch"
-                android:textSize="20sp"
-                android:textColor="@color/black"
-                style="?android:attr/buttonBarButtonStyle"/>
-        </TableRow>
-    </TableLayout>
+        <Button
+            android:id="@+id/tv_remote_a"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/tv_rectangle_red"
+            android:text="@string/television_a"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/sixth_row"
+            app:layout_constraintLeft_toLeftOf="@+id/second_column"
+            app:layout_constraintRight_toRightOf="@+id/third_column"
+            app:layout_constraintTop_toTopOf="@+id/fifth_row" />
 
-    <Button
-        android:id="@+id/tv_remote_up"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/receiver_rectangle_gray"
-        android:text="@string/television_up"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/sixth_row"
-        app:layout_constraintLeft_toLeftOf="@+id/third_column"
-        app:layout_constraintRight_toRightOf="@+id/fourth_column"
-        app:layout_constraintTop_toTopOf="@+id/fifth_row" />
+        <Button
+            android:id="@+id/tv_remote_turn_up_sound"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/receiver_rectangle_gray"
+            android:text="@string/television_turn_up_sound"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="@+id/sixth_row"
+            app:layout_constraintLeft_toLeftOf="@+id/first_column"
+            app:layout_constraintRight_toRightOf="@+id/second_column"
+            app:layout_constraintTop_toTopOf="@+id/fifth_row" />
 
-    <Button
-        android:id="@+id/tv_remote_down"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/receiver_rectangle_gray"
-        android:text="@string/television_down"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/eighth_row"
-        app:layout_constraintLeft_toLeftOf="@+id/third_column"
-        app:layout_constraintRight_toRightOf="@+id/fourth_column"
-        app:layout_constraintTop_toTopOf="@+id/seventh_row" />
+        <Button
+            android:id="@+id/tv_remote_quiet_sound"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/receiver_rectangle_gray"
+            android:text="@string/television_turn_down_sound"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="@+id/eighth_row"
+            app:layout_constraintLeft_toLeftOf="@+id/first_column"
+            app:layout_constraintRight_toRightOf="@+id/second_column"
+            app:layout_constraintTop_toTopOf="@+id/seventh_row" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <Button
-        android:id="@+id/tv_remote_next"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/receiver_rectangle_gray"
-        android:text="@string/television_next"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/eighth_row"
-        app:layout_constraintLeft_toLeftOf="@+id/second_column"
-        app:layout_constraintRight_toRightOf="@+id/third_column"
-        app:layout_constraintTop_toTopOf="@+id/seventh_row" />
-
-    <Button
-        android:id="@+id/tv_remote_a"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/tv_rectangle_red"
-        android:text="@string/television_a"
-        android:textSize="20sp"
-        android:textColor="@color/white"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/sixth_row"
-        app:layout_constraintLeft_toLeftOf="@+id/second_column"
-        app:layout_constraintRight_toRightOf="@+id/third_column"
-        app:layout_constraintTop_toTopOf="@+id/fifth_row" />
-
-    <Button
-        android:id="@+id/tv_remote_turn_up_sound"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/receiver_rectangle_gray"
-        android:text="@string/television_turn_up_sound"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="@+id/sixth_row"
-        app:layout_constraintLeft_toLeftOf="@+id/first_column"
-        app:layout_constraintRight_toRightOf="@+id/second_column"
-        app:layout_constraintTop_toTopOf="@+id/fifth_row" />
-
-    <Button
-        android:id="@+id/tv_remote_quiet_sound"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/receiver_rectangle_gray"
-        android:text="@string/television_turn_down_sound"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="@+id/eighth_row"
-        app:layout_constraintLeft_toLeftOf="@+id/first_column"
-        app:layout_constraintRight_toRightOf="@+id/second_column"
-        app:layout_constraintTop_toTopOf="@+id/seventh_row" />
-
-    <include
-        android:id="@+id/toolbar"
-        layout="@layout/toolbar"
-        tools:layout_editor_absoluteX="-52dp"
-        tools:layout_editor_absoluteY="270dp" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigation_menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:headerLayout="@layout/header"
+        app:menu="@menu/drawer_menu">
+    </com.google.android.material.navigation.NavigationView>
+</androidx.drawerlayout.widget.DrawerLayout>

@@ -6,12 +6,21 @@
     <string name="led_table">LED-Table</string>
     <string name="led_cupboard">LED-Cupboard</string>
     <string name="tv_remote2">Television 2</string>
-    <string name="room_light">Room-Light ON/OFF</string>
+    <string name="room_light">Room-Light</string>
     <string name="tv_fire_tv">FireTV</string>
     <string name="table_ventilator">Table-Ventilator ON/OFF</string>
     <string name="pc_energyConservation">PC Power Saving Mode</string>
     <string name="pcRemoteControl">PC</string>
     <string name="alarm">Alarm</string>
+    <string name="left_page">Left Page</string>
+    <string name="right_page">Right Page</string>
+    <string name="light_dimming">Light-Dimming</string>
+
+    //drawer menu
+    <string name="drawerTitle">Smart Home</string>
+    <string name="settings">Settings</string>
+    <!--<string name="share">Share</string>-->
+    <string name="aboutUs">About Us</string>
 
     //led table
     <string name="on">On</string>
@@ -118,5 +127,8 @@
     <string name="S">S</string>
     <string name="save">Save</string>
     <string name="new_task">New Task</string>
+
+    //content descriptions
+    <string name="buchhorchLogo">Is the logo of our friendship group</string>
 
 </resources>

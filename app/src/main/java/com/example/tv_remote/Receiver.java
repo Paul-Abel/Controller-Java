@@ -1,18 +1,26 @@
 package com.example.tv_remote;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MotionEvent;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.Button;
+import android.widget.Toast;
+
+import com.example.tv_remote.alarmClock.AlarmClock;
+import com.example.tv_remote.pcRemote.pcRemoteControl;
+import com.google.android.material.navigation.NavigationView;
 
 public class Receiver extends ToolbarActivity {
 
-    private float x1;
+    NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +31,7 @@ public class Receiver extends ToolbarActivity {
 
         toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle(R.string.receiver);
+        setUpToolbar();
 
         Button receiver_on_off = findViewById(R.id.receiver_on_off);
         Button receiver_menu = findViewById(R.id.receiver_menu);
@@ -155,29 +164,56 @@ public class Receiver extends ToolbarActivity {
         });
 
         toolbar();
-    }
 
-    public boolean onTouchEvent(MotionEvent touchEvent){
-        float x2;
-        switch(touchEvent.getAction()){
-            case MotionEvent.ACTION_DOWN:
-                x1 = touchEvent.getX();
-                break;
-            case MotionEvent.ACTION_UP:
-                x2 = touchEvent.getX();
-                if(x1 < x2){
-                    Intent television = new Intent(this, MainActivity.class);
-                    startActivity(television);
-                    overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+        navigationView = findViewById(R.id.navigation_menu);
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()) {
+                    case R.id.nav_television:
+                        Intent intent0 = new Intent(Receiver.this, MainActivity.class);
+                        startActivity(intent0);
+                        break;
+                    case R.id.nav_led_table:
+                        Intent intent1 = new Intent(Receiver.this, LedTable.class);
+                        startActivity(intent1);
+                        break;
+                    case R.id.nav_led_cupboard:
+                        Intent intent2 = new Intent(Receiver.this, LedCupboard.class);
+                        startActivity(intent2);
+                        break;
+                    case R.id.nav_pc:
+                        Intent intent3 = new Intent(Receiver.this, pcRemoteControl.class);
+                        startActivity(intent3);
+                        break;
+                    case R.id.nav_alarm:
+                        Intent intent4 = new Intent(Receiver.this, AlarmClock.class);
+                        startActivity(intent4);
+                        break;
+                    case R.id.nav_receiver:
+                        Intent intent5 = new Intent(Receiver.this, Receiver.class);
+                        startActivity(intent5);
+                        break;
+                    case R.id.nav_room_light:
+                        Intent intent6 = new Intent(Receiver.this, RoomLightSeekerBar.class);
+                        startActivity(intent6);
+                        break;
+                    case R.id.nav_ventilator:
+                        Toast.makeText(getApplicationContext(), "'Ventilator' turn ON/OFF!", Toast.LENGTH_SHORT).show();
+                        InternetConnection.changeBooleanFalse();
+                        InternetConnection b = new InternetConnection();
+                        b.execute("300X","192.168.2.101");  //normaly 300X 192.168.2.101 just testing partyCube with 16753245
+                        break;
+                    case R.id.nav_settings:
+                        Toast.makeText(getApplicationContext(), "Button 'Preference' isn't in use!", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.nav_aboutus:
+                        Toast.makeText(getApplicationContext(), "Button 'About Us' isn't in use!", Toast.LENGTH_SHORT).show();
+                        break;
                 }
-                else if(x1 > x2){
-                    Intent Led_cupboard = new Intent(this, LedCupboard.class);
-                    startActivity(Led_cupboard);
-                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                }
-                break;
-        }
-        return false;
+                return false;
+            }
+        });
     }
 
     private void toolbar(){  //Insert toolbar
@@ -194,5 +230,15 @@ public class Receiver extends ToolbarActivity {
 
     private void sendInfrared(String infrared){
         new InternetConnection().execute(infrared + "X", "192.168.2.102");  //"X" used as ending signal by esp ,102
+    }
+
+    public void setUpToolbar() {
+        DrawerLayout drawerLayout = findViewById(R.id.drawerLayout);
+        Toolbar stoolbar = findViewById(R.id.drawer);
+        setSupportActionBar(stoolbar);
+        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, stoolbar, R.string.app_name, R.string.app_name);
+        drawerLayout.addDrawerListener(actionBarDrawerToggle);
+        actionBarDrawerToggle.getDrawerArrowDrawable().setColor(getResources().getColor(R.color.black));
+        actionBarDrawerToggle.syncState();
     }
 }

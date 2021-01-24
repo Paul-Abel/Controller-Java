@@ -5,12 +5,12 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.tv_remote.alarmClock.AlarmClock;
-
 public class ToolbarActivity extends AppCompatActivity{
+    public char navigationIntent = 0;
 
     @Override   //insert toolbar layout
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -22,47 +22,57 @@ public class ToolbarActivity extends AppCompatActivity{
     @Override   //Navigation
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
-            case R.id.toolbar_led_table:
-                Intent led = new Intent(this, LedTable.class);
-                startActivity(led);
-                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+            case R.id.toolbar_left_page:
+                switch (navigationIntent){
+                    case 1:     //if current activity equals MainActivity
+                        Intent intent0 = new Intent(this, LedTable.class);
+                        startActivity(intent0);
+                        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+                        break;
+                    case 2:     //if current activity equals LedTable
+                        Intent intent1 = new Intent(this, LedCupboard.class);
+                        startActivity(intent1);
+                        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+                        break;
+                    /*case 3:     //if current activity equals LedCupboard
+                        Intent intent2 = new Intent(this, MainActivity.class);
+                        startActivity(intent2);
+                        break;*/
+                    default:    //for the rest activity's
+                        Intent intent3 = new Intent(this, MainActivity.class);
+                        startActivity(intent3);
+                        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+                        break;
+                }
                 return true;
-            case R.id.toolbar_television:
-                Intent television = new Intent(this, MainActivity.class);
-                startActivity(television);
-                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
-                return true;
-            case R.id.toolbar_receiver:
-                Intent receiver = new Intent(this, Receiver.class);
-                startActivity(receiver);
-                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
-                return true;
-            case R.id.toolbar_led_cupboard:
-                Intent Led_cupboard = new Intent(this, LedCupboard.class);
-                startActivity(Led_cupboard);
-                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            case R.id.toolbar_right_page:
+                switch (navigationIntent){
+                    case 1:     //if current activity equals MainActivity
+                        Intent intent0 = new Intent(this, LedCupboard.class);
+                        startActivity(intent0);
+                        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                        break;
+                    /*case 2:     //if current activity equals LedTable
+                        Intent intent1 = new Intent(this, MainActivity.class);
+                        startActivity(intent1);
+                        break;*/
+                    case 3:     //if current activity equals LedCupboard
+                        Intent intent2 = new Intent(this, LedTable.class);
+                        startActivity(intent2);
+                        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                        break;
+                    default:    //for the rest activity's
+                        Intent intent3 = new Intent(this, MainActivity.class);
+                        startActivity(intent3);
+                        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                        break;
+                }
                 return true;
             case R.id.toolbar_room_light:
-                Toast.makeText(getApplicationContext(), "light on/off", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "'Room_Light' turn ON/OFF!", Toast.LENGTH_SHORT).show();
                 InternetConnection.changeBooleanFalse();
                 InternetConnection a = new InternetConnection();
                 a.execute("-555X","192.168.2.154");
-                return true;
-            case R.id.toolbar_table_ventilator:
-                Toast.makeText(getApplicationContext(), "Ventilator on/off", Toast.LENGTH_SHORT).show();
-                InternetConnection.changeBooleanFalse();
-                InternetConnection b = new InternetConnection();
-                b.execute("300X","192.168.2.101");  //normaly 300X 192.168.2.101 just testing partyCube with 16753245
-                return true;
-            case R.id.toolbar_pc_remoteControl:
-                Intent pcRemoteControl = new Intent(this, com.example.tv_remote.pcRemote.pcRemoteControl.class);
-                startActivity(pcRemoteControl);
-                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                return true;
-            case R.id.toolbar_alarm_clock:
-                Intent alarmClock = new Intent(this, AlarmClock.class);
-                startActivity(alarmClock);
-                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
