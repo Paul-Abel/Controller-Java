@@ -27,29 +27,181 @@
         </LinearLayout>
     </ScrollView>
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="16dp">
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@id/seekBar"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="24dp"
-            android:text="@string/zeroPercentage"
-            android:textSize="30sp"
-            android:textColor="#ff00f0f0"/>
-        <SeekBar
-            android:id="@+id/seekBar"
+        android:layout_marginTop="50dp"
+        android:id="@+id/constrain_0"
+        android:padding="30dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constrain_1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="30dp"/>
-    </RelativeLayout>
+            android:layout_height="180dp"
+            android:layout_marginTop="50dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="#ff000000">
+            <TextView
+                android:id="@+id/textView_0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/room_light"
+                android:textColor="#ff00f0f0"
+                android:textSize="30sp"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintBottom_toTopOf="@+id/textLightPercentage"
+                app:layout_constraintEnd_toEndOf="@+id/textLightPercentage"
+                app:layout_constraintStart_toStartOf="@+id/textLightPercentage"/>
+            <TextView
+                android:id="@+id/textLightPercentage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/seekBar"
+                android:layout_centerHorizontal="true"
+                android:text="@string/zeroPercentage"
+                android:textColor="#ff00f0f0"
+                android:textSize="30sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <SeekBar
+                android:id="@+id/seekBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                app:layout_constraintTop_toBottomOf="@+id/textLightPercentage"
+                tools:layout_editor_absoluteX="0dp"
+                android:layout_marginTop="10dp"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constrain_2"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constrain_1"
+            android:background="#ff90705f"
+            android:layout_marginTop="30dp">
+            <TextView
+                android:id="@+id/textHumidityView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="@string/currentHumidity"
+                android:textSize="30sp"
+                app:layout_constraintBottom_toBottomOf="@+id/textTempView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.759"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textTempView"
+                app:layout_constraintVertical_bias="0.503"/>
+            <TextView
+                android:id="@+id/textView_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/temperature"
+                android:textSize="30sp"
+                android:textColor="#ff00f0f0"
+                app:layout_constraintBottom_toTopOf="@+id/textTempView"
+                app:layout_constraintEnd_toEndOf="@+id/textTempView"
+                app:layout_constraintStart_toStartOf="@+id/textTempView"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/textTempView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="@string/currentTemp"
+                android:textSize="30sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/textHumidityView"
+                app:layout_constraintHorizontal_bias="0.489"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.654"/>
+            <TextView
+                android:id="@+id/textView_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/humidity"
+                android:textSize="30sp"
+                android:textColor="#ff00f0f0"
+                app:layout_constraintBottom_toBottomOf="@+id/textView_4"
+                app:layout_constraintEnd_toEndOf="@+id/textHumidityView"
+                app:layout_constraintStart_toStartOf="@+id/textHumidityView"
+                app:layout_constraintTop_toTopOf="@+id/textView_4"
+                app:layout_constraintVertical_bias="1.0"/>
+
+            <Button
+                android:id="@+id/refresh"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:padding="20dp"
+                android:background="@drawable/ic_refresh"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constrain_3"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constrain_2"
+            android:background="@mipmap/led_table_background"
+            android:layout_marginTop="30dp">
+            <TextView
+                android:id="@+id/textVie_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/partyLight"
+                android:textSize="30sp"
+                android:textColor="#ff00f0f0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:padding="10dp"/>
+
+            <Button
+                android:id="@+id/on_off"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.236"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textVie_6" />
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/on_off"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/on_off"
+                app:layout_constraintTop_toTopOf="@+id/on_off" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/on_off"
+                app:layout_constraintStart_toStartOf="@+id/on_off"
+                app:layout_constraintTop_toBottomOf="@+id/on_off" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/button2"
+                app:layout_constraintEnd_toEndOf="@+id/button1"
+                app:layout_constraintStart_toStartOf="@+id/button1" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigation_menu"

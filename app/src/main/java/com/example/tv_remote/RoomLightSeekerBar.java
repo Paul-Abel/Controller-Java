@@ -3,7 +3,12 @@ package com.example.tv_remote;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,13 +22,34 @@ import com.example.tv_remote.alarmClock.AlarmClock;
 import com.example.tv_remote.pcRemote.pcRemoteControl;
 import com.google.android.material.navigation.NavigationView;
 
+import java.util.concurrent.TimeUnit;
+
 public class RoomLightSeekerBar extends ToolbarActivity {
 
+    private static final String TAG = ".RoomLightSeekerBar";
+    public static String sensorData;
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle actionBarDrawerToggle;
     NavigationView navigationView;
     private TextView percentageLook;
+    @SuppressLint("StaticFieldLeak")
+    private static TextView tempView;
+    @SuppressLint("StaticFieldLeak")
+    private static TextView humidityView;
     private int currentPercentage;
+
+    @SuppressLint("SetTextI18n")
+    protected void onStart() {
+        InternetConnection.changeCallbackBooleanTrue();
+        sendInfrared("800");    //signal to get temperature and humidity
+        try {
+            TimeUnit.MILLISECONDS.sleep(300);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        setTempHumanityText();
+        super.onStart();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,8 +62,15 @@ public class RoomLightSeekerBar extends ToolbarActivity {
         toolbar.setTitle(R.string.light_dimming);
         setUpToolbar();
 
-        percentageLook = (TextView) findViewById(R.id.textView);
-        SeekBar seekBar = (SeekBar) findViewById(R.id.seekBar);
+        percentageLook = findViewById(R.id.textLightPercentage);
+        SeekBar seekBar = findViewById(R.id.seekBar);
+        tempView = findViewById(R.id.textTempView);
+        humidityView = findViewById(R.id.textHumidityView);
+        Button refreshTempHum = findViewById(R.id.refresh);
+        Button onOff = findViewById(R.id.on_off);
+        Button button1 = findViewById(R.id.button1);
+        Button button2 = findViewById(R.id.button2);
+        Button button3 = findViewById(R.id.button3);
 
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @SuppressLint("SetTextI18n")
@@ -53,6 +86,45 @@ public class RoomLightSeekerBar extends ToolbarActivity {
             public void onStopTrackingTouch(SeekBar seekBar) {
                 String sendString = String.valueOf(currentPercentage);
                 sendInfrared(sendString);
+            }
+        });
+
+        refreshTempHum.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showButtonClicked();
+                InternetConnection.changeCallbackBooleanTrue();
+                sendInfrared("800");    //signal to get temperature and humidity
+                try {
+                    TimeUnit.MILLISECONDS.sleep(300);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                setTempHumanityText();
+            }
+        });
+        onOff.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendInfrared("1001");
+            }
+        });
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendInfrared("2001");
+            }
+        });
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendInfrared("3001");
+            }
+        });
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendInfrared("4001");
             }
         });
 
@@ -109,8 +181,29 @@ public class RoomLightSeekerBar extends ToolbarActivity {
         });
     }
 
+    @SuppressLint("SetTextI18n")
+    public static void setTempHumanityText(){
+        if(sensorData != null) {
+            Log.d(TAG,"setTempHum" + sensorData);
+            String[] splitData = sensorData.split(":");
+            tempView.setText(splitData[0] + "°C");
+            humidityView.setText(splitData[1] + "%");
+        }else{
+            tempView.setText("not");
+            humidityView.setText("reachable");
+        }
+        InternetConnection.changeCallbackBooleanFalse();
+    }
+
     private void sendInfrared(String infrared){
-        new InternetConnection().execute(infrared + "X", "192.168.2.118");    //change id to the used esp
+        new InternetConnection().execute(infrared + "X", "192.168.2.174");    //change id to the used esp 174
+    }
+
+    private void showButtonClicked() {
+        Animation anim = new AlphaAnimation(0.0f, 1.0f);
+        anim.setDuration(500); //You can manage the blinking time with this parameter
+        Button showButton = findViewById(R.id.refresh);
+        showButton.startAnimation(anim);
     }
 
     private void toolbar(){  //Insert toolbar

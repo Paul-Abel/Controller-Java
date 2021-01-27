@@ -131,6 +131,10 @@
 
     //room light dimming
     <string name="zeroPercentage">0%</string>
-
+    <string name="temperature">Temp:</string>
+    <string name="humidity">Humidity:</string>
+    <string name="partyLight">Party Light:</string>
+    <string name="currentTemp">not</string>
+    <string name="currentHumidity">reachable</string>
 
 </resources>
